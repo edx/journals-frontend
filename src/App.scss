@@ -1,0 +1,15 @@
+@import "~@edx/edx-bootstrap/sass/edx/theme";
+@import "~bootstrap/scss/bootstrap";
+
+#content{
+  display:flex;
+}
+
+button.side-nav-panel-toggle{
+  height: 60px;
+  width: 82px;
+}
+button.header-nav-panel-toggle{
+  height: 38px;
+  width: 82px;
+}
