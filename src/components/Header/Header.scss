@@ -1,0 +1,13 @@
+@media (min-width: 576px){
+  div.header{
+    height:64px;
+  }
+}
+@media (max-width: 575px){
+  div.header{
+    height:54px;
+  }
+}
+div.header{
+  border-bottom: 1px solid black;
+}

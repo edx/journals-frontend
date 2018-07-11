@@ -1,0 +1,21 @@
+
+#nav-panel.nav-panel-closed{
+  width: 0;
+  overflow: hidden;
+}
+#nav-panel.nav-panel-open{
+  border: 1px solid black;
+  min-height: calc(100vh - 108px);
+}
+@media (min-width: 576px){
+  #nav-panel.nav-panel-open{
+    width: 335px;
+    min-height: calc(100vh - 64px);
+  }
+}
+@media (max-width: 575px){
+  #nav-panel.nav-panel-open{
+    width: 100%;
+    min-height: calc(100vh - 108px);
+  }
+}
