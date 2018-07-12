@@ -1,4 +1,4 @@
-import { TOGGLE_NAVIGATION_PANEL } from '../constants/actionTypes/navigation';
+import TOGGLE_NAVIGATION_PANEL from '../constants/actionTypes/navigation';
 
 const toggleNavigationPanel = () => (
   {

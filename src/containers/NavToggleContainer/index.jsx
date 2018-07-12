@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import NavToggle from '../../components/NavToggle';
-import { toggleNavigationPanel } from '../../data/actions/navigation';
+import toggleNavigationPanel from '../../data/actions/navigation';
 
 const mapStateToProps = state => (
   {
