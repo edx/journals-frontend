@@ -6,8 +6,8 @@ services:
       dockerfile: Dockerfile
       args:
         - NODE_ENV=development
-    container_name: longboard
-    image: 'edxops/longboard:latest'
+    container_name: journals_frontend
+    image: 'edxops/journals_frontend:latest'
     volumes:
       - '.:/edx/app:delegated'
       - 'notused:/edx/app/node_modules'

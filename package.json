@@ -1,8 +1,8 @@
 {
-  "name": "longboard",
+  "name": "journals_frontend",
   "version": "1.0.0",
   "description": "Starter app from the ground up",
-  "repository": "https://github.com/edx/longboard",
+  "repository": "https://github.com/edx/journals_frontend",
   "scripts": {
     "build": "NODE_ENV=production BABEL_ENV=production webpack --config=config/webpack.prod.config.js",
     "deploy:gh-pages": "npm run build && gh-pages -d dist",
