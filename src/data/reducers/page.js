@@ -13,7 +13,7 @@ const page = (state = {
     case GET_PAGE:
       return {
         ...state,
-        currentPage: action.page
+        page: action.page,
       };
     case STARTED_FETCHING_PAGE:
       return {

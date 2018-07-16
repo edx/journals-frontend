@@ -2,17 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-import settings from '../../data/configuration/constants';
-
-
-
 const JournalItem = ({
   id,
   title,
   shortDesc,
 }) => (
   <div className="journal">
-    <Link to={{ pathname: `about/${id}` }}>{title}</Link>
+    <Link to={{ pathname: `/${id}/about` }}>{title}</Link>
     <p>Short Description: {shortDesc}</p>
   </div>
 );
@@ -55,15 +51,12 @@ class JournalListComp extends React.Component {
 JournalItem.defaultProps = {
   title: '',
   shortDesc: '',
-  longDesc: '',
-  structure: '',
 };
 
 JournalItem.propTypes = {
   title: PropTypes.string,
   shortDesc: PropTypes.string,
-  longDesc: PropTypes.string,
-  structure: PropTypes.string,
+  id: PropTypes.number.isRequired,
 };
 
 JournalList.defaultProps = {

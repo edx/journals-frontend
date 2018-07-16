@@ -13,7 +13,7 @@ const journal = (state = {
     case GET_JOURNAL:
       return {
         ...state,
-        currentPage: action.page
+        journal: action.journal,
       };
     case STARTED_FETCHING_JOURNAL:
       return {

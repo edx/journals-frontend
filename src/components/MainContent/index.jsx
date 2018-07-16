@@ -4,7 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import classNames from 'classnames';
 
 import IndexPage from '../../containers/IndexPage';
-import JournalPage from '../../containers/JournalPage';
+import JournalPageContainer from '../../containers/JournalPageContainer';
 import JournalAboutPageContainer from '../../containers/JournalAboutPageContainer';
 
 
@@ -23,8 +23,8 @@ const MainContent = (props) => {
               {/* TODO: Change to slugs not ids */}
               <Route exact path="/" component={IndexPage} />
               <Route path="/:journalId/about" component={JournalAboutPageContainer} />
+              <Route path="/:journalId/pages/:pageId" component={JournalPageContainer} />
               {/* <Route path="/:journalId" component={JournalRerouter} /> */}
-              <Route path="/:journalId/pages/:pageId" component={JournalPage} />
             </Switch>
           </main>
         </div>

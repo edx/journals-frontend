@@ -6,13 +6,13 @@ import { fetchJournal } from '../../data/actions/journal';
 
 const mapStateToProps = state => (
   {
-    title: state.journal.title,
+    title: state.journal.journal.title,
   }
 );
 
 const mapDispatchToProps = dispatch => (
   {
-    getJournal: (pageId) => dispatch(fetchJournal(pageId)),
+    getJournal: pageId => dispatch(fetchJournal(pageId)),
   }
 );
 
@@ -22,3 +22,4 @@ const JournalAboutPageContainer = connect(
 )(JournalAboutPage);
 
 export default JournalAboutPageContainer;
+
