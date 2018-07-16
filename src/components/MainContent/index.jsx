@@ -5,6 +5,7 @@ import classNames from 'classnames';
 
 import IndexPage from '../../containers/IndexPage';
 import JournalPage from '../../containers/JournalPage';
+import JournalAboutPageContainer from '../../containers/JournalAboutPageContainer';
 
 
 const MainContent = (props) => {
@@ -19,8 +20,11 @@ const MainContent = (props) => {
         <div className="col offset-1 col-10">
           <main>
             <Switch>
-              <Route path="/page" component={JournalPage} />
-              <Route path="/explore" component={IndexPage} />
+              {/* TODO: Change to slugs not ids */}
+              <Route exact path="/" component={IndexPage} />
+              <Route path="/:journalId/about" component={JournalAboutPageContainer} />
+              {/* <Route path="/:journalId" component={JournalRerouter} /> */}
+              <Route path="/:journalId/pages/:pageId" component={JournalPage} />
             </Switch>
           </main>
         </div>

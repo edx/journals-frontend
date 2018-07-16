@@ -1,27 +1,27 @@
 import {
-  GET_JOURNALS,
-  STARTED_FETCHING_JOURNALS,
-  FINISHED_FETCHING_JOURNALS,
-} from '../constants/actionTypes/journals';
+  GET_JOURNAL,
+  STARTED_FETCHING_JOURNAL,
+  FINISHED_FETCHING_JOURNAL,
+} from '../constants/actionTypes/journal';
 
-const journals = (state = {
-  journals: [],
+const journal = (state = {
+  journal: {},
   startedFetching: false,
   finishedFetching: false,
 }, action) => {
   switch (action.type) {
-    case GET_JOURNALS:
+    case GET_JOURNAL:
       return {
         ...state,
-        journals: action.journals,
+        currentPage: action.page
       };
-    case STARTED_FETCHING_JOURNALS:
+    case STARTED_FETCHING_JOURNAL:
       return {
         ...state,
         startedFetching: true,
         finishedFetching: false,
       };
-    case FINISHED_FETCHING_JOURNALS:
+    case FINISHED_FETCHING_JOURNAL:
       return {
         ...state,
         startedFetching: false,
@@ -32,4 +32,4 @@ const journals = (state = {
   }
 };
 
-export default journals;
+export default journal;

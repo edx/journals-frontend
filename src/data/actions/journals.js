@@ -6,6 +6,11 @@ import {
   GET_JOURNALS,
 } from '../constants/actionTypes/journals';
 
+import settings from '../configuration/constants';
+
+import JournalPageApiService from '../services/JournalPageApiService';
+
+
 const startedFetchingJournals = () => (
   {
     type: STARTED_FETCHING_JOURNALS,
@@ -28,13 +33,11 @@ const getJournals = journals => (
 const fetchJournals = () => (
   (dispatch) => {
     dispatch(startedFetchingJournals());
-    return fetch('http://localhost:18606/api/wagtail/pages/?type=journals.JournalAboutPage&fields=*')
-      // TODO: handle response error
-      .then(response => response.json())
-      .then((data) => {
-        dispatch(getJournals(data));
+    return JournalPageApiService.fetchAllJournals()
+      .then(data => {
+        dispatch(getJournals(data.data.items));
         dispatch(finishedFetchingJournals());
-      });
+      })
   }
 );
 

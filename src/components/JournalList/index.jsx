@@ -1,17 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+
+import settings from '../../data/configuration/constants';
+
+
 
 const JournalItem = ({
+  id,
   title,
   shortDesc,
-  longDesc,
-  structure,
 }) => (
   <div className="journal">
-    <h3>Title: {title}</h3>
+    <Link to={{ pathname: `about/${id}` }}>{title}</Link>
     <p>Short Description: {shortDesc}</p>
-    <p>Long Description: {longDesc}</p>
-    <p>Structure: {structure}</p>
   </div>
 );
 
@@ -23,10 +25,9 @@ const JournalList = ({ journals }) => (
         .map(journal => (
           <li key={journal.id}>
             <JournalItem
+              id={journal.id}
               title={journal.title}
               shortDesc={journal.short_description}
-              longDesc={journal.long_description}
-              structure={JSON.stringify(journal.get_journal_structure, null, 2)}
             />
           </li>
         ))
@@ -44,7 +45,7 @@ class JournalListComp extends React.Component {
     return (
       <div>
         <div>
-          <JournalList journals={this.props.journals.items} />
+          <JournalList journals={this.props.journals} />
         </div>
       </div>
     );
