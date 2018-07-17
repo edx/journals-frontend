@@ -1,6 +1,8 @@
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 import MainContent from '../../components/MainContent';
+
 
 const mapStateToProps = state => (
   {
@@ -19,4 +21,4 @@ const MainContentContainer = connect(
   mapDispatchToProps,
 )(MainContent);
 
-export default MainContentContainer;
+export default withRouter(MainContentContainer);

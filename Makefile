@@ -1,5 +1,5 @@
 shell: ## run a shell on the cookie-cutter container
-	docker exec -it edx.fecc /bin/bash
+	docker exec -it journals_frontend /bin/bash
 
 build:
 	docker-compose build

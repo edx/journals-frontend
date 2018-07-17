@@ -6,8 +6,6 @@ import {
   GET_JOURNAL,
 } from '../constants/actionTypes/journal';
 
-import settings from '../configuration/constants';
-
 import JournalPageApiService from '../services/JournalPageApiService';
 
 const startedFetchingJournal = () => (
@@ -29,14 +27,14 @@ const getJournal = journal => (
   }
 );
 
-const fetchJournal = (id) => (
+const fetchJournal = id => (
   (dispatch) => {
     dispatch(startedFetchingJournal());
     return JournalPageApiService.fetchJournalPage(id)
-      .then(response => {
+      .then((response) => {
         dispatch(getJournal(response.data));
         dispatch(finishedFetchingJournal());
-      })
+      });
   }
 );
 

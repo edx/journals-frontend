@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 class JournalAboutPage extends React.Component {
   constructor(props) {
     super(props);
-    //this.props.getJournal(this.props.match.params.journalSlug);
+    this.props.getJournal(this.props.match.params.journalId);
   }
 
   render() {
@@ -19,10 +19,18 @@ class JournalAboutPage extends React.Component {
 
 JournalAboutPage.defaultProps = {
   title: '',
+  getJournal: () => {},
 };
 
 JournalAboutPage.propTypes = {
   title: PropTypes.string,
+  getJournal: PropTypes.func,
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      journalId: PropTypes.string,
+    }),
+    url: PropTypes.string,
+  }).isRequired,
 };
 
 
