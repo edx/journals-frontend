@@ -1,13 +1,14 @@
 import { connect } from 'react-redux';
 
 import JournalPage from '../../components/JournalPage';
-import { fetchPage } from '../../data/actions/page';
+import fetchPage from '../../data/actions/page';
 
 
 const mapStateToProps = state => (
   {
     title: state.page.page.title,
     body: state.page.page.body,
+    fetchPageSuccess: state.page.error,
   }
 );
 

@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 
 
 class JournalAboutPage extends React.Component {
-  constructor(props) {
-    super(props);
+  componentDidMount() {
     this.props.getJournal(this.props.match.params.journalId);
   }
 

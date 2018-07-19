@@ -3,10 +3,11 @@ import 'whatwg-fetch';
 import {
   STARTED_FETCHING_JOURNALS,
   FINISHED_FETCHING_JOURNALS,
-  GET_JOURNALS,
+  GET_JOURNALS_SUCCESS,
+  GET_JOURNALS_FAILURE,
 } from '../constants/actionTypes/journals';
 
-import JournalPageApiService from '../services/JournalPageApiService';
+import JournalsApiService from '../services/JournalsApiService';
 
 
 const startedFetchingJournals = () => (
@@ -21,27 +22,34 @@ const finishedFetchingJournals = () => (
   }
 );
 
-const getJournals = journals => (
+const getJournalsSuccess = journals => (
   {
-    type: GET_JOURNALS,
+    type: GET_JOURNALS_SUCCESS,
     journals,
+  }
+);
+
+const getJournalsFailure = error => (
+  {
+    type: GET_JOURNALS_FAILURE,
+    error,
   }
 );
 
 const fetchJournals = () => (
   (dispatch) => {
     dispatch(startedFetchingJournals());
-    return JournalPageApiService.fetchAllJournals()
+    return JournalsApiService.fetchAllJournals()
       .then((data) => {
-        dispatch(getJournals(data.data.items));
+        dispatch(getJournalsSuccess(data.data.items));
+      })
+      .catch((error) => {
+        dispatch(getJournalsFailure(error));
+      })
+      .finally(() => {
         dispatch(finishedFetchingJournals());
       });
   }
 );
 
-export {
-  startedFetchingJournals,
-  finishedFetchingJournals,
-  getJournals,
-  fetchJournals,
-};
+export default fetchJournals;
