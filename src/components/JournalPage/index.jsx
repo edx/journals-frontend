@@ -27,10 +27,8 @@ class JournalPage extends React.Component {
             this.props.body.map((el) => {
               switch (el.type) {
                 case RICH_TEXT:
-                  // return <RichText />
-                  return <div>RichText</div>;
                 case RAW_HTML:
-                  // return <RawHTML />
+                  // rich text and raw HTML use the same component
                   return <RawHTML content={el.value} />;
                 case PDF:
                   // return <PDF />
