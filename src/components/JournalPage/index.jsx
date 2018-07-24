@@ -10,6 +10,7 @@ import {
 } from '../../data/constants/contentTypes';
 
 import RawHTML from '../RawHTML';
+import Image from '../Image';
 
 class JournalPage extends React.Component {
   constructor(props) {
@@ -37,8 +38,13 @@ class JournalPage extends React.Component {
                   // return <XBlockVideo />
                   return <div>XBlockVideo</div>;
                 case IMAGE:
-                  // return <Image />
-                  return <div>Image</div>;
+                  // TODO: need to change id for search
+                  return (<Image
+                    url={el.value.url}
+                    id={el.id}
+                    title={el.value.title}
+                    altText={el.value.title}
+                  />);
                 default:
                   return <div>No matching component</div>;
               }
