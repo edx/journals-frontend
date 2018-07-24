@@ -9,6 +9,8 @@ import {
   IMAGE,
 } from '../../data/constants/contentTypes';
 
+import RawHTML from '../../components/RawHTML';
+
 class JournalPage extends React.Component {
   constructor(props) {
     super(props);
@@ -29,7 +31,7 @@ class JournalPage extends React.Component {
                   return <div>RichText</div>;
                 case RAW_HTML:
                   // return <RawHTML />
-                  return <div>RawHTML</div>;
+                  return <RawHTML content={el.value} />;
                 case PDF:
                   // return <PDF />
                   return <div>PDF</div>;
