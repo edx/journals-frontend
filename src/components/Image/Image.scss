@@ -1,0 +1,29 @@
+// TODO: all colors should be using variables and inheriting from sitebranding
+.image-border{
+  background-color: #f2f8fb
+}
+.image-title{
+  padding: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.71;
+  letter-spacing: 1px;
+  color: #292b2c;
+}
+.image-block{
+  width: 100%;
+  padding: 4px;
+  box-sizing: border-box;
+}
+.image-caption{
+  padding: 4px;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: #292b2c;
+}
