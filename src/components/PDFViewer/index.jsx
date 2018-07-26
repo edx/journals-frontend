@@ -1,7 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
-const PDFViewer = props => (
+const PDFViewer = (
   <div>Look a PDF!</div>
 );
 

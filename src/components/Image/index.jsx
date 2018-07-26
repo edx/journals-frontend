@@ -20,7 +20,7 @@ const Image = props => (
 
 Image.defaultProps = {
   altText: '',
-  caption: '',journaljoauslskd
+  caption: '',
   title: '',
 };
 
