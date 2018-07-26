@@ -9,8 +9,10 @@ import {
   IMAGE,
 } from '../../data/constants/contentTypes';
 
+// TODO: rename all of these viewer
 import RawHTML from '../RawHTML';
 import Image from '../Image';
+import PDFViewer from '../PDFViewer';
 
 class JournalPage extends React.Component {
   constructor(props) {
@@ -32,8 +34,7 @@ class JournalPage extends React.Component {
                   // rich text and raw HTML use the same component
                   return <RawHTML content={el.value} />;
                 case PDF:
-                  // return <PDF />
-                  return <div>PDF</div>;
+                  return <PDFViewer />;
                 case XBLOCK_VIDEO:
                   // return <XBlockVideo />
                   return <div>XBlockVideo</div>;
