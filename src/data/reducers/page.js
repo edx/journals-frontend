@@ -1,5 +1,6 @@
 import {
-  GET_PAGE,
+  GET_PAGE_SUCCESS,
+  GET_PAGE_FAILURE,
   STARTED_FETCHING_PAGE,
   FINISHED_FETCHING_PAGE,
 } from '../constants/actionTypes/page';
@@ -10,10 +11,15 @@ const page = (state = {
   finishedFetching: false,
 }, action) => {
   switch (action.type) {
-    case GET_PAGE:
+    case GET_PAGE_SUCCESS:
       return {
         ...state,
         page: action.page,
+      };
+    case GET_PAGE_FAILURE:
+      return {
+        ...state,
+        error: action.error,
       };
     case STARTED_FETCHING_PAGE:
       return {

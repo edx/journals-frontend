@@ -32,8 +32,7 @@ const JournalList = ({ journals }) => (
 );
 
 class JournalListComp extends React.Component {
-  constructor(props) {
-    super(props);
+  componentDidMount() {
     this.props.getJournals();
   }
 

@@ -1,7 +1,8 @@
 import {
-  GET_JOURNALS,
   STARTED_FETCHING_JOURNALS,
   FINISHED_FETCHING_JOURNALS,
+  GET_JOURNALS_SUCCESS,
+  GET_JOURNALS_FAILURE,
 } from '../constants/actionTypes/journals';
 
 const journals = (state = {
@@ -10,10 +11,15 @@ const journals = (state = {
   finishedFetching: false,
 }, action) => {
   switch (action.type) {
-    case GET_JOURNALS:
+    case GET_JOURNALS_SUCCESS:
       return {
         ...state,
         journals: action.journals,
+      };
+    case GET_JOURNALS_FAILURE:
+      return {
+        ...state,
+        error: action.error,
       };
     case STARTED_FETCHING_JOURNALS:
       return {

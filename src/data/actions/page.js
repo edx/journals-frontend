@@ -3,10 +3,11 @@ import 'whatwg-fetch';
 import {
   STARTED_FETCHING_PAGE,
   FINISHED_FETCHING_PAGE,
-  GET_PAGE,
+  GET_PAGE_SUCCESS,
+  GET_PAGE_FAILURE,
 } from '../constants/actionTypes/page';
 
-import JournalPageApiService from '../services/JournalPageApiService';
+import JournalsApiService from '../services/JournalsApiService';
 
 const startedFetchingPage = () => (
   {
@@ -20,27 +21,34 @@ const finishedFetchingPage = () => (
   }
 );
 
-const getPage = page => (
+const getPageSuccess = page => (
   {
-    type: GET_PAGE,
+    type: GET_PAGE_SUCCESS,
     page,
+  }
+);
+
+const getPageFailure = error => (
+  {
+    type: GET_PAGE_FAILURE,
+    error,
   }
 );
 
 const fetchPage = id => (
   (dispatch) => {
     dispatch(startedFetchingPage());
-    return JournalPageApiService.fetchJournalPage(id)
+    return JournalsApiService.fetchJournalPage(id)
       .then((response) => {
-        dispatch(getPage(response.data));
+        dispatch(getPageSuccess(response.data));
+      })
+      .catch((error) => {
+        dispatch(getPageFailure(error));
+      })
+      .finally(() => {
         dispatch(finishedFetchingPage());
       });
   }
 );
 
-export {
-  startedFetchingPage,
-  finishedFetchingPage,
-  getPage,
-  fetchPage,
-};
+export default fetchPage;

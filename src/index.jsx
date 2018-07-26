@@ -5,7 +5,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
 
-import Header from './components/Header';
+import HeaderContainer from './containers/HeaderContainer';
 import SubHeader from './components/SubHeader';
 import NavigationPanelContainer from './containers/NavigationPanelContainer';
 import NavToggleContainer from './containers/NavToggleContainer';
@@ -17,7 +17,7 @@ const App = () => (
   <Provider store={store}>
     <Router>
       <div>
-        <Header />
+        <HeaderContainer />
         <SubHeader />
         <div id="content">
           <NavigationPanelContainer />

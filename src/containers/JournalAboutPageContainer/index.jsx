@@ -1,12 +1,12 @@
 import { connect } from 'react-redux';
 
 import JournalAboutPage from '../../components/JournalAboutPage';
-import { fetchJournal } from '../../data/actions/journal';
+import fetchJournal from '../../data/actions/journal';
 
 
 const mapStateToProps = state => (
   {
-    title: state.journal.journal.title,
+    title: state.journal.title,
   }
 );
 
