@@ -1,8 +1,16 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
-const PDFViewer = (
-  <div>Look a PDF!</div>
+const PDFViewer = props => (
+  <div>{props.title}</div>
 );
+
+PDFViewer.defaultProps = {
+  title: '',
+};
+
+PDFViewer.propTypes = {
+  title: PropTypes.string,
+};
 
 export default PDFViewer;
