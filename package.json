@@ -24,6 +24,7 @@
     "email-prop-type": "^1.1.5",
     "font-awesome": "^4.7.0",
     "history": "^4.7.2",
+    "pdfjs-dist": "^2.0.489",
     "prop-types": "^15.5.10",
     "query-string": "^6.1.0",
     "react": "^16.2.0",
