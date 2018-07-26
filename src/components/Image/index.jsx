@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 // TODO: get from site branding
 import settings from '../../data/configuration/constants';
 

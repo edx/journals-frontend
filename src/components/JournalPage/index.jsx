@@ -34,7 +34,7 @@ class JournalPage extends React.Component {
                   // rich text and raw HTML use the same component
                   return <RawHTML content={el.value} />;
                 case PDF:
-                  return <PDFViewer url={el.value.url} title={el.value.block_title} />;
+                  return <PDFViewer url={el.value.url} title={el.value.block_title} id={el.id} />;
                 case XBLOCK_VIDEO:
                   // return <XBlockVideo />
                   return <div>XBlockVideo</div>;

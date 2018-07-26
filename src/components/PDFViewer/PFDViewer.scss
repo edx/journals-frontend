@@ -1,0 +1,20 @@
+// TODO: all colors should be using variables and inheriting from sitebranding
+.pdf-border{
+  background-color: #f2f8fb;
+}
+.pdf-title{
+  padding: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.71;
+  letter-spacing: 1px;
+  color: #292b2c;
+}
+.pdf-block{
+  width: 100%;
+  padding: 4px;
+  box-sizing: border-box;
+}
+
