@@ -1,8 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+// TODO: get from site branding
+import settings from '../../data/configuration/constants';
+
 const PDFViewer = props => (
-  <div>{props.title}</div>
+  <div>
+    <div>{props.title}</div>
+    <div>{`${settings.journalsBackendBaseUrl}${props.url}`}</div>
+  </div>
 );
 
 PDFViewer.defaultProps = {
@@ -10,6 +16,7 @@ PDFViewer.defaultProps = {
 };
 
 PDFViewer.propTypes = {
+  url: PropTypes.string.isRequired,
   title: PropTypes.string,
 };
 
