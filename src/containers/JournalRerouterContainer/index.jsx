@@ -10,7 +10,11 @@ const mapStateToProps = state => (
     userInfoFinishedFetching: state.userInfo.finishedFetching,
     journalFinishedFetching: state.journal.finishedFetching,
     journalFirstPage: state.journal.structure.length !== 0 ? state.journal.structure[0].id : null,
-    lastVisitedPage: state.userInfo.visitedPages.length !== 0 ? state.userInfo.visitedPages[0].page : null,
+    lastVisitedPage: (
+      state.userInfo.visitedPages.length !== 0 ?
+        state.userInfo.visitedPages[0].page :
+        null
+    ),
   }
 );
 

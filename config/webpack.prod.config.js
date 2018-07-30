@@ -21,9 +21,13 @@ module.exports = Merge.smart(commonConfig, {
       {
         test: /\.(js|jsx)$/,
         include: [
+          path.resolve(__dirname, '../node_modules'),
           path.resolve(__dirname, '../src'),
         ],
         loader: 'babel-loader',
+        options: {
+          compact: true,
+        },
       },
       // Webpack, by default, includes all CSS in the javascript bundles. Unfortunately, that means:
       // a) The CSS won't be cached by browsers separately (a javascript change will force CSS
