@@ -12,6 +12,7 @@ import UnauthorizedPage from '../UnauthorizedPage';
 
 import RawHTML from '../RawHTML';
 import Image from '../Image';
+import PDFViewer from '../PDFViewer';
 
 class JournalPage extends React.Component {
   componentDidMount() {
@@ -34,8 +35,8 @@ class JournalPage extends React.Component {
                     // rich text and raw HTML use the same component
                     return <RawHTML content={el.value} />;
                   case PDF:
-                    // return <PDF />
-                    return <div>PDF</div>;
+                    // TODO: need to change id for search
+                    return <PDFViewer id={el.id} url={el.value.url} title={el.value.block_title} />;
                   case XBLOCK_VIDEO:
                     // return <XBlockVideo />
                     return <div>XBlockVideo</div>;
