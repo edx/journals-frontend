@@ -12,6 +12,7 @@ import UnauthorizedPage from '../UnauthorizedPage';
 
 import RawHTML from '../RawHTML';
 import Image from '../Image';
+import XBlockVideoViewer from '../XBlockVideoViewer';
 
 class JournalPage extends React.Component {
   componentDidMount() {
@@ -37,8 +38,13 @@ class JournalPage extends React.Component {
                     // return <PDF />
                     return <div>PDF</div>;
                   case XBLOCK_VIDEO:
-                    // return <XBlockVideo />
-                    return <div>XBlockVideo</div>;
+                    // TODO: need to change id for search
+                    // TODO: display_name is not the one set in wagtail
+                    return (<XBlockVideoViewer
+                      url={el.value.view_url}
+                      id={el.id}
+                      title={el.value.display_name}
+                    />);
                   case IMAGE:
                     // TODO: need to change id for search
                     return (<Image
