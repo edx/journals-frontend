@@ -7,7 +7,7 @@ cache:
 notifications:
   email:
     recipients:
-      - jbradley@edx.org
+      - white-label-team@edx.org
     on_success: never
     on_failure: always
   hipchat:
