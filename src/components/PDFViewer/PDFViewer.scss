@@ -1,0 +1,27 @@
+// TODO: all colors should be variables and inheriting from site branding
+.pdf-border{
+  width: 100%;
+  background-color: #f2f8fb;
+}
+.pdf-title{
+  padding: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.71;
+  letter-spacing: 1px;
+  color: #292b2c;
+}
+.pdf-block{
+  width: 100%;
+}
+.imported-pdf{
+  width: 100%;
+  padding: 4px;
+  box-sizing: border-box;
+}
+.responsive-pdf::before {
+  padding-top: 129.41%; /* about 11:8.5 standard page size */
+}
+
