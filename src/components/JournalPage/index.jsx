@@ -10,8 +10,8 @@ import {
 } from '../../data/constants/contentTypes';
 import UnauthorizedPage from '../UnauthorizedPage';
 
-import RawHTML from '../RawHTML';
-import Image from '../Image';
+import RawHTMLViewer from '../RawHTMLViewer';
+import ImageViewer from '../ImageViewer';
 
 class JournalPage extends React.Component {
   componentDidMount() {
@@ -32,7 +32,7 @@ class JournalPage extends React.Component {
                   case RICH_TEXT:
                   case RAW_HTML:
                     // rich text and raw HTML use the same component
-                    return <RawHTML content={el.value} />;
+                    return <RawHTMLViewer content={el.value} />;
                   case PDF:
                     // return <PDF />
                     return <div>PDF</div>;
@@ -41,7 +41,7 @@ class JournalPage extends React.Component {
                     return <div>XBlockVideo</div>;
                   case IMAGE:
                     // TODO: need to change id for search
-                    return (<Image
+                    return (<ImageViewer
                       url={el.value.url}
                       id={el.id}
                       title={el.value.title}

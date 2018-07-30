@@ -1,18 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const RawHTML = props => (
+const RawHTMLViewer = props => (
   /* eslint-disable react/no-danger */
   <div dangerouslySetInnerHTML={{ __html: props.content }} />
   /* eslint-enable react/no-danger */
 );
 
-RawHTML.defaultProps = {
+RawHTMLViewer.defaultProps = {
   content: <div />,
 };
 
-RawHTML.propTypes = {
+RawHTMLViewer.propTypes = {
   content: PropTypes.string,
 };
 
-export default RawHTML;
+export default RawHTMLViewer;
