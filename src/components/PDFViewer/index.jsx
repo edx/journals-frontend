@@ -15,7 +15,7 @@ const PDFViewer = props => (
   <span id={props.id}>
     <div className="pdf-border">
       { (props.title.trim() !== '') ? <div className="image-title">{props.title} </div> : '' }
-      <div className="pdf-block embed-responsive embed-responsive-1by1">
+      <div className="pdf-block embed-responsive responsive-pdf">
         <iframe
           title={props.title}
           className="imported-pdf embed-responsive-item"

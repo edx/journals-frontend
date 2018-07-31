@@ -21,4 +21,7 @@
   padding: 4px;
   box-sizing: border-box;
 }
+.responsive-pdf::before {
+  padding-top: 129.41%; /* about 11:8.5 standard page size */
+}
 
