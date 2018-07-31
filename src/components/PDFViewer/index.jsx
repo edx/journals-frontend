@@ -12,18 +12,11 @@ const getIFrameUrl = relativeUrl => (
 
 const PDFViewer = props => (
   // If the title is an empty string do not display one
-  <span id={props.id}>
-    <div className="pdf-border">
-      { (props.title.trim() !== '') ? <div className="image-title">{props.title} </div> : '' }
-      <div className="pdf-block embed-responsive responsive-pdf">
-        <iframe
-          title={props.title}
-          className="imported-pdf embed-responsive-item"
-          src={getIFrameUrl(props.url)}
-        />
-      </div>
-    </div>
-  </span>
+  <iframe
+    title={props.title}
+    className="imported-pdf embed-responsive-item"
+    src={getIFrameUrl(props.url)}
+  />
 );
 
 PDFViewer.defaultProps = {
