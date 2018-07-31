@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 // TODO: get from site branding
 import settings from '../../data/configuration/constants';
 
-import './Image.scss';
+import './ImageViewer.scss';
 
 
-const Image = props => (
+const ImageViewer = props => (
   // If title or caption is an empty string or a string of whitespaces do not display an empty div
   <span id={props.id}>
     <div className="image-border w-100">
@@ -18,13 +18,13 @@ const Image = props => (
   </span>
 );
 
-Image.defaultProps = {
+ImageViewer.defaultProps = {
   altText: '',
   caption: '',
   title: '',
 };
 
-Image.propTypes = {
+ImageViewer.propTypes = {
   url: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
   altText: PropTypes.string,
@@ -32,4 +32,4 @@ Image.propTypes = {
   title: PropTypes.string,
 };
 
-export default Image;
+export default ImageViewer;
