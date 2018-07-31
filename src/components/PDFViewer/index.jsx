@@ -6,12 +6,8 @@ import settings from '../../data/configuration/constants';
 
 import './PDFViewer.scss';
 
-const getPDFUrl = relativeUrl => (
-  `${settings.journalsBackendBaseUrl}${relativeUrl}`
-);
-
 const getIFrameUrl = relativeUrl => (
-  `${settings.journalsBackendBaseUrl}/static/pdf_js/web/viewer.html?file=${getPDFUrl(relativeUrl)}`
+  `${settings.journalsBackendBaseUrl}/static/pdf_js/web/viewer.html?file=${relativeUrl}`
 );
 
 const PDFViewer = props => (
