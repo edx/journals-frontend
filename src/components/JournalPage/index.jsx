@@ -25,7 +25,7 @@ class JournalPage extends React.Component {
   }
 
   render() {
-    const baseUrl = `/${this.props.match.params.journalId}/pages`;
+    const baseUrl = !this.props.is_preview ? `/${this.props.match.params.journalId}/pages` : '';
     const previousPageUrl = this.props.previousPage ? `${baseUrl}/${this.props.previousPage}` : '';
     const nextPageUrl = this.props.nextPage ? `${baseUrl}/${this.props.nextPage}` : '';
     return (
@@ -65,7 +65,10 @@ class JournalPage extends React.Component {
               })
             }
           </div>
-          <PageNavigationButtons prev={previousPageUrl} next={nextPageUrl} />
+          {
+            !this.props.is_preview &&
+              <PageNavigationButtons prev={previousPageUrl} next={nextPageUrl} />
+          }
         </div>
       )
     );
@@ -79,6 +82,7 @@ JournalPage.defaultProps = {
   fetchPageSuccess: false,
   nextPage: null,
   previousPage: null,
+  is_preview: false,
 };
 
 JournalPage.propTypes = {
@@ -95,6 +99,7 @@ JournalPage.propTypes = {
   fetchPageSuccess: PropTypes.bool,
   nextPage: PropTypes.number,
   previousPage: PropTypes.number,
+  is_preview: PropTypes.bool,
 };
 
 

@@ -15,6 +15,13 @@ class JournalsApiService {
     });
   }
 
+  // Fetch Journal Preview
+  static fetchJournalPreview(previewId) {
+    return axios.get(`${JournalsApiService.apiUrl}/preview/${previewId}`, {
+      withCredentials: true,
+    });
+  }
+
   static fetchAllJournals() {
     const options = {
       fields: '*',
