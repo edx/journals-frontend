@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import {
   RICH_TEXT,
   RAW_HTML,
@@ -12,13 +11,22 @@ import UnauthorizedPage from '../UnauthorizedPage';
 
 import RawHTMLViewer from '../RawHTMLViewer';
 import ImageViewer from '../ImageViewer';
+import PageNavigationButtons from '../PageNavigationButtons';
 
 class JournalPage extends React.Component {
   componentDidMount() {
     this.props.getPage(this.props.match.params.pageId);
   }
+  componentDidUpdate(prevProps) {
+    if (prevProps.match.params.pageId !== this.props.match.params.pageId) {
+      this.props.getPage(this.props.match.params.pageId);
+    }
+  }
 
   render() {
+    const baseUrl = `/${this.props.match.params.journalId}/pages`;
+    const previousPageUrl = this.props.previousPage ? `${baseUrl}/${this.props.previousPage}` : '';
+    const nextPageUrl = this.props.nextPage ? `${baseUrl}/${this.props.nextPage}` : '';
     return (
       this.props.fetchPageSuccess ? (
         <UnauthorizedPage />
@@ -53,6 +61,7 @@ class JournalPage extends React.Component {
               })
             }
           </div>
+          <PageNavigationButtons prev={previousPageUrl} next={nextPageUrl} />
         </div>
       )
     );
@@ -64,6 +73,8 @@ JournalPage.defaultProps = {
   body: [],
   getPage: () => {},
   fetchPageSuccess: false,
+  nextPage: null,
+  previousPage: null,
 };
 
 JournalPage.propTypes = {
@@ -73,10 +84,13 @@ JournalPage.propTypes = {
   match: PropTypes.shape({
     params: PropTypes.shape({
       pageId: PropTypes.string,
+      journalId: PropTypes.string,
     }),
     url: PropTypes.string,
   }).isRequired,
   fetchPageSuccess: PropTypes.bool,
+  nextPage: PropTypes.number,
+  previousPage: PropTypes.number,
 };
 
 

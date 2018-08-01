@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 import PrivateRoute from '../../components/PrivateRoute';
 import settings from '../../data/configuration/constants';
@@ -9,4 +10,6 @@ const mapStateToProps = state => ({
   userInfoFinishedFetching: state.userInfo.finishedFetching,
 });
 
-export default connect(mapStateToProps)(PrivateRoute);
+const PrivateRouteContainer = connect(mapStateToProps)(PrivateRoute);
+
+export default withRouter(PrivateRouteContainer);
