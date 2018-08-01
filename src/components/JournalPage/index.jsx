@@ -43,21 +43,18 @@ class JournalPage extends React.Component {
                     // rich text and raw HTML use the same component
                     return <RawHTMLViewer content={el.value} />;
                   case PDF:
-                    return (<PDFViewer
-                      spanId={el.value.span_id}
-                      url={el.value.url}
-                      title={el.value.title}
-                    />);
+                    // TODO: need to change id for search
+                    return <PDFViewer id={el.id} url={el.value.url} title={el.value.block_title} />;
                   case XBLOCK_VIDEO:
                     // return <XBlockVideo />
                     return <div>XBlockVideo</div>;
                   case IMAGE:
+                    // TODO: need to change id for search
                     return (<ImageViewer
                       url={el.value.url}
-                      spanId={el.value.span_id}
+                      id={el.id}
                       title={el.value.title}
                       altText={el.value.title}
-                      caption={el.value.caption}
                     />);
                   default:
                     return <div>No matching component</div>;
