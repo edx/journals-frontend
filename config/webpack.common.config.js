@@ -4,7 +4,9 @@ const path = require('path');
 
 module.exports = {
   entry: {
-    app: path.resolve(__dirname, '../src/index.jsx'),
+    app: [
+      path.resolve(__dirname, '../src/index.jsx'),
+    ],
   },
   output: {
     path: path.resolve(__dirname, '../dist'),

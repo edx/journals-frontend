@@ -2,8 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Button } from '@edx/paragon';
 
-import './NavToggle.scss';
-
 
 class NavToggle extends React.Component {
   constructor(props) {
