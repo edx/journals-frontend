@@ -12,7 +12,7 @@ const getIFrameUrl = relativeUrl => (
 
 const PDFViewer = props => (
   // If the title is an empty string do not display one
-  <span id={props.spanId}>
+  <span id={props.id}>
     <div className="pdf-border">
       { (props.title.trim() !== '') ? <div className="image-title">{props.title} </div> : '' }
       <div className="pdf-block embed-responsive responsive-pdf">
@@ -31,7 +31,7 @@ PDFViewer.defaultProps = {
 };
 
 PDFViewer.propTypes = {
-  spanId: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
   title: PropTypes.string,
 };
