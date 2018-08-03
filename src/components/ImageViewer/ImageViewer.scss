@@ -1,8 +1,10 @@
 // TODO: all colors should be using variables and inheriting from sitebranding
 .image-border{
-  background-color: #f2f8fb
+  background-color: #f2f8fb;
+  display: inline-block;
 }
 .image-title{
+  min-width: 350px;
   padding: 4px;
   font-size: 14px;
   font-weight: 600;
@@ -13,11 +15,13 @@
   color: #292b2c;
 }
 .image-block{
-  width: 100%;
+  max-width: 100%;
+  margin: auto;
   padding: 4px;
   box-sizing: border-box;
 }
 .image-caption{
+  min-width: 350px;
   padding: 4px;
   font-size: 14px;
   font-weight: normal;
@@ -26,4 +30,11 @@
   line-height: 1.5;
   letter-spacing: normal;
   color: #292b2c;
+}
+.grow{
+  display: flex;
+  div{
+    flex-grow: 1;
+    width: 0;
+  }
 }

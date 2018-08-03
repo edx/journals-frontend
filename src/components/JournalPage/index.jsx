@@ -54,7 +54,7 @@ class JournalPage extends React.Component {
                   case IMAGE:
                     return (<ImageViewer
                       url={el.value.url}
-                      spanId={el.id}
+                      spanId={el.value.span_id}
                       title={el.value.title}
                       altText={el.value.title}
                       caption={el.value.caption}
