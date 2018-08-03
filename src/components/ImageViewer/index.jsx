@@ -29,7 +29,6 @@ ImageViewer.defaultProps = {
 ImageViewer.propTypes = {
   url: PropTypes.string.isRequired,
   spanId: PropTypes.string.isRequired,
-  width: PropTypes.string.isRequired,
   altText: PropTypes.string,
   caption: PropTypes.string,
   title: PropTypes.string,
