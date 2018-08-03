@@ -10,11 +10,11 @@ import './ImageViewer.scss';
 const ImageViewer = props => (
   // If title or caption is an empty string or a string of whitespaces do not display an empty div
   <span id={props.spanId}>
-    <div className="image-border w-100">
-      { (props.title.trim() !== '') ? <div className="image-title">{props.title} </div> : '' }
+    <div className="image-border">
+      { (props.title.trim() !== '') ? <div className="image-title" >{props.title} </div> : '' }
       <img className="image-block" src={`${settings.journalsBackendBaseUrl}${props.url}`} alt={props.altText} />
       { (props.caption.trim() !== '') ?
-        <div className="image-caption" dangerouslySetInnerHTML={{ __html: props.caption }} /> : // eslint-disable-line react/no-danger
+        <div className="image-caption"> <div dangerouslySetInnerHTML={{ __html: props.caption }} /> </div> : // eslint-disable-line react/no-danger
         '' }
     </div>
   </span>
@@ -29,6 +29,7 @@ ImageViewer.defaultProps = {
 ImageViewer.propTypes = {
   url: PropTypes.string.isRequired,
   spanId: PropTypes.string.isRequired,
+  width: PropTypes.string.isRequired,
   altText: PropTypes.string,
   caption: PropTypes.string,
   title: PropTypes.string,
