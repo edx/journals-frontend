@@ -1,0 +1,40 @@
+// TODO: all colors should be using variables and inheriting from sitebranding
+// TODO: all fonts should be inherited
+.viewer-border{
+  background-color: #f2f8fb;
+  display: inline-block;
+}
+.viewer-title{
+  min-width: 350px;
+  padding: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.71;
+  letter-spacing: 1px;
+  color: #292b2c;
+}
+.viewer-caption{
+   min-width: 350px;
+   padding: 4px;
+   font-size: 14px;
+   font-weight: normal;
+   font-style: normal;
+   font-stretch: normal;
+   line-height: 1.5;
+   letter-spacing: normal;
+   color: #292b2c;
+ }
+.viewer-content{
+  margin: auto;
+  padding: 4px;
+  box-sizing: border-box;
+}
+.grow{
+  display: flex;
+  div{
+    flex-grow: 1;
+    width: 0;
+  }
+}
