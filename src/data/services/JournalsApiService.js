@@ -3,6 +3,11 @@ import qs from 'query-string';
 
 import settings from '../configuration/constants';
 
+function getCookieValue(name) {
+  const value = document.cookie.match(`(^|;)\\s*${name}\\s*=\\s*([^;]+)`);
+  return value ? value.pop() : '';
+}
+
 class JournalsApiService {
   static get apiUrl() {
     return `${settings.journalsBackendBaseUrl}/api/v1`;
@@ -35,6 +40,18 @@ class JournalsApiService {
   static fetchUserInfo() {
     return axios.get(`${JournalsApiService.apiUrl}/users/current/`, {
       withCredentials: true,
+    });
+  }
+
+  static setPageVisit(userId, pageId) {
+    return axios.post(`${JournalsApiService.apiUrl}/userpagevisits/`, {
+      user: userId,
+      page: pageId,
+    }, {
+      withCredentials: true,
+      headers: {
+        'X-CSRFToken': getCookieValue('journals_csrftoken'),
+      },
     });
   }
 }
