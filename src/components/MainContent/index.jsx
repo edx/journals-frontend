@@ -5,6 +5,7 @@ import classNames from 'classnames';
 
 import IndexPage from '../../containers/IndexPage';
 import JournalPageContainer from '../../containers/JournalPageContainer';
+import JournalPreviewContainer from '../../containers/JournalPreviewContainer';
 import JournalAboutPageContainer from '../../containers/JournalAboutPageContainer';
 import JournalRerouterContainer from '../../containers/JournalRerouterContainer';
 import PrivateRouteContainer from '../../containers/PrivateRouteContainer';
@@ -23,6 +24,7 @@ const MainContent = (props) => {
           <main>
             <Switch>
               <Route exact path="/" component={IndexPage} />
+              <PrivateRouteContainer path="/preview/:previewId" component={JournalPreviewContainer} />
               <Route path="/:journalId/about" component={JournalAboutPageContainer} />
               <PrivateRouteContainer path="/:journalId/pages/:pageId" component={JournalPageContainer} />
               <PrivateRouteContainer path="/:journalId" component={JournalRerouterContainer} />
