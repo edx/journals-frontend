@@ -13,6 +13,7 @@ import RawHTMLViewer from '../RawHTMLViewer';
 import ImageViewer from '../ImageViewer';
 import PageNavigationButtons from '../PageNavigationButtons';
 import PDFViewer from '../PDFViewer';
+import ViewerBorder from '../ViewerBorder';
 
 class JournalPage extends React.Component {
   componentDidMount() {
@@ -43,22 +44,24 @@ class JournalPage extends React.Component {
                     // rich text and raw HTML use the same component
                     return <RawHTMLViewer content={el.value} />;
                   case PDF:
-                    return (<PDFViewer
-                      spanId={el.value.span_id}
-                      url={el.value.url}
-                      title={el.value.title}
-                    />);
+                    return (
+                      <ViewerBorder spanId={el.value.span_id} title={el.value.title} spanFullWidth>
+                        <PDFViewer url={el.value.url} title={el.value.title} />
+                      </ViewerBorder>
+                    );
                   case XBLOCK_VIDEO:
                     // return <XBlockVideo />
                     return <div>XBlockVideo</div>;
                   case IMAGE:
-                    return (<ImageViewer
-                      url={el.value.url}
-                      spanId={el.value.span_id}
-                      title={el.value.title}
-                      altText={el.value.title}
-                      caption={el.value.caption}
-                    />);
+                    return (
+                      <ViewerBorder
+                        spanId={el.value.span_id}
+                        title={el.value.title}
+                        caption={el.value.caption}
+                      >
+                        <ImageViewer url={el.value.url} altText={el.value.title} />
+                      </ViewerBorder>
+                    );
                   default:
                     return <div>No matching component</div>;
                 }
