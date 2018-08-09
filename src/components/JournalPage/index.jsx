@@ -20,8 +20,19 @@ class JournalPage extends React.Component {
     this.props.getPage(this.props.match.params.pageId);
   }
   componentDidUpdate(prevProps) {
+    // If we try to change Journal pages
     if (prevProps.match.params.pageId !== this.props.match.params.pageId) {
       this.props.getPage(this.props.match.params.pageId);
+    }
+    // If we successfully change Journal pages
+    if (prevProps.pageId !== this.props.pageId) {
+      this.trackVisit();
+    }
+  }
+
+  trackVisit() {
+    if (this.props.userId != null) {
+      this.props.setPageVisit(this.props.userId, this.props.match.params.pageId);
     }
   }
 
@@ -82,16 +93,19 @@ JournalPage.defaultProps = {
   title: '',
   body: [],
   getPage: () => {},
+  setPageVisit: () => {},
   fetchPageSuccess: false,
   nextPage: null,
   previousPage: null,
   is_preview: false,
+  pageId: 0,
 };
 
 JournalPage.propTypes = {
   title: PropTypes.string,
   body: PropTypes.arrayOf(PropTypes.object),
   getPage: PropTypes.func,
+  setPageVisit: PropTypes.func,
   match: PropTypes.shape({
     params: PropTypes.shape({
       pageId: PropTypes.string,
@@ -103,6 +117,8 @@ JournalPage.propTypes = {
   nextPage: PropTypes.number,
   previousPage: PropTypes.number,
   is_preview: PropTypes.bool,
+  userId: PropTypes.number.isRequired,
+  pageId: PropTypes.number,
 };
 
 

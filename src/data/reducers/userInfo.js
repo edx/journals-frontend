@@ -6,6 +6,7 @@ import {
 } from '../constants/actionTypes/userInfo';
 
 const userInfo = (state = {
+  id: null,
   username: '',
   visitedPages: [],
   isAuthenticated: false,
@@ -16,6 +17,7 @@ const userInfo = (state = {
     case GET_USER_INFO_SUCCESS:
       return {
         ...state,
+        id: action.userInfo.id,
         username: action.userInfo.username,
         visitedPages: action.userInfo.visited_pages,
         isAuthenticated: true,
