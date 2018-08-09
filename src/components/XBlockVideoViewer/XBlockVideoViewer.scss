@@ -1,0 +1,20 @@
+.xblock-video-container{
+  width: 100%;
+}
+.imported-xblock-video{
+  border: none;
+}
+
+.responsive-video::before{
+  padding-top: 143%;
+}
+@media (min-width: 768px){
+  .responsive-video::before{
+    padding-top: 98%;
+  }
+}
+@media (min-width: 992px){
+  .responsive-video::before{
+    padding-top: 78%;
+  }
+}

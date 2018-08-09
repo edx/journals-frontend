@@ -16,6 +16,7 @@ import PageNavigationButtons from '../PageNavigationButtons';
 import PDFViewerContainer from '../../containers/PDFViewerContainer';
 import ViewerBorder from '../ViewerBorder';
 import BreadCrumbs from '../BreadCrumbs';
+import XBlockVideoViewer from '../XBlockVideoViewer';
 
 
 class JournalPage extends React.Component {
@@ -81,8 +82,11 @@ class JournalPage extends React.Component {
                       </ViewerBorder>
                     );
                   case XBLOCK_VIDEO:
-                    // return <XBlockVideo />
-                    return <div key={el.id}>XBlockVideo</div>;
+                    return (
+                      <ViewerBorder spanId={el.value.span_id} title={el.value.title} spanFullWidth>
+                        <XBlockVideoViewer url={el.value.view_url} title={el.value.title} />
+                      </ViewerBorder>
+                    );
                   case IMAGE:
                     return (
                       <ViewerBorder
