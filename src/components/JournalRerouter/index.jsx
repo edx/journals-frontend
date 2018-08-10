@@ -9,7 +9,7 @@ class JournalRerouter extends React.Component {
   }
 
   render() {
-    if (this.props.userInfoFinishedFetching && this.props.journalFinishedFetching) {
+    if (this.props.siteInfoFinishedFetching && this.props.journalFinishedFetching) {
       // Only run if both the user info and journal info API calls have finished
       if (this.props.lastVisitedPage) {
         // Send user to the last page they visited if available
@@ -28,7 +28,7 @@ JournalRerouter.defaultProps = {
   lastVisitedPage: 0,
   journalFirstPage: 0,
   getJournal: () => {},
-  userInfoFinishedFetching: false,
+  siteInfoFinishedFetching: false,
   journalFinishedFetching: false,
 };
 
@@ -42,7 +42,7 @@ JournalRerouter.propTypes = {
   }).isRequired,
   journalFirstPage: PropTypes.number,
   getJournal: PropTypes.func,
-  userInfoFinishedFetching: PropTypes.bool,
+  siteInfoFinishedFetching: PropTypes.bool,
   journalFinishedFetching: PropTypes.bool,
 };
 

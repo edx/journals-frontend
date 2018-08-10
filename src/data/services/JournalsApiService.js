@@ -1,7 +1,9 @@
 import axios from 'axios';
 import qs from 'query-string';
 
-import settings from '../configuration/constants';
+import store from '../store';
+
+import configuration from '../../config/';
 
 function getCookieValue(name) {
   const value = document.cookie.match(`(^|;)\\s*${name}\\s*=\\s*([^;]+)`);
@@ -10,7 +12,8 @@ function getCookieValue(name) {
 
 class JournalsApiService {
   static get apiUrl() {
-    return `${settings.journalsBackendBaseUrl}/api/v1`;
+    const base = store.getState().siteInfo.serverBaseUrl || configuration.JOURNALS_BASE_URL;
+    return `${base}/api/v1`;
   }
 
   // Used for both JournalPage and JournalAboutPages
@@ -37,8 +40,8 @@ class JournalsApiService {
     });
   }
 
-  static fetchUserInfo() {
-    return axios.get(`${JournalsApiService.apiUrl}/users/current/`, {
+  static fetchSiteInfo() {
+    return axios.get(`${JournalsApiService.apiUrl}/siteinfo/`, {
       withCredentials: true,
     });
   }
