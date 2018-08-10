@@ -1,8 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
-import JournalRerouter from '../../components/JournalRerouter';
-import fetchJournal from '../../data/actions/journal';
+import JournalPageRedirect from '../../components/JournalPageRedirect';
 
 
 const mapStateToProps = state => (
@@ -18,15 +17,13 @@ const mapStateToProps = state => (
   }
 );
 
-const mapDispatchToProps = dispatch => (
-  {
-    getJournal: pageId => dispatch(fetchJournal(pageId)),
-  }
-);
+const mapDispatchToProps = () => ({
 
-const JournalRerouterContainer = connect(
+});
+
+const JournalPageRedirectContainer = connect(
   mapStateToProps,
   mapDispatchToProps,
-)(JournalRerouter);
+)(JournalPageRedirect);
 
-export default withRouter(JournalRerouterContainer);
+export default withRouter(JournalPageRedirectContainer);
