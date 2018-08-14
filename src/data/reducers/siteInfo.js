@@ -5,13 +5,15 @@ import {
   GET_SITE_INFO_FAILURE,
 } from '../constants/actionTypes/siteInfo';
 
+import configuration from '../../config/';
+
 const siteInfo = (state = {
   username: '',
   userId: null,
   visitedPages: [],
   themeName: '',
   logo: '',
-  serverBaseUrl: '',
+  serverBaseUrl: configuration.JOURNALS_BASE_URL,
   error: null,
   isAuthenticated: false,
   startedFetching: false,
