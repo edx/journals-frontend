@@ -1,9 +1,9 @@
 import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Helmet } from 'react-helmet';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
-
 
 import HeaderContainer from './containers/HeaderContainer';
 import SubHeader from './components/SubHeader';
@@ -17,6 +17,9 @@ const App = () => (
   <Provider store={store}>
     <Router>
       <div>
+        <Helmet
+          defaultTitle="Journals"
+        />
         <HeaderContainer />
         <SubHeader />
         <div id="content">

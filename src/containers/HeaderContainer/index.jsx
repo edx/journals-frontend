@@ -1,20 +1,22 @@
 import { connect } from 'react-redux';
 
 import Header from '../../components/Header';
-import fetchUserInfo from '../../data/actions/userInfo';
-import settings from '../../data/configuration/constants';
+import fetchSiteInfo from '../../data/actions/siteInfo';
 
 const mapStateToProps = state => (
   {
-    username: state.userInfo.username,
-    isAuthenticated: state.userInfo.isAuthenticated,
-    loginPath: `${settings.journalsBackendBaseUrl}/require_auth?forward=${encodeURI(window.location.href)}`,
+    username: state.siteInfo.username,
+    isAuthenticated: state.siteInfo.isAuthenticated,
+    loginPath: `${state.siteInfo.serverBaseUrl}/require_auth?forward=${encodeURI(window.location.href)}`,
+    siteLogo: `${state.siteInfo.serverBaseUrl}${state.siteInfo.logo}`,
+    journalName: state.journal.title,
+    themeName: state.siteInfo.themeName,
   }
 );
 
 const mapDispatchToProps = dispatch => (
   {
-    getUserInfo: () => dispatch(fetchUserInfo()),
+    getSiteInfo: () => dispatch(fetchSiteInfo()),
   }
 );
 

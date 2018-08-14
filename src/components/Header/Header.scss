@@ -10,4 +10,15 @@
 }
 div.header{
   border-bottom: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+}
+
+.site-logo{
+  max-height: 100%;
+  padding: 10px 30px;
+}
+
+.account-info{
+  padding: 10px 30px;
 }

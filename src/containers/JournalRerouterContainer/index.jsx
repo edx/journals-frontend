@@ -7,12 +7,12 @@ import fetchJournal from '../../data/actions/journal';
 
 const mapStateToProps = state => (
   {
-    userInfoFinishedFetching: state.userInfo.finishedFetching,
+    siteInfoFinishedFetching: state.siteInfo.finishedFetching,
     journalFinishedFetching: state.journal.finishedFetching,
     journalFirstPage: state.journal.structure.length !== 0 ? state.journal.structure[0].id : null,
     lastVisitedPage: (
-      state.userInfo.visitedPages.length !== 0 ?
-        state.userInfo.visitedPages[0].page :
+      state.siteInfo.visitedPages.length !== 0 ?
+        state.siteInfo.visitedPages[0].page :
         null
     ),
   }

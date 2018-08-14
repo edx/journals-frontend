@@ -5,7 +5,7 @@ import preview from './preview';
 import journal from './journal';
 import journals from './journals';
 import navigation from './navigation';
-import userInfo from './userInfo';
+import siteInfo from './siteInfo';
 
 
 const rootReducer = combineReducers({
@@ -14,7 +14,7 @@ const rootReducer = combineReducers({
   navigation,
   journals,
   journal,
-  userInfo,
+  siteInfo,
 });
 
 export default rootReducer;

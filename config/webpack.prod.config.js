@@ -3,6 +3,7 @@
 const Merge = require('webpack-merge');
 const commonConfig = require('./webpack.common.config.js');
 const path = require('path');
+const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const fs = require('fs');
@@ -77,7 +78,7 @@ module.exports = themes.map(theme => (
               loader: 'sass-loader', // compiles Sass to CSS
               options: {
                 sourceMap: true,
-                data: `@import "../src/themes/${theme}.scss";`,
+                data: `@import "../src/themes/${theme}.scss"; @import "../src/themes/base.scss";`,
                 includePaths: [
                   path.join(__dirname, '../node_modules'),
                   path.join(__dirname, '../src'),
@@ -117,7 +118,7 @@ module.exports = themes.map(theme => (
     plugins: [
       // Writes the extracted CSS from each entry to a file in the output directory.
       new MiniCssExtractPlugin({
-        filename: `${theme}-[name].min.css`,
+        filename: `${theme}-[name].css`,
       }),
       // Generates an HTML file in the output directory.
       new HtmlWebpackPlugin({
@@ -131,7 +132,7 @@ module.exports = themes.map(theme => (
         */
         templateParameters: (compilation, assets, options) => {
           const customAssets = assets;
-          customAssets.css[0] = 'base-app.min.css';
+          customAssets.css[0] = 'base-app.css';
           return {
             compilation,
             webpackConfig: compilation.options,
@@ -141,6 +142,10 @@ module.exports = themes.map(theme => (
             },
           };
         },
+      }),
+      new webpack.EnvironmentPlugin({
+        NODE_ENV: 'production',
+        JOURNALS_BASE_URL: undefined,
       }),
     ],
   })

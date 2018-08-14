@@ -2,27 +2,23 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import settings from '../../data/configuration/constants';
-
 
 class PrivateRoute extends React.Component {
   getUnusedProps({
     component: Component,
     isAuthenticated,
-    userInfoFinishedFetching,
+    siteInfoFinishedFetching,
     ...rest
   }) {
     return rest;
   }
 
   render() {
-    const loginUrl = `${settings.journalsBackendBaseUrl}/require_auth?forward=${encodeURI(window.location.href)}`;
-
-    if (this.props.userInfoFinishedFetching) {
+    if (this.props.siteInfoFinishedFetching) {
       if (this.props.isAuthenticated === true) {
         return <Route {...this.getUnusedProps(this.props)} component={this.props.component} />;
       }
-      window.location.href = loginUrl;
+      window.location.href = this.props.loginPath;
       return <div>Redirecting...</div>;
     }
     return <div>Loading...</div>;
@@ -32,7 +28,7 @@ class PrivateRoute extends React.Component {
 PrivateRoute.propTypes = {
   isAuthenticated: PropTypes.bool.isRequired,
   component: PropTypes.func.isRequired,
-  userInfoFinishedFetching: PropTypes.bool.isRequired,
+  siteInfoFinishedFetching: PropTypes.bool.isRequired,
   location: PropTypes.shape({
     state: PropTypes.shape({
       from: PropTypes.shape({
@@ -40,6 +36,7 @@ PrivateRoute.propTypes = {
       }),
     }),
   }).isRequired,
+  loginPath: PropTypes.string.isRequired,
 };
 
 export default PrivateRoute;
