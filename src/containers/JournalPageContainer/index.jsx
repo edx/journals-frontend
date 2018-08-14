@@ -14,7 +14,7 @@ const mapStateToProps = state => (
     fetchPageSuccess: state.page.error,
     nextPage: state.page.page.next_page_id,
     previousPage: state.page.page.previous_page_id,
-    userId: state.userInfo.id,
+    userId: state.siteInfo.userId,
   }
 );
 
