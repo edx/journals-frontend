@@ -10,9 +10,9 @@ import {
 import UnauthorizedPage from '../UnauthorizedPage';
 
 import RawHTMLViewer from '../RawHTMLViewer';
-import ImageViewer from '../ImageViewer';
+import ImageViewerContainer from '../../containers/ImageViewerContainer';
 import PageNavigationButtons from '../PageNavigationButtons';
-import PDFViewer from '../PDFViewer';
+import PDFViewerContainer from '../../containers/PDFViewerContainer';
 import ViewerBorder from '../ViewerBorder';
 
 class JournalPage extends React.Component {
@@ -57,7 +57,7 @@ class JournalPage extends React.Component {
                   case PDF:
                     return (
                       <ViewerBorder spanId={el.value.span_id} title={el.value.title} spanFullWidth>
-                        <PDFViewer url={el.value.url} title={el.value.title} />
+                        <PDFViewerContainer url={el.value.url} title={el.value.title} />
                       </ViewerBorder>
                     );
                   case XBLOCK_VIDEO:
@@ -70,7 +70,7 @@ class JournalPage extends React.Component {
                         title={el.value.title}
                         caption={el.value.caption}
                       >
-                        <ImageViewer url={el.value.url} altText={el.value.title} />
+                        <ImageViewerContainer url={el.value.url} altText={el.value.title} />
                       </ViewerBorder>
                     );
                   default:
