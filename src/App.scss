@@ -73,10 +73,13 @@ h5{
 p {
   font-family: "Open Sans";
   font-size: 16px;
-  font-weight: normal;
   line-height: 1.5;
   color: $dark-grey;
 }
 p.muted-text {
   color: $slate-grey;
+}
+a{
+  font-family: "Open Sans";
+  color: $deep-sea-blue;
 }

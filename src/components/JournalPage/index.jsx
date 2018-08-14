@@ -15,6 +15,7 @@ import ImageViewerContainer from '../../containers/ImageViewerContainer';
 import PageNavigationButtons from '../PageNavigationButtons';
 import PDFViewerContainer from '../../containers/PDFViewerContainer';
 import ViewerBorder from '../ViewerBorder';
+import BreadCrumbs from '../BreadCrumbs';
 
 
 class JournalPage extends React.Component {
@@ -47,6 +48,10 @@ class JournalPage extends React.Component {
         <UnauthorizedPage />
       ) : (
         <div className="page">
+          <BreadCrumbs
+            ancestorPages={this.props.breadCrumbs}
+            journalId={this.props.match.params.journalAboutId}
+          />
           <h1>{this.props.title}</h1>
           <h2 className="subtitle">{this.props.subTitle}</h2>
           {
@@ -111,6 +116,7 @@ JournalPage.defaultProps = {
   displayLastPublishedDate: false,
   lastPublishedDate: '',
   author: '',
+  breadCrumbs: [],
   body: [],
   getPage: () => {},
   setPageVisit: () => {},
@@ -127,6 +133,10 @@ JournalPage.propTypes = {
   displayLastPublishedDate: PropTypes.bool,
   lastPublishedDate: PropTypes.string,
   author: PropTypes.string,
+  breadCrumbs: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number,
+    title: PropTypes.string,
+  })),
   body: PropTypes.arrayOf(PropTypes.object),
   getPage: PropTypes.func,
   setPageVisit: PropTypes.func,

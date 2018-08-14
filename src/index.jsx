@@ -13,6 +13,7 @@ import MainContentContainer from './containers/MainContentContainer';
 import store from './data/store';
 import './App.scss';
 
+
 const App = () => (
   <Provider store={store}>
     <Router>
