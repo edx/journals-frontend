@@ -1,9 +1,18 @@
-import TOGGLE_NAVIGATION_PANEL from '../constants/actionTypes/navigation';
+import { TOGGLE_NAVIGATION_VISABILITY, TOGGLE_NAVIGATION_OPEN } from '../constants/actionTypes/navigation';
 
-const toggleNavigationPanel = () => (
+const toggleNavigationVisibility = visible => (
   {
-    type: TOGGLE_NAVIGATION_PANEL,
+    type: TOGGLE_NAVIGATION_VISABILITY,
+    visible,
+  }
+);
+const toggleNavigationOpen = () => (
+  {
+    type: TOGGLE_NAVIGATION_OPEN,
   }
 );
 
-export default toggleNavigationPanel;
+export {
+  toggleNavigationVisibility,
+  toggleNavigationOpen,
+};

@@ -1,17 +1,19 @@
 import { connect } from 'react-redux';
 
 import NavToggle from '../../components/NavToggle';
-import toggleNavigationPanel from '../../data/actions/navigation';
+import { toggleNavigationOpen } from '../../data/actions/navigation';
 
 const mapStateToProps = state => (
   {
     navPanelOpen: state.navPanelOpen,
+    navPanelVisible: state.navigation.visible,
+    journalFinishedFetching: state.journal.finishedFetching,
   }
 );
 
 const mapDispatchToProps = dispatch => (
   {
-    toggleNavigationPanel: () => dispatch(toggleNavigationPanel()),
+    toggleNavigationOpen: () => dispatch(toggleNavigationOpen()),
   }
 );
 
