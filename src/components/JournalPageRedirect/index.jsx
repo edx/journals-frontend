@@ -3,36 +3,40 @@ import PropTypes from 'prop-types';
 import { Redirect } from 'react-router';
 
 
-class JournalRerouter extends React.Component {
-  componentDidMount() {
-    this.props.getJournal(this.props.match.params.journalId);
+class JournalPageRedirect extends React.Component {
+  constructor(props) {
+    super(props);
+    this.setPageUrls();
   }
-
+  componentDidUpdate() {
+    this.setPageUrls();
+  }
+  setPageUrls() {
+    this.lastVisitedPageUrl = `/${this.props.match.params.journalId}/pages/${this.props.lastVisitedPage}`;
+    this.firstJournalPageUrl = `/${this.props.match.params.journalId}/pages/${this.props.journalFirstPage}`;
+  }
   render() {
     if (this.props.siteInfoFinishedFetching && this.props.journalFinishedFetching) {
       // Only run if both the user info and journal info API calls have finished
       if (this.props.lastVisitedPage) {
         // Send user to the last page they visited if available
-        const lastVisitedPageUrl = `/${this.props.match.params.journalId}/pages/${this.props.lastVisitedPage}`;
-        return <Redirect push to={lastVisitedPageUrl} />;
+        return <Redirect push to={this.lastVisitedPageUrl} />;
       }
       // Send user to the first page in the journal
-      const firstJournalPage = `/${this.props.match.params.journalId}/pages/${this.props.journalFirstPage}`;
-      return <Redirect push to={firstJournalPage} />;
+      return <Redirect push to={this.firstJournalPageUrl} />;
     }
     return <div>Loading...</div>;
   }
 }
 
-JournalRerouter.defaultProps = {
+JournalPageRedirect.defaultProps = {
   lastVisitedPage: 0,
   journalFirstPage: 0,
-  getJournal: () => {},
   siteInfoFinishedFetching: false,
   journalFinishedFetching: false,
 };
 
-JournalRerouter.propTypes = {
+JournalPageRedirect.propTypes = {
   lastVisitedPage: PropTypes.number,
   match: PropTypes.shape({
     params: PropTypes.shape({
@@ -41,9 +45,8 @@ JournalRerouter.propTypes = {
     url: PropTypes.string,
   }).isRequired,
   journalFirstPage: PropTypes.number,
-  getJournal: PropTypes.func,
   siteInfoFinishedFetching: PropTypes.bool,
   journalFinishedFetching: PropTypes.bool,
 };
 
-export default JournalRerouter;
+export default JournalPageRedirect;

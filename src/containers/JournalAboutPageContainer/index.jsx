@@ -1,20 +1,17 @@
 import { connect } from 'react-redux';
 
 import JournalAboutPage from '../../components/JournalAboutPage';
-import fetchJournal from '../../data/actions/journal';
-
 
 const mapStateToProps = state => (
   {
     title: state.journal.title,
+    journalId: state.journal.id,
   }
 );
 
-const mapDispatchToProps = dispatch => (
-  {
-    getJournal: pageId => dispatch(fetchJournal(pageId)),
-  }
-);
+const mapDispatchToProps = () => ({
+
+});
 
 const JournalAboutPageContainer = connect(
   mapStateToProps,
