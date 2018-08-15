@@ -5,6 +5,9 @@ import NavigationPanel from '../../components/NavigationPanel';
 const mapStateToProps = state => (
   {
     navPanelOpen: state.navigation.open,
+    navPanelVisible: state.navigation.visible,
+    journalFinishedFetching: state.journal.finishedFetching,
+    journal: state.journal,
   }
 );
 

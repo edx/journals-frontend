@@ -1,7 +1,8 @@
 import { connect } from 'react-redux';
 
-import JournalListComp from '../../components/JournalList';
+import IndexPage from '../../components/IndexPage';
 import fetchJournals from '../../data/actions/journals';
+import { toggleNavigationVisibility } from '../../data/actions/navigation';
 
 const mapStateToProps = state => (
   {
@@ -12,12 +13,13 @@ const mapStateToProps = state => (
 const mapDispatchToProps = dispatch => (
   {
     getJournals: () => dispatch(fetchJournals()),
+    toggleNavigationVisibility: val => dispatch(toggleNavigationVisibility(val)),
   }
 );
 
-const IndexPage = connect(
+const IndexPageContainer = connect(
   mapStateToProps,
   mapDispatchToProps,
-)(JournalListComp);
+)(IndexPage);
 
-export default IndexPage;
+export default IndexPageContainer;

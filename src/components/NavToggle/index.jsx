@@ -10,16 +10,20 @@ class NavToggle extends React.Component {
   }
 
   handleClick() {
-    this.props.toggleNavigationPanel();
+    this.props.toggleNavigationOpen();
   }
 
   render() {
     return (
-      <Button
-        className={this.props.classNames}
-        label={this.props.label}
-        onClick={this.handleClick}
-      />
+      (this.props.navPanelVisible) ? (
+        <Button
+          className={this.props.classNames}
+          label={this.props.label}
+          onClick={this.handleClick}
+        />
+      ) : (
+        ''
+      )
     );
   }
 }
@@ -27,13 +31,15 @@ class NavToggle extends React.Component {
 NavToggle.defaultProps = {
   classNames: [''],
   label: '',
-  toggleNavigationPanel: () => {},
+  toggleNavigationOpen: () => {},
+  navPanelVisible: false,
 };
 
 NavToggle.propTypes = {
   classNames: PropTypes.arrayOf(PropTypes.string),
   label: PropTypes.string,
-  toggleNavigationPanel: PropTypes.func,
+  toggleNavigationOpen: PropTypes.func,
+  navPanelVisible: PropTypes.bool,
 };
 
 

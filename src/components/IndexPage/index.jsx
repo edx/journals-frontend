@@ -13,34 +13,29 @@ const JournalItem = ({
   </div>
 );
 
-const JournalList = ({ journals }) => (
-  <ul>
-    {
-      journals
-        .slice(0, 10)
-        .map(journal => (
-          <li key={journal.id}>
-            <JournalItem
-              id={journal.id}
-              title={journal.title}
-              shortDesc={journal.short_description}
-            />
-          </li>
-        ))
-    }
-  </ul>
-);
-
-class JournalListComp extends React.Component {
+class IndexPage extends React.Component {
   componentDidMount() {
     this.props.getJournals();
+    this.props.toggleNavigationVisibility(false);
   }
 
   render() {
     return (
       <div>
         <div>
-          <JournalList journals={this.props.journals} />
+          <ul>
+            {
+              this.props.journals.map(journal => (
+                <li key={journal.id}>
+                  <JournalItem
+                    id={journal.id}
+                    title={journal.title}
+                    shortDesc={journal.short_description}
+                  />
+                </li>
+              ))
+            }
+          </ul>
         </div>
       </div>
     );
@@ -58,22 +53,16 @@ JournalItem.propTypes = {
   id: PropTypes.number.isRequired,
 };
 
-JournalList.defaultProps = {
-  journals: [],
-};
-
-JournalList.propTypes = {
-  journals: PropTypes.arrayOf(PropTypes.object),
-};
-
-JournalListComp.defaultProps = {
+IndexPage.defaultProps = {
   journals: [],
   getJournals: () => [{}],
+  toggleNavigationVisibility: () => {},
 };
 
-JournalListComp.propTypes = {
+IndexPage.propTypes = {
   journals: PropTypes.arrayOf(PropTypes.object),
   getJournals: PropTypes.func,
+  toggleNavigationVisibility: PropTypes.func,
 };
 
-export default JournalListComp;
+export default IndexPage;
