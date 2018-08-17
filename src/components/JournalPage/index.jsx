@@ -1,4 +1,5 @@
 import React from 'react';
+import Moment from 'react-moment';
 import PropTypes from 'prop-types';
 import {
   RICH_TEXT,
@@ -46,6 +47,12 @@ class JournalPage extends React.Component {
       ) : (
         <div className="page">
           <h3>{this.props.title}</h3>
+          {
+            this.props.displayLastPublishedDate &&
+            <p className="muted-text">
+              <Moment date={this.props.lastPublishedDate} format="MMMM DD, YYYY" />
+            </p>
+          }
           <div>
             {
               this.props.body.map((el) => {
@@ -91,6 +98,8 @@ class JournalPage extends React.Component {
 
 JournalPage.defaultProps = {
   title: '',
+  displayLastPublishedDate: false,
+  lastPublishedDate: '',
   body: [],
   getPage: () => {},
   setPageVisit: () => {},
@@ -103,6 +112,8 @@ JournalPage.defaultProps = {
 
 JournalPage.propTypes = {
   title: PropTypes.string,
+  displayLastPublishedDate: PropTypes.bool,
+  lastPublishedDate: PropTypes.string,
   body: PropTypes.arrayOf(PropTypes.object),
   getPage: PropTypes.func,
   setPageVisit: PropTypes.func,
