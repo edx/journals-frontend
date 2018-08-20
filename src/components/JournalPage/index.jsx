@@ -38,7 +38,7 @@ class JournalPage extends React.Component {
   }
 
   render() {
-    const baseUrl = !this.props.is_preview ? `/${this.props.match.params.journalId}/pages` : '';
+    const baseUrl = !this.props.is_preview ? `/${this.props.match.params.journalAboutId}/pages` : '';
     const previousPageUrl = this.props.previousPage ? `${baseUrl}/${this.props.previousPage}` : '';
     const nextPageUrl = this.props.nextPage ? `${baseUrl}/${this.props.nextPage}` : '';
     return (
@@ -120,7 +120,7 @@ JournalPage.propTypes = {
   match: PropTypes.shape({
     params: PropTypes.shape({
       pageId: PropTypes.string,
-      journalId: PropTypes.string,
+      journalAboutId: PropTypes.string,
     }),
     url: PropTypes.string,
   }).isRequired,

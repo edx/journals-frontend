@@ -5,7 +5,7 @@ import JournalAboutPage from '../../components/JournalAboutPage';
 const mapStateToProps = state => (
   {
     title: state.journal.title,
-    journalId: state.journal.id,
+    journalAboutId: state.journal.journalAboutId,
   }
 );
 
