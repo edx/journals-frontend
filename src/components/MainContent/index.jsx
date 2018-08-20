@@ -23,7 +23,7 @@ const MainContent = (props) => {
             <Switch>
               <Route exact path="/" component={IndexPageContainer} />
               <PrivateRouteContainer path="/preview/:previewId" component={JournalPreviewContainer} />
-              <Route path="/:journalId" component={JournalRouterContainer} />
+              <Route path="/:journalAboutId" component={JournalRouterContainer} />
             </Switch>
           </main>
         </div>

@@ -6,18 +6,18 @@ import { Link } from 'react-router-dom';
 const JournalAboutPage = props => (
   <div className="about-page">
     <h3>{props.title}</h3>
-    <Link to={{ pathname: `/${props.journalId}` }}>Enter</Link>
+    <Link to={{ pathname: `/${props.journalAboutId}` }}>Enter</Link>
   </div>
 );
 
 JournalAboutPage.defaultProps = {
   title: '',
-  journalId: 0,
+  journalAboutId: 0,
 };
 
 JournalAboutPage.propTypes = {
   title: PropTypes.string,
-  journalId: PropTypes.number,
+  journalAboutId: PropTypes.number,
 };
 
 

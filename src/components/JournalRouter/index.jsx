@@ -9,7 +9,7 @@ import JournalPageContainer from '../../containers/JournalPageContainer';
 
 class JournalRouter extends React.Component {
   componentDidMount() {
-    this.props.getJournal(this.props.match.params.journalId);
+    this.props.getJournal(this.props.match.params.journalAboutId);
     if (this.props.isAuthenticated) {
       this.props.toggleNavigationVisibility(true);
     }
@@ -17,8 +17,8 @@ class JournalRouter extends React.Component {
 
   componentDidUpdate(prevProps) {
     // if journal changes
-    if (prevProps.match.params.journalId !== this.props.match.params.journalId) {
-      this.props.getJournal(this.props.match.params.journalId);
+    if (prevProps.match.params.journalAboutId !== this.props.match.params.journalAboutId) {
+      this.props.getJournal(this.props.match.params.journalAboutId);
     }
     // if auth state changes
     if (prevProps.isAuthenticated !== this.props.isAuthenticated) {
@@ -29,9 +29,9 @@ class JournalRouter extends React.Component {
   render() {
     return (
       <Switch>
-        <PrivateRouteContainer exact path="/:journalId" component={JournalPageRedirectContainer} />
-        <Route path="/:journalId/about" component={JournalAboutPageContainer} />
-        <PrivateRouteContainer path="/:journalId/pages/:pageId" component={JournalPageContainer} />
+        <PrivateRouteContainer exact path="/:journalAboutId" component={JournalPageRedirectContainer} />
+        <Route path="/:journalAboutId/about" component={JournalAboutPageContainer} />
+        <PrivateRouteContainer path="/:journalAboutId/pages/:pageId" component={JournalPageContainer} />
       </Switch>
     );
   }
@@ -46,7 +46,7 @@ JournalRouter.defaultProps = {
 JournalRouter.propTypes = {
   match: PropTypes.shape({
     params: PropTypes.shape({
-      journalId: PropTypes.string,
+      journalAboutId: PropTypes.string,
     }),
     url: PropTypes.string,
   }).isRequired,

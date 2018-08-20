@@ -26,7 +26,7 @@ const journal = (state = {
         longDescription: action.journal.long_description,
         cardImageUrl: action.journal.card_image_url,
         heroImageUrl: action.journal.hero_image_url,
-        id: action.journal.id,
+        aboutId: action.journal.id,
         structure: action.journal.structure,
       };
     case GET_JOURNAL_FAILURE:

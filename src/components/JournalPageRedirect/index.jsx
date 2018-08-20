@@ -12,8 +12,8 @@ class JournalPageRedirect extends React.Component {
     this.setPageUrls();
   }
   setPageUrls() {
-    this.lastVisitedPageUrl = `/${this.props.match.params.journalId}/pages/${this.props.lastVisitedPage}`;
-    this.firstJournalPageUrl = `/${this.props.match.params.journalId}/pages/${this.props.journalFirstPage}`;
+    this.lastVisitedPageUrl = `/${this.props.match.params.journalAboutId}/pages/${this.props.lastVisitedPage}`;
+    this.firstJournalPageUrl = `/${this.props.match.params.journalAboutId}/pages/${this.props.journalFirstPage}`;
   }
   render() {
     if (this.props.siteInfoFinishedFetching && this.props.journalFinishedFetching) {
@@ -40,7 +40,7 @@ JournalPageRedirect.propTypes = {
   lastVisitedPage: PropTypes.number,
   match: PropTypes.shape({
     params: PropTypes.shape({
-      journalId: PropTypes.string,
+      journalAboutId: PropTypes.string,
     }),
     url: PropTypes.string,
   }).isRequired,
