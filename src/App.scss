@@ -8,7 +8,7 @@ $fa-font-path: "~font-awesome/fonts";
   display:flex;
 }
 
-button.side-nav-panel-toggle{
+#side-nav-panel-toggle{
   height: 60px;
   width: 82px;
   border-left: 0;
@@ -19,7 +19,7 @@ button.side-nav-panel-toggle{
     font-size: 24px;
   }
 }
-button.header-nav-panel-toggle{
+#header-nav-panel-toggle{
   height: 38px;
   flex-grow: 1;
   .nav-toggle-label{

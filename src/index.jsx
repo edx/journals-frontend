@@ -24,7 +24,11 @@ const App = () => (
         <SubHeader />
         <div id="content">
           <NavigationPanelContainer />
-          <NavToggleContainer label="Contents" classNames={['side-nav-panel-toggle', 'd-none', 'd-sm-block']} />
+          <NavToggleContainer
+            label="Contents"
+            id="side-nav-panel-toggle"
+            classNames={['nav-panel-toggle', 'd-none', 'd-sm-block']}
+          />
           <MainContentContainer />
         </div>
       </div>
