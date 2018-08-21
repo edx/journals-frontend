@@ -9,7 +9,7 @@ const NavigationPanel = props => (
     <div id="nav-panel" className={props.navPanelOpen ? 'nav-panel-open' : 'nav-panel-closed'}>
       {
         props.journalFinishedFetching ?
-          <TOCViewer journal={props.journal} /> :
+          <TOCViewer journal={props.journal} currentPageId={props.currentPageId} /> :
           'Loading...'
       }
     </div>
@@ -22,6 +22,7 @@ NavigationPanel.defaultProps = {
   navPanelOpen: true,
   navPanelVisible: false,
   journalFinishedFetching: false,
+  currentPageId: 0,
 };
 
 NavigationPanel.propTypes = {
@@ -34,6 +35,7 @@ NavigationPanel.propTypes = {
     shortDescription: PropTypes.string,
   }).isRequired,
   journalFinishedFetching: PropTypes.bool,
+  currentPageId: PropTypes.number,
 };
 
 

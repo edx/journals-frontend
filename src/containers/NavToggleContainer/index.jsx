@@ -5,7 +5,7 @@ import { toggleNavigationOpen } from '../../data/actions/navigation';
 
 const mapStateToProps = state => (
   {
-    navPanelOpen: state.navPanelOpen,
+    navPanelOpen: state.navigation.open,
     navPanelVisible: state.navigation.visible,
     journalFinishedFetching: state.journal.finishedFetching,
   }

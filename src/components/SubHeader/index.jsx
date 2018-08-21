@@ -5,8 +5,8 @@ import './SubHeader.scss';
 
 
 const SubHeader = () => (
-  <div className="sub-header d-block d-sm-none">
-    <NavToggleContainer label="Menu" classNames={['header-nav-panel-toggle', 'd-block', 'd-sm-none']} />
+  <div className="sub-header d-flex d-sm-none">
+    <NavToggleContainer label="Contents" classNames={['header-nav-panel-toggle', 'd-block', 'd-sm-none']} />
   </div>
 );
 
