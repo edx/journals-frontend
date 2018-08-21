@@ -20,6 +20,7 @@ class NavToggle extends React.Component {
       (this.props.navPanelVisible) ? (
         <Button
           className={this.props.classNames}
+          id={this.props.id}
           label={
             <span className="nav-toggle-label">
               <Icon
@@ -49,6 +50,7 @@ NavToggle.defaultProps = {
   toggleNavigationOpen: () => {},
   navPanelVisible: false,
   navPanelOpen: false,
+  id: '',
 };
 
 NavToggle.propTypes = {
@@ -57,6 +59,7 @@ NavToggle.propTypes = {
   toggleNavigationOpen: PropTypes.func,
   navPanelVisible: PropTypes.bool,
   navPanelOpen: PropTypes.bool,
+  id: PropTypes.string,
 };
 
 
