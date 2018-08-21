@@ -1,10 +1,9 @@
-
 #nav-panel.nav-panel-closed{
   width: 0;
   overflow: hidden;
 }
 #nav-panel.nav-panel-open{
-  border: 1px solid black;
+  border-right: 1px solid $primary;
   min-height: calc(100vh - 108px);
 }
 @media (min-width: 576px){

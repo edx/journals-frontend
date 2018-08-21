@@ -1,6 +1,9 @@
 @import "~@edx/edx-bootstrap/sass/edx/theme";
 @import "~bootstrap/scss/bootstrap";
 
+$fa-font-path: "~font-awesome/fonts";
+@import "~font-awesome/scss/font-awesome";
+
 #content{
   display:flex;
 }
@@ -8,10 +11,25 @@
 button.side-nav-panel-toggle{
   height: 60px;
   width: 82px;
+  border-left: 0;
+  border-radius: 0 4px 4px 0;
+  margin-left: -1px;
+  margin-top: 30px;
+  .nav-toggle-label div{
+    font-size: 24px;
+  }
 }
 button.header-nav-panel-toggle{
   height: 38px;
-  width: 82px;
+  flex-grow: 1;
+  .nav-toggle-label{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    div{
+      padding: 0 5px;
+    }
+  }
 }
 p.muted-text {
   font-family: "Open Sans";

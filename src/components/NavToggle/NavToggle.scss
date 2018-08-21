@@ -1,0 +1,16 @@
+button.btn{
+  line-height: 1;
+  padding: 8px;
+  color: $primary;
+  background-color: #ffffff;
+  border: 1px solid $primary;
+
+  &:hover{
+   cursor: pointer;
+  }
+
+  >span{
+    font-size: 14px;
+    font-weight: bold;
+  }
+}
