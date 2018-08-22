@@ -53,6 +53,7 @@ class JournalPage extends React.Component {
               <Moment date={this.props.lastPublishedDate} format="MMMM DD, YYYY" />
             </p>
           }
+          <p className="muted-text">{ this.props.author.trim() && `By ${this.props.author}` }</p>
           <div>
             {
               this.props.body.map((el) => {
@@ -106,6 +107,7 @@ JournalPage.defaultProps = {
   title: '',
   displayLastPublishedDate: false,
   lastPublishedDate: '',
+  author: '',
   body: [],
   getPage: () => {},
   setPageVisit: () => {},
@@ -120,6 +122,7 @@ JournalPage.propTypes = {
   title: PropTypes.string,
   displayLastPublishedDate: PropTypes.bool,
   lastPublishedDate: PropTypes.string,
+  author: PropTypes.string,
   body: PropTypes.arrayOf(PropTypes.object),
   getPage: PropTypes.func,
   setPageVisit: PropTypes.func,
