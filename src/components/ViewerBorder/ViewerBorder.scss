@@ -1,31 +1,35 @@
 // TODO: all colors should be using variables and inheriting from sitebranding
 // TODO: all fonts should be inherited
 .viewer-border{
-  background-color: #f2f8fb;
+  background-color: $pale-grey;
   display: inline-block;
 }
 .viewer-title{
   min-width: 350px;
   padding: 4px;
+  font-family: "Open Sans";
   font-size: 14px;
-  font-weight: 600;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.71;
-  letter-spacing: 1px;
-  color: #292b2c;
+  font-weight: bold;
+  line-height: 1.5;
+  color: $dark-grey;
 }
-.viewer-caption{
-   min-width: 350px;
-   padding: 4px;
-   font-size: 14px;
-   font-weight: normal;
-   font-style: normal;
-   font-stretch: normal;
-   line-height: 1.5;
-   letter-spacing: normal;
-   color: #292b2c;
- }
+// TODO doesn't work if the caption is wrapped in a <p>
+%caption-text {
+  min-width: 350px;
+  font-family: "Open Sans";
+  font-size: 14px;
+  line-height: 1.5;
+  color: $dark-grey;
+}
+.viewer-caption {
+  @extend %caption-text;
+  padding: 4px;
+
+  p {
+    @extend %caption-text;
+  }
+}
+
 .viewer-content{
   margin: auto;
   padding: 4px;
