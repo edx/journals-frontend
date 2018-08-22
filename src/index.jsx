@@ -17,9 +17,9 @@ const App = () => (
   <Provider store={store}>
     <Router>
       <div>
-        <Helmet
-          defaultTitle="Journals"
-        />
+        <Helmet defaultTitle="Journals">
+          <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet" />
+        </Helmet>
         <HeaderContainer />
         <SubHeader />
         <div id="content">

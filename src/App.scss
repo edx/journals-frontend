@@ -31,10 +31,52 @@ $fa-font-path: "~font-awesome/fonts";
     }
   }
 }
-p.muted-text {
+h1{
+  font-family: 'Merriweather', serif;
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 1.25;
+  color: $dark-grey;
+}
+h2 {
+  font-family: "Open Sans";
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: $dark-grey;
+}
+h2.subtitle {
+  font-size: 20px;
+  line-height: 1.5;
+}
+h3 {
+  font-family: "Open Sans";
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: $dark-grey;
+}
+h4 {
+  font-family: "Open Sans";
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: $dark-grey;
+}
+h5{
+  font-family: "Open Sans";
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: $dark-grey;
+}
+p {
   font-family: "Open Sans";
   font-size: 16px;
   font-weight: normal;
   line-height: 1.5;
+  color: $dark-grey;
+}
+p.muted-text {
   color: $slate-grey;
 }

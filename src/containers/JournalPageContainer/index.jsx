@@ -10,6 +10,7 @@ const mapStateToProps = state => (
   {
     pageId: state.page.page.id,
     title: state.page.page.title,
+    subTitle: state.page.page.sub_title,
     displayLastPublishedDate: state.page.page.display_last_published_date,
     lastPublishedDate: state.page.page.last_published_at,
     author: state.page.page.author,

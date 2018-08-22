@@ -16,6 +16,7 @@ import PageNavigationButtons from '../PageNavigationButtons';
 import PDFViewerContainer from '../../containers/PDFViewerContainer';
 import ViewerBorder from '../ViewerBorder';
 
+
 class JournalPage extends React.Component {
   componentDidMount() {
     this.props.getPage(this.props.match.params.pageId);
@@ -46,7 +47,8 @@ class JournalPage extends React.Component {
         <UnauthorizedPage />
       ) : (
         <div className="page">
-          <h3>{this.props.title}</h3>
+          <h1>{this.props.title}</h1>
+          <h2 className="subtitle">{this.props.subTitle}</h2>
           {
             this.props.displayLastPublishedDate &&
             <p className="muted-text">
@@ -105,6 +107,7 @@ class JournalPage extends React.Component {
 
 JournalPage.defaultProps = {
   title: '',
+  subTitle: '',
   displayLastPublishedDate: false,
   lastPublishedDate: '',
   author: '',
@@ -120,6 +123,7 @@ JournalPage.defaultProps = {
 
 JournalPage.propTypes = {
   title: PropTypes.string,
+  subTitle: PropTypes.string,
   displayLastPublishedDate: PropTypes.bool,
   lastPublishedDate: PropTypes.string,
   author: PropTypes.string,
