@@ -71,14 +71,14 @@ class TreeViewer extends React.Component {
               /> :
               <span className="bullet">&bull;</span>
           }
-          <Link to={`/${this.props.journalId}/pages/${this.props.node.id}`}>{this.props.node.title}</Link>
+          <Link to={`/${this.props.journalAboutId}/pages/${this.props.node.id}`}>{this.props.node.title}</Link>
         </span>
         {
           this.props.node.children &&
           <ul>
             <TreeList
               structure={this.props.node.children}
-              journalId={this.props.journalId}
+              journalAboutId={this.props.journalAboutId}
               currentPageId={this.props.currentPageId}
               expandParent={this.setExpanded}
             />
@@ -126,7 +126,7 @@ TreeViewer.propTypes = {
     title: PropTypes.string,
     children: PropTypes.array,
   }).isRequired,
-  journalId: PropTypes.number.isRequired,
+  journalAboutId: PropTypes.number.isRequired,
   currentPageId: PropTypes.number,
   expandParent: PropTypes.func,
 };
@@ -137,7 +137,7 @@ TreeList.propTypes = {
     title: PropTypes.string,
     children: PropTypes.array,
   })).isRequired,
-  journalId: PropTypes.number.isRequired,
+  journalAboutId: PropTypes.number.isRequired,
 };
 
 TOCViewer.defaultProps = {
