@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import { Button, Icon } from '@edx/paragon';
 import classNames from 'classnames';
 
-import './NavToggle.scss';
-
 class NavToggle extends React.Component {
   constructor(props) {
     super(props);

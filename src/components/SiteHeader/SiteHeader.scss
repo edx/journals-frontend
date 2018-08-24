@@ -1,0 +1,71 @@
+@media (min-width: 576px){
+  .header-actions .account-info .dropdown-toggle{
+    padding: 8px;
+    span{
+      display: inline-block;
+    }
+  }
+}
+@media (max-width: 575px){
+  .header-actions .account-info .dropdown-toggle {
+    padding: 2px;
+    width: 47px;
+
+    span{
+      display: block;
+      font-size: 9px;
+      .fa{
+        font-size: 14px;
+      }
+    }
+  }
+}
+.header-actions{
+  .account-info{
+    margin-left: 20px;
+    .dropdown-toggle{
+      line-height: 1;
+      color: $primary;
+      background-color: #ffffff;
+      border: 1px solid $primary;
+      font-weight: bold;
+
+      &::after{
+        content: none;
+      }
+
+      span{
+        .fa{
+          padding: 4px;
+        }
+      }
+
+      &:hover{
+       cursor: pointer;
+      }
+
+      >span{
+        font-size: 14px;
+        font-weight: bold;
+      }
+    }
+    .dropdown-menu{
+      border: 1px solid $primary;
+      left: unset;
+      right: 0;
+      .dropdown-item{
+        color: $primary;
+        .fa{
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+  a.btn{
+    height: 38px;
+    margin: 0 10px;
+  }
+}
+
+
+

@@ -30,6 +30,7 @@ const siteInfo = (state = {
         themeName: action.siteInfo.theme_name,
         logo: action.siteInfo.logo,
         serverBaseUrl: action.siteInfo.server_url,
+        lmsRootUrl: action.siteInfo.lms_url_root,
         error: null,
       };
     case GET_SITE_INFO_FAILURE:
