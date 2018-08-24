@@ -14,6 +14,7 @@ const mapStateToProps = state => (
     displayLastPublishedDate: state.page.page.display_last_published_date,
     lastPublishedDate: state.page.page.last_published_at,
     author: state.page.page.author,
+    breadCrumbs: state.page.page.bread_crumbs,
     body: state.page.page.body,
     fetchPageSuccess: state.page.error,
     nextPage: state.page.page.next_page_id,

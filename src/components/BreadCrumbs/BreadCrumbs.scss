@@ -1,0 +1,37 @@
+ul {
+  list-style: none;
+  padding: 0;
+
+  div {
+    display: inline-block;
+  }
+
+  li:last-child {
+    .bread-crumb-arrow {
+      visibility: hidden;
+    }
+  }
+
+  li {
+    display: inline;
+
+    .bread-crumb-arrow {
+      font-size: 14px;
+      font-weight: lighter;
+      line-height: 1.13;
+      padding-right: 5px;
+      padding-left: 5px;
+      text-align: center;
+      color: $cool-grey;
+    }
+
+    .bread-crumb-link {
+      //padding-left: 5px;
+      font-size: 14px;
+      line-height: 1.29;
+    }
+  }
+}
+
+
+
