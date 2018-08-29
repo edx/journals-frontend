@@ -10,6 +10,7 @@ import HeaderContainer from './containers/HeaderContainer';
 import NavigationPanelContainer from './containers/NavigationPanelContainer';
 import NavToggleContainer from './containers/NavToggleContainer';
 import MainContentContainer from './containers/MainContentContainer';
+import FooterContainer from './containers/FooterContainer';
 import store from './data/store';
 import './App.scss';
 
@@ -32,6 +33,7 @@ const App = () => (
           />
           <MainContentContainer />
         </div>
+        <FooterContainer />
       </div>
     </Router>
   </Provider>
