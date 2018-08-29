@@ -1,0 +1,31 @@
+div.mobile-navigation{
+  height:54px;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  z-index: 5;
+  border-bottom: 1px solid black;
+  padding: 8px 10px;
+  margin-bottom: 20px;
+
+  >div {
+    display: flex;
+  }
+
+  button.btn.control-btn{
+    margin: 0 5px;
+    padding: 0;
+    .fa{
+      padding: 0 5px;
+    }
+  }
+
+  .search-button  {
+    width: 47px;
+    height: 38px;
+    font-size: 9px;
+    .fa{
+      font-size: 14px;
+    }
+  }
+}

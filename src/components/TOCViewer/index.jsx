@@ -108,7 +108,7 @@ const TOCViewer = props => (
     <ul>
       <TreeList
         structure={props.journal.structure}
-        journalAboutId={props.journal.id}
+        journalAboutId={props.journal.journalAboutId}
         currentPageId={props.currentPageId}
       />
     </ul>
@@ -146,7 +146,7 @@ TOCViewer.defaultProps = {
 
 TOCViewer.propTypes = {
   journal: PropTypes.shape({
-    id: PropTypes.number,
+    journalAboutId: PropTypes.number,
     title: PropTypes.string,
     shortDescription: PropTypes.string,
     structure: PropTypes.arrayOf(PropTypes.object),

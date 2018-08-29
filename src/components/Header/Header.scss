@@ -1,24 +1,76 @@
 @media (min-width: 576px){
-  div.header{
+  div.site-header{
     height:64px;
   }
 }
 @media (max-width: 575px){
-  div.header{
+  div.site-header{
     height:54px;
   }
 }
 div.header{
-  border-bottom: 1px solid black;
-  display: flex;
-  justify-content: space-between;
+  display:inline;
+
+  .site-header{
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 10px;
+
+    >*{
+      height: 100%;
+      display: flex;
+      align-items: center;
+      margin: 0 5px;
+
+      a{
+        height: 100%;
+      }
+    }
+
+    .site-logo{
+      max-height: 100%;
+      padding-right: 30px;
+    }
+  }
+
+  .mobile-control{
+    height: 64px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+
+    >div{
+      display: flex;
+      align-items: center;
+    }
+
+    .mobile-toc-header{
+      color: $primary;
+      font-weight: bold;
+
+      .btn{
+        margin: 0 10px;
+        width: 32px;
+        padding: 8px;
+        height: 22px;
+      }
+    }
+
+    .search-field{
+      color: unset;
+      font-weight: unset;
+    }
+
+    .btn{
+      box-sizing: content-box;
+
+      &.close-btn{
+        background-color: transparent;
+        color: $primary;
+      }
+    }
+  }
 }
 
-.site-logo{
-  max-height: 100%;
-  padding: 10px 30px;
-}
 
-.account-info{
-  padding: 10px 30px;
-}

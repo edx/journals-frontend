@@ -1,22 +1,23 @@
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 import Header from '../../components/Header';
 import fetchSiteInfo from '../../data/actions/siteInfo';
+import { toggleNavigationOpen } from '../../data/actions/navigation';
 
 const mapStateToProps = state => (
   {
-    username: state.siteInfo.username,
-    isAuthenticated: state.siteInfo.isAuthenticated,
-    loginPath: `${state.siteInfo.serverBaseUrl}/require_auth?forward=${encodeURI(window.location.href)}`,
-    siteLogo: `${state.siteInfo.serverBaseUrl}${state.siteInfo.logo}`,
-    journalName: state.journal.title,
     themeName: state.siteInfo.themeName,
+    navPanelOpen: state.navigation.open,
+    isAuthenticated: state.siteInfo.isAuthenticated,
+    journalId: state.journal.journalId,
   }
 );
 
 const mapDispatchToProps = dispatch => (
   {
     getSiteInfo: () => dispatch(fetchSiteInfo()),
+    toggleNavigationOpen: () => dispatch(toggleNavigationOpen()),
   }
 );
 
@@ -25,4 +26,4 @@ const HeaderContainer = connect(
   mapDispatchToProps,
 )(Header);
 
-export default HeaderContainer;
+export default withRouter(HeaderContainer);

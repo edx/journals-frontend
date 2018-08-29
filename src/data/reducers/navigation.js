@@ -1,4 +1,7 @@
-import { TOGGLE_NAVIGATION_VISABILITY, TOGGLE_NAVIGATION_OPEN } from '../constants/actionTypes/navigation';
+import {
+  TOGGLE_NAVIGATION_VISABILITY,
+  TOGGLE_NAVIGATION_OPEN,
+} from '../constants/actionTypes/navigation';
 
 const navigation = (state = {
   open: false,

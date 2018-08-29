@@ -1,5 +1,6 @@
 @import "~@edx/edx-bootstrap/sass/edx/theme";
 @import "~bootstrap/scss/bootstrap";
+@import '~@edx/paragon/src/SearchField/SearchField';
 
 $fa-font-path: "~font-awesome/fonts";
 @import "~font-awesome/scss/font-awesome";
@@ -15,8 +16,9 @@ $fa-font-path: "~font-awesome/fonts";
   border-radius: 0 4px 4px 0;
   margin-left: -1px;
   margin-top: 30px;
-  .nav-toggle-label div{
+  .nav-toggle-label span{
     font-size: 24px;
+    display: block;
   }
 }
 #header-nav-panel-toggle{
@@ -31,6 +33,24 @@ $fa-font-path: "~font-awesome/fonts";
     }
   }
 }
+
+.btn.control-btn{
+    line-height: 1;
+    padding: 8px;
+    color: $primary;
+    background-color: #ffffff;
+    border: 1px solid $primary;
+
+    &:hover{
+     cursor: pointer;
+    }
+
+    >span{
+      font-size: 14px;
+      font-weight: bold;
+    }
+}
+
 h1{
   font-family: 'Merriweather', serif;
   font-size: 40px;
