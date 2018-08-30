@@ -6,6 +6,7 @@ import journal from './journal';
 import journals from './journals';
 import navigation from './navigation';
 import siteInfo from './siteInfo';
+import searchResults from './search';
 
 
 const rootReducer = combineReducers({
@@ -14,6 +15,7 @@ const rootReducer = combineReducers({
   navigation,
   journals,
   journal,
+  searchResults,
   siteInfo,
 });
 

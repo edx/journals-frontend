@@ -1,0 +1,51 @@
+@media (min-width: 576px){
+  .search-filter-panel>div{
+    margin: 20px 16px 0px 16px;
+  }
+}
+
+@media (max-width: 575px){
+  .search-filter-panel{
+    justify-content: space-between;
+
+    >div{
+        margin: 0px 5px 0px 5px;
+    }
+  }
+}
+
+.search-filter-panel {
+  display: flex;
+  border-bottom: 1px solid #d6dbe0;
+  flex-wrap: wrap;
+}
+  
+.search-filter-panel > div {
+  text-align: center;
+}
+
+.btn.filter-btn{
+  line-height: 1;
+  padding: 0 0 8px 0;
+  color:  $slate-grey;
+  background-color: $white;
+  border: none;
+  border-radius: 0px;
+  font-size: 14px;
+
+  &:hover{
+    cursor: pointer;
+  }
+
+  &:focus{
+    box-shadow: none;
+    color: $primary;
+    font-weight: bold;
+  }
+}
+
+.btn.filter-btn-selected{
+  color: $primary;
+  border-bottom: 2px solid $primary;
+  font-weight: bold;
+}

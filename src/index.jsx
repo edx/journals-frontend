@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import { Helmet } from 'react-helmet';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import { IntlProvider } from 'react-intl';
 
 import HeaderContainer from './containers/HeaderContainer';
 import NavigationPanelContainer from './containers/NavigationPanelContainer';
@@ -36,4 +37,4 @@ const App = () => (
   </Provider>
 );
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<IntlProvider locale="en"><App /></IntlProvider>, document.getElementById('root'));
