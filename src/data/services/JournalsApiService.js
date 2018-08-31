@@ -57,6 +57,25 @@ class JournalsApiService {
       },
     });
   }
+
+  static fetchSearchResults(journalId, query, operator) {
+    // Note, not passing filter to server for now, will filter on client side
+    const options = { query, operator };
+
+    let searchPath = null;
+
+    if (journalId === undefined || journalId === null || journalId === 0) {
+      // if no journal specified, search across all journals user has access to
+      searchPath = `${JournalsApiService.apiUrl}/search/?${qs.stringify(options)}`;
+    } else {
+      // else search in specific journal
+      searchPath = `${JournalsApiService.apiUrl}/search/${journalId}/?${qs.stringify(options)}`;
+    }
+
+    return axios.get(searchPath, {
+      withCredentials: true,
+    });
+  }
 }
 
 export default JournalsApiService;

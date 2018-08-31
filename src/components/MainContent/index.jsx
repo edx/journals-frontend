@@ -7,6 +7,7 @@ import IndexPageContainer from '../../containers/IndexPageContainer';
 import JournalPreviewContainer from '../../containers/JournalPreviewContainer';
 import PrivateRouteContainer from '../../containers/PrivateRouteContainer';
 import JournalRouterContainer from '../../containers/JournalRouterContainer';
+import SearchPageContainer from '../../containers/SearchPageContainer';
 
 
 const MainContent = (props) => {
@@ -18,11 +19,11 @@ const MainContent = (props) => {
   return (
     <div className={containerClass}>
       <div className="row">
-        <div className="col offset-1 col-10">
+        <div className="col col-12 offset-md-1 col-md-10 ">
           <main>
             <Switch>
               <Route exact path="/" component={IndexPageContainer} />
-              <Route path="/search" render={() => (<div>Hello</div>)} />
+              <PrivateRouteContainer path="/search" component={SearchPageContainer} />
               <PrivateRouteContainer path="/preview/:previewId" component={JournalPreviewContainer} />
               <Route path="/:journalAboutId" component={JournalRouterContainer} />
             </Switch>
