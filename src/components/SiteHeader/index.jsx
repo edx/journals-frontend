@@ -9,48 +9,58 @@ import SearchBar from '../SearchBar';
 import './SiteHeader.scss';
 
 
-const SiteHeader = props => (
-  <div className={`site-header ${props.className}`}>
-    <div>
-      <Link to="/">
-        <img className="site-logo" alt="site logo" src={props.siteLogo} />
-      </Link>
-      <span className="d-none d-md-inline">{props.journalName}</span>
-    </div>
-    <div className="header-actions">
-      {
-        props.isAuthenticated &&
-          <span className="d-none d-sm-inline-block">
-            <SearchBar journalId={props.journalId} history={props.history} />
-          </span>
-      }
-      {
-        props.isAuthenticated ? (
-          <div className="account-info">
-            <Dropdown
-              className="control-btn"
-              title={
-                <div>
-                  <Icon className="fa fa-user" />
-                  <span>Account</span>
-                </div>
-              }
-              buttonType={null}
-              menuItems={
-                [
-                  { label: <span><Icon className="fa fa-user" />My Account</span>, href: props.lmsAccountPath },
-                  { label: 'Logout', href: props.logoutPath },
-                ]
-              }
-            />
-          </div>
-        ) : (
-          <Hyperlink className="btn control-btn" destination={props.loginPath} content="Login" />
-        )
-      }
-    </div>
-  </div>
-);
+class SiteHeader extends React.Component {
+  getMenuItems() {
+    const menuList = [];
+    menuList.push({ label: <span><Icon className="fa fa-user" />My Account</span>, href: this.props.lmsAccountPath });
+    if (this.props.canAccessAdmin) {
+      menuList.push({ label: <span><Icon className="fa fa-pencil-square-o" />Journal Editor</span>, href: this.props.cmsPath });
+    }
+    menuList.push({ label: 'Logout', href: this.props.logoutPath });
+
+    return menuList;
+  }
+
+  render() {
+    return (
+      <div className={`site-header ${this.props.className}`}>
+        <div>
+          <Link to="/">
+            <img className="site-logo" alt="site logo" src={this.props.siteLogo} />
+          </Link>
+          <span className="d-none d-md-inline">{this.props.journalName}</span>
+        </div>
+        <div className="header-actions">
+          {
+            this.props.isAuthenticated &&
+              <span className="d-none d-sm-inline-block">
+                <SearchBar journalId={this.props.journalId} history={this.props.history} />
+              </span>
+          }
+          {
+            this.props.isAuthenticated ? (
+              <div className="account-info">
+                <Dropdown
+                  className="control-btn"
+                  title={
+                    <div>
+                      <Icon className="fa fa-user" />
+                      <span>Account</span>
+                    </div>
+                  }
+                  buttonType={null}
+                  menuItems={this.getMenuItems()}
+                />
+              </div>
+            ) : (
+              <Hyperlink className="btn control-btn" destination={this.props.loginPath} content="Login" />
+            )
+          }
+        </div>
+      </div>
+    );
+  }
+}
 
 SiteHeader.defaultProps = {
   isAuthenticated: false,
@@ -61,6 +71,8 @@ SiteHeader.defaultProps = {
   logoutPath: '',
   siteLogo: '',
   className: '',
+  cmsPath: '',
+  canAccessAdmin: false,
 };
 
 SiteHeader.propTypes = {
@@ -75,6 +87,8 @@ SiteHeader.propTypes = {
   logoutPath: PropTypes.string,
   siteLogo: PropTypes.string,
   className: PropTypes.string,
+  cmsPath: PropTypes.string,
+  canAccessAdmin: PropTypes.bool,
 };
 
 export default SiteHeader;

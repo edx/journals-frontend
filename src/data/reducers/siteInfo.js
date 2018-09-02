@@ -25,6 +25,7 @@ const siteInfo = (state = {
         ...state,
         username: action.siteInfo.user.username,
         userId: action.siteInfo.user.id,
+        canAccessAdmin: action.siteInfo.user.can_access_admin,
         isAuthenticated: action.siteInfo.is_authenticated,
         visitedPages: action.siteInfo.visited_pages,
         themeName: action.siteInfo.theme_name,
