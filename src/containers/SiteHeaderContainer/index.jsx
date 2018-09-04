@@ -12,6 +12,8 @@ const mapStateToProps = state => (
     loginPath: `${state.siteInfo.serverBaseUrl}/require_auth?forward=${encodeURI(window.location.href)}`,
     logoutPath: `${state.siteInfo.serverBaseUrl}/logout`,
     siteLogo: `${state.siteInfo.serverBaseUrl}${state.siteInfo.logo}`,
+    canAccessAdmin: state.siteInfo.canAccessAdmin,
+    cmsPath: `${state.siteInfo.serverBaseUrl}/cms`,
   }
 );
 
