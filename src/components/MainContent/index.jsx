@@ -4,7 +4,6 @@ import { Route, Switch } from 'react-router-dom';
 import classNames from 'classnames';
 
 import IndexPageContainer from '../../containers/IndexPageContainer';
-import JournalPreviewContainer from '../../containers/JournalPreviewContainer';
 import PrivateRouteContainer from '../../containers/PrivateRouteContainer';
 import JournalRouterContainer from '../../containers/JournalRouterContainer';
 import SearchPageContainer from '../../containers/SearchPageContainer';
@@ -24,7 +23,6 @@ const MainContent = (props) => {
             <Switch>
               <Route exact path="/" component={IndexPageContainer} />
               <PrivateRouteContainer path="/search" component={SearchPageContainer} />
-              <PrivateRouteContainer path="/preview/:previewId" component={JournalPreviewContainer} />
               <Route path="/:journalAboutId" component={JournalRouterContainer} />
             </Switch>
           </main>

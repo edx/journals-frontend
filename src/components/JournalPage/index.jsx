@@ -129,6 +129,7 @@ JournalPage.defaultProps = {
   previousPage: null,
   is_preview: false,
   pageId: 0,
+  userId: null,
 };
 
 JournalPage.propTypes = {
@@ -155,7 +156,7 @@ JournalPage.propTypes = {
   nextPage: PropTypes.number,
   previousPage: PropTypes.number,
   is_preview: PropTypes.bool,
-  userId: PropTypes.number.isRequired,
+  userId: PropTypes.number,
   pageId: PropTypes.number,
 };
 

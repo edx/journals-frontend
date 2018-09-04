@@ -20,6 +20,11 @@ class JournalPreview extends React.Component {
         fetchPreviewSuccess={this.props.fetchPreviewSuccess}
         is_preview
         title={this.props.title}
+        subTitle={this.props.subTitle}
+        displayLastPublishedDate={this.props.displayLastPublishedDate}
+        lastPublishedDate={this.props.lastPublishedDate}
+        author={this.props.author}
+        breadCrumbs={this.props.breadCrumbs}
         body={this.props.body}
       />
     );
@@ -28,6 +33,11 @@ class JournalPreview extends React.Component {
 
 JournalPreview.defaultProps = {
   title: '',
+  subTitle: '',
+  displayLastPublishedDate: false,
+  lastPublishedDate: '',
+  author: '',
+  breadCrumbs: [],
   body: [],
   getPreview: () => {},
   fetchPreviewSuccess: false,
@@ -35,6 +45,14 @@ JournalPreview.defaultProps = {
 
 JournalPreview.propTypes = {
   title: PropTypes.string,
+  subTitle: PropTypes.string,
+  displayLastPublishedDate: PropTypes.bool,
+  lastPublishedDate: PropTypes.string,
+  author: PropTypes.string,
+  breadCrumbs: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number,
+    title: PropTypes.string,
+  })),
   body: PropTypes.arrayOf(PropTypes.object),
   getPreview: PropTypes.func,
   match: PropTypes.shape({
