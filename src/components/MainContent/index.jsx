@@ -18,7 +18,7 @@ const MainContent = (props) => {
   return (
     <div className={containerClass}>
       <div className="row">
-        <div className="col col-12 offset-md-1 col-md-10 ">
+        <div className="col col-12 offset-md-2 col-md-8">
           <main>
             <Switch>
               <Route exact path="/" component={IndexPageContainer} />
