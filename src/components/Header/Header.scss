@@ -12,7 +12,7 @@ div.header{
   display:inline;
 
   .site-header{
-    border-bottom: 1px solid black;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
     display: flex;
     justify-content: space-between;
     padding: 8px 10px;
