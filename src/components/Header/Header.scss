@@ -11,29 +11,6 @@
 div.header{
   display:inline;
 
-  .site-header{
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
-    display: flex;
-    justify-content: space-between;
-    padding: 8px 10px;
-
-    >*{
-      height: 100%;
-      display: flex;
-      align-items: center;
-      margin: 0 5px;
-
-      a{
-        height: 100%;
-      }
-    }
-
-    .site-logo{
-      max-height: 100%;
-      padding-right: 30px;
-    }
-  }
-
   .mobile-control{
     height: 64px;
     display: flex;
