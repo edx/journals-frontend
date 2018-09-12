@@ -1,0 +1,63 @@
+.journal-card-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.journal-card-link {
+  &:hover {
+      text-decoration: none;
+  }
+  margin-left: 0px;
+
+  .journal-card {
+    height: 360px;
+    width: 360px;
+    border-radius: 4px;
+    background-color: $white;
+    border: solid 1px $light-grey;
+    padding: 20px 20px;
+    border-bottom: 5px solid $primary;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+
+     &:hover{
+        border-color: $primary;
+        cursor: pointer;
+    }
+
+  }
+
+  .journal-card-image {
+    display: block;
+    height: 160px;
+    overflow: hidden;
+  }
+
+  .journal-card-image > img {
+    width: 100%;
+    height: auto;
+  }
+
+  .journal-card-organization {
+    color: $slate-grey;
+    font-size: 18px;
+    height: 35px;
+    padding: 10px 10px 0 10px;
+  }
+
+  .journal-card-title {
+    color: $deep-sea-blue;
+    font-size: 20px;
+    height: 100px;
+    padding: 5px 10px 10px 10px;
+    overflow: hidden;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+  }
+}

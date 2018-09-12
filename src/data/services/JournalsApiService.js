@@ -40,6 +40,16 @@ class JournalsApiService {
     });
   }
 
+  static fetchJournalIndexPage() {
+    const options = {
+      fields: '*',
+      type: 'journals.JournalIndexPage',
+    };
+    return axios.get(`${JournalsApiService.apiUrl}/content/pages/?${qs.stringify(options)}`, {
+      withCredentials: true,
+    });
+  }
+
   static fetchSiteInfo() {
     return axios.get(`${JournalsApiService.apiUrl}/siteinfo/`, {
       withCredentials: true,

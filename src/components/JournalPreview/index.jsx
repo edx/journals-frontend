@@ -7,11 +7,6 @@ class JournalPreview extends React.Component {
   componentDidMount() {
     this.props.getPreview(this.props.match.params.previewId);
   }
-  componentDidUpdate(prevProps) {
-    if (prevProps.match.params.previewId !== this.props.match.params.previewId) {
-      this.props.getPreview(this.props.match.params.previewId);
-    }
-  }
 
   render() {
     return (

@@ -76,15 +76,14 @@ class JournalPage extends React.Component {
                   case RAW_HTML:
                     // rich text and raw HTML use the same component
                     return (
-                      <div className="body-element">
-                        <RawHTMLViewer key={el.id} content={el.value} />
+                      <div className="body-element" key={el.id}>
+                        <RawHTMLViewer content={el.value} />
                       </div>
                     );
                   case PDF:
                     return (
-                      <div className="body-element">
+                      <div className="body-element" key={el.id}>
                         <ViewerBorder
-                          key={el.id}
                           spanId={el.value.span_id}
                           title={el.value.title}
                           spanFullWidth
@@ -95,7 +94,7 @@ class JournalPage extends React.Component {
                     );
                   case XBLOCK_VIDEO:
                     return (
-                      <div className="body-element">
+                      <div className="body-element" key={el.id}>
                         <ViewerBorder
                           spanId={el.value.span_id}
                           title={el.value.title}
@@ -107,9 +106,8 @@ class JournalPage extends React.Component {
                     );
                   case IMAGE:
                     return (
-                      <div className="body-element">
+                      <div className="body-element" key={el.id}>
                         <ViewerBorder
-                          key={el.id}
                           spanId={el.value.span_id}
                           title={el.value.title}
                           caption={el.value.caption}

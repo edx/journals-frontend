@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import { Route, Switch } from 'react-router-dom';
 import classNames from 'classnames';
 
-import IndexPageContainer from '../../containers/IndexPageContainer';
+import JournalIndexPageContainer from '../../containers/JournalIndexPageContainer';
+import JournalIndexPreviewContainer from '../../containers/JournalIndexPreviewContainer';
 import PrivateRouteContainer from '../../containers/PrivateRouteContainer';
 import JournalRouterContainer from '../../containers/JournalRouterContainer';
 import SearchPageContainer from '../../containers/SearchPageContainer';
@@ -21,7 +22,8 @@ const MainContent = (props) => {
         <div className="col col-12 offset-lg-2 col-lg-8">
           <main>
             <Switch>
-              <Route exact path="/" component={IndexPageContainer} />
+              <Route exact path="/" component={JournalIndexPageContainer} />
+              <Route path="/indexPreview/:previewId" component={JournalIndexPreviewContainer} />
               <PrivateRouteContainer path="/search" component={SearchPageContainer} />
               <Route path="/:journalAboutId" component={JournalRouterContainer} />
             </Switch>

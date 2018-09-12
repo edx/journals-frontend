@@ -11,7 +11,9 @@ import JournalAboutPreviewContainer from '../../containers/JournalAboutPreviewCo
 
 class JournalRouter extends React.Component {
   componentDidMount() {
-    this.props.getJournal(this.props.match.params.journalAboutId);
+    if (parseInt(this.props.match.params.journalAboutId, 10) !== this.props.journalAboutId) {
+      this.props.getJournal(this.props.match.params.journalAboutId);
+    }
     if (this.props.isAuthenticated) {
       this.props.toggleNavigationVisibility(true);
     }
@@ -45,6 +47,7 @@ JournalRouter.defaultProps = {
   getJournal: () => {},
   toggleNavigationVisibility: () => {},
   isAuthenticated: false,
+  journalAboutId: 0,
 };
 
 JournalRouter.propTypes = {
@@ -57,6 +60,7 @@ JournalRouter.propTypes = {
   getJournal: PropTypes.func,
   toggleNavigationVisibility: PropTypes.func,
   isAuthenticated: PropTypes.bool,
+  journalAboutId: PropTypes.number,
 };
 
 export default JournalRouter;
