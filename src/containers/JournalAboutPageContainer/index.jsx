@@ -4,13 +4,13 @@ import JournalAboutPage from '../../components/JournalAboutPage';
 
 const mapStateToProps = state => (
   {
-    title: state.journal.title,
-    journalAboutId: state.journal.journalAboutId,
+    journal: state.journal,
+    authorizedJournals: state.siteInfo.authorizedJournals,
+    serverBaseUrl: state.siteInfo.serverBaseUrl,
   }
 );
 
 const mapDispatchToProps = () => ({
-
 });
 
 const JournalAboutPageContainer = connect(
