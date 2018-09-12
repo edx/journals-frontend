@@ -21,17 +21,17 @@
         padding: 7px 5px;
 
         &:hover{
-          background-color: $pale-grey;
+          background-color: $lightest;
           cursor: pointer;
         }
 
         &.highlight{
-          background-color: $pale-grey;
+          background-color: $lightest;
         }
       }
 
       a{
-        color: $primary;
+        color: $deep-sea-blue;
         line-height: 1.25;
       }
 
@@ -41,8 +41,12 @@
         width: 20px;
         padding: 0;
         margin-right: 12px;
-        background-color: $pale-grey;
+        background-color: $lightest;
         color: $primary;
+
+        .fa{
+          color: $deep-sea-blue;
+        }
       }
     }
   }

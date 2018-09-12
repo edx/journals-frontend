@@ -1,7 +1,19 @@
 .page-nav-btns{
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   a{
-    margin: 0 5px;
+    margin: 0px;
+  }
+  .btn-label{
+    display: inline-block;
+    div{
+      display: inline-block;
+    }
+    .fa-chevron-right{
+      padding-left: 8px;
+    }
+    .fa-chevron-left{
+      padding-right: 8px;
+    }
   }
 }

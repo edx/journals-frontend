@@ -1,24 +1,49 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { Button } from '@edx/paragon';
+import { Icon } from '@edx/paragon';
 
 import './PageNavigationButtons.scss';
 
+const PrevButtonText = () => (
+  <div className="btn-label">
+    <Icon className="fa fa-chevron-left" hidden />
+    <span className="btn-text"> Previous </span>
+  </div>
+);
+
+const NextButtonText = () => (
+  <div className="btn-label">
+    <span className="btn-text">Next</span>
+    <Icon className="fa fa-chevron-right" hidden />
+  </div>
+);
 
 const PageNavigationButtons = props => (
   <div className="page-nav-btns">
     {
       props.prev.trim() ?
-        <Link className="btn btn-primary" to={props.prev}>Previous</Link>
+        <Link className="btn btn-outline-secondary" to={props.prev}>
+          {PrevButtonText()}
+        </Link>
       :
-        <Button buttonType="disabled" label="Previous" />
+        /* eslint-disable jsx-a11y/anchor-is-valid */
+        <a className="btn btn-outline-secondary disabled" aria-disabled="true">
+          {PrevButtonText()}
+        </a>
+        /* eslint-enable jsx-a11y/anchor-is-valid */
     }
     {
       props.next.trim() ?
-        <Link className="btn btn-primary" to={props.next}>Next</Link>
+        <Link className="btn btn-outline-secondary" to={props.next}>
+          {NextButtonText()}
+        </Link>
       :
-        <Button buttonType="disabled" label="Next" />
+        /* eslint-disable jsx-a11y/anchor-is-valid */
+        <a className="btn btn-outline-secondary disabled" aria-disabled="true">
+          {NextButtonText()}
+        </a>
+        /* eslint-enable jsx-a11y/anchor-is-valid */
     }
   </div>
 );
