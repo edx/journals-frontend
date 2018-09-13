@@ -1,4 +1,3 @@
-// TODO: does this height make sense on all screens?
 footer.page-footer{
   height: 100px;
   background-color: $white;
@@ -19,6 +18,8 @@ footer.page-footer{
 
   ul {
     display: inline-block;
+    list-style: none;
+
     li:last-child {
       .link-divider {
         visibility: hidden;
@@ -26,12 +27,16 @@ footer.page-footer{
     }
 
     li {
+
+      display: inline;
+
       .footer-link {
         font-size: 14px;
         line-height: 1.29;
       }
 
       .link-divider {
+        display: inline-block;
         font-size: 14px;
         line-height: 1.29;
         color: $slate-grey;
