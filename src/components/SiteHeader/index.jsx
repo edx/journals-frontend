@@ -14,10 +14,9 @@ class SiteHeader extends React.Component {
     const menuList = [];
     menuList.push({ label: <span><Icon className="fa fa-user" />My Account</span>, href: this.props.lmsAccountPath });
     if (this.props.canAccessAdmin) {
-      menuList.push({ label: <span><Icon className="fa fa-pencil-square-o" />Journal Editor</span>, href: this.props.cmsPath });
+      menuList.push(<a href={this.props.cmsPath} target="_blank" rel="noopener noreferrer"><span><Icon className="fa fa-pencil-square-o" />Journal Editor</span></a>);
     }
     menuList.push({ label: 'Logout', href: this.props.logoutPath });
-
     return menuList;
   }
 
