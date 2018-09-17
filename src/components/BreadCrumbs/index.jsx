@@ -15,7 +15,7 @@ const BreadCrumbs = props => (
             <Link className="bread-crumb-link" to={`/${props.journalId}/pages/${page.id}`}>
               {page.title}
             </Link>
-            <Icon className="fa fa-chevron-right bread-crumb-arrow" hidden />
+            <Icon className="fa fa-angle-right bread-crumb-arrow" hidden />
           </li>
         ))
     }

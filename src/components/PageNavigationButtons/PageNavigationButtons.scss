@@ -1,19 +1,23 @@
 .page-nav-btns{
   display: flex;
   justify-content: space-between;
-  a{
+  a.nav-btn {
     margin: 0px;
+    width: 122px;
   }
   .btn-label{
     display: inline-block;
-    div{
-      display: inline-block;
+    font-size: 16px;
+
+    .fa-angle-right{
+      padding-left: 10px;
     }
-    .fa-chevron-right{
-      padding-left: 8px;
+    .fa-angle-left{
+      padding-right: 10px;
     }
-    .fa-chevron-left{
-      padding-right: 8px;
+    .btn-text{
+      font-family: "Open Sans";
+      font-weight: bold;
     }
   }
 }
