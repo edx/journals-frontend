@@ -22,12 +22,12 @@ const SearchButton = props => (
 );
 
 const MobileNavigation = props => (
-  <div className="mobile-navigation d-block d-sm-none">
+  <div className="mobile-navigation d-block d-lg-none">
     <div>
       <NavToggleContainer
         label="Contents"
         id="header-nav-panel-toggle"
-        classNames={['control-btn', 'd-block', 'd-sm-none']}
+        classNames={['control-btn', 'd-block', 'd-lg-none']}
       />
       <SearchButton onClick={() => { props.updateSearchOpen(true); }} />
     </div>

@@ -29,7 +29,7 @@ const App = () => (
           <NavToggleContainer
             label="Contents"
             id="side-nav-panel-toggle"
-            classNames={['control-btn', 'd-none', 'd-sm-block']}
+            classNames={['control-btn', 'd-none', 'd-lg-block']}
           />
           <MainContentContainer />
         </div>

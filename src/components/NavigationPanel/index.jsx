@@ -4,25 +4,43 @@ import PropTypes from 'prop-types';
 import './NavigationPanel.scss';
 import TOCViewer from '../TOCViewer';
 
-const NavigationPanel = props => (
-  props.navPanelVisible ? (
-    <div id="nav-panel" className={props.navPanelOpen ? 'nav-panel-open' : 'nav-panel-closed'}>
-      {
-        props.journalFinishedFetching ?
-          <TOCViewer journal={props.journal} currentPageId={props.currentPageId} /> :
-          'Loading...'
-      }
-    </div>
-  ) : (
-    ''
-  )
-);
+class NavigationPanel extends React.Component {
+  componentDidMount() {
+    window.addEventListener('resize', this.closeNavWhenShrunk.bind(this));
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.closeNavWhenShrunk.bind(this));
+  }
+
+  closeNavWhenShrunk = () => {
+    if (window.matchMedia('(max-width: 992px)').matches && this.props.navPanelOpen) {
+      this.props.toggleNavigationOpen();
+    }
+  }
+  render() {
+    return (
+      this.props.navPanelVisible ? (
+        <div id="nav-panel" className={this.props.navPanelOpen ? 'nav-panel-open' : 'nav-panel-closed'}>
+          {
+            this.props.journalFinishedFetching ?
+              <TOCViewer journal={this.props.journal} currentPageId={this.props.currentPageId} /> :
+              'Loading...'
+          }
+        </div>
+      ) : (
+        ''
+      )
+    );
+  }
+}
 
 NavigationPanel.defaultProps = {
   navPanelOpen: true,
   navPanelVisible: false,
   journalFinishedFetching: false,
   currentPageId: 0,
+  toggleNavigationOpen: () => {},
 };
 
 NavigationPanel.propTypes = {
@@ -36,6 +54,7 @@ NavigationPanel.propTypes = {
   }).isRequired,
   journalFinishedFetching: PropTypes.bool,
   currentPageId: PropTypes.number,
+  toggleNavigationOpen: PropTypes.func,
 };
 
 

@@ -1,4 +1,4 @@
-@media (min-width: 576px){
+@media (min-width: 992px){
   .header-actions .account-info .dropdown-toggle{
     padding: 8px;
     span{
@@ -6,7 +6,7 @@
     }
   }
 }
-@media (max-width: 575px){
+@media (max-width: 991px){
   .header-actions .account-info .dropdown-toggle {
     padding: 2px;
     width: 47px;

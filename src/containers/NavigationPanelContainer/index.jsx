@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 
 import NavigationPanel from '../../components/NavigationPanel';
+import { toggleNavigationOpen } from '../../data/actions/navigation';
 
 const mapStateToProps = state => (
   {
@@ -12,8 +13,9 @@ const mapStateToProps = state => (
   }
 );
 
-const mapDispatchToProps = () => (
+const mapDispatchToProps = dispatch => (
   {
+    toggleNavigationOpen: () => dispatch(toggleNavigationOpen()),
   }
 );
 

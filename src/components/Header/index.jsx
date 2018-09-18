@@ -11,7 +11,7 @@ import SearchBar from '../SearchBar';
 import './Header.scss';
 
 const MobileControl = props => (
-  <div className="mobile-control d-flex d-sm-none">
+  <div className="mobile-control d-flex d-lg-none">
     {
       props.navPanelOpen &&
       <div className="mobile-toc-header">
@@ -55,7 +55,7 @@ class Header extends React.Component {
     if (
       this.props.location.pathname !== prevProps.location.pathname &&
       this.props.navPanelOpen &&
-      window.matchMedia('(max-width: 575px)').matches
+      window.matchMedia('(max-width: 992px)').matches
     ) {
       this.props.toggleNavigationOpen();
     }
@@ -86,7 +86,7 @@ class Header extends React.Component {
         <SiteHeaderContainer
           updateSearchOpen={this.updateSearchOpen}
           className={classNames({
-            'd-none d-sm-flex': this.shouldMobileControlOpen(),
+            'd-none d-lg-flex': this.shouldMobileControlOpen(),
           })}
         />
         {

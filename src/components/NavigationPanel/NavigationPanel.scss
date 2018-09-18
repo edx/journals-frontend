@@ -6,13 +6,13 @@
   border-right: 1px solid $primary;
   min-height: calc(100vh - 108px);
 }
-@media (min-width: 576px){
+@media (min-width: 992px){
   #nav-panel.nav-panel-open{
     width: 335px;
     min-height: calc(100vh - 64px);
   }
 }
-@media (max-width: 575px){
+@media (max-width: 991px){
   #nav-panel.nav-panel-open{
     width: 100%;
     min-height: calc(100vh - 108px);
