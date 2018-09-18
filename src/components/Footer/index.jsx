@@ -14,7 +14,7 @@ const LinkList = footerLinks => (
             <Hyperlink
               className="footer-link"
               destination={link.destination_link}
-              content={link.label_text}
+              content={<u>{link.label_text}</u>}
             />
             <div className="link-divider">/</div>
           </li>
