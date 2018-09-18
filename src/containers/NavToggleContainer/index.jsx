@@ -8,6 +8,8 @@ const mapStateToProps = state => (
     navPanelOpen: state.navigation.open,
     navPanelVisible: state.navigation.visible,
     journalFinishedFetching: state.journal.finishedFetching,
+    journalId: state.journal.journalId,
+    authorizedJournals: state.siteInfo.authorizedJournals,
   }
 );
 

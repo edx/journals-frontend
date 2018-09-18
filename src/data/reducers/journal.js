@@ -11,8 +11,11 @@ const journal = (state = {
   longDescription: '',
   cardImageUrl: '',
   heroImageUrl: '',
+  customContent: '',
   journalAboutId: null,
   journalId: null,
+  purchaseUrl: '',
+  price: '0',
   structure: [],
   startedFetching: false,
   finishedFetching: false,
@@ -27,9 +30,12 @@ const journal = (state = {
         longDescription: action.journal.long_description,
         cardImageUrl: action.journal.card_image_url,
         heroImageUrl: action.journal.hero_image_url,
+        customContent: action.journal.custom_content,
         journalAboutId: action.journal.id,
         journalId: action.journal.journal_id,
         structure: action.journal.structure,
+        purchaseUrl: action.journal.purchase_url,
+        price: action.journal.price,
       };
     case GET_JOURNAL_FAILURE:
       return {

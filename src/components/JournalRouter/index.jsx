@@ -7,6 +7,7 @@ import PrivateRouteContainer from '../../containers/PrivateRouteContainer';
 import JournalAboutPageContainer from '../../containers/JournalAboutPageContainer';
 import JournalPageContainer from '../../containers/JournalPageContainer';
 import JournalPreviewContainer from '../../containers/JournalPreviewContainer';
+import JournalAboutPreviewContainer from '../../containers/JournalAboutPreviewContainer';
 
 class JournalRouter extends React.Component {
   componentDidMount() {
@@ -33,7 +34,8 @@ class JournalRouter extends React.Component {
         <PrivateRouteContainer exact path="/:journalAboutId" component={JournalPageRedirectContainer} />
         <Route path="/:journalAboutId/about" component={JournalAboutPageContainer} />
         <PrivateRouteContainer path="/:journalAboutId/pages/:pageId" component={JournalPageContainer} />
-        <PrivateRouteContainer path="/:journalAboutId/preview/:previewId" component={JournalPreviewContainer} />
+        <PrivateRouteContainer path="/:journalAboutId/pagePreview/:previewId" component={JournalPreviewContainer} />
+        <PrivateRouteContainer path="/:journalAboutId/aboutPreview/:previewId" component={JournalAboutPreviewContainer} />
       </Switch>
     );
   }
