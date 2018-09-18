@@ -18,6 +18,8 @@ import ViewerBorder from '../ViewerBorder';
 import BreadCrumbs from '../BreadCrumbs';
 import XBlockVideoViewer from '../XBlockVideoViewer';
 
+import './JournalPage.scss';
+
 
 class JournalPage extends React.Component {
   componentDidMount() {
@@ -49,54 +51,72 @@ class JournalPage extends React.Component {
         <UnauthorizedPage />
       ) : (
         <div className="page">
-          <BreadCrumbs
-            ancestorPages={this.props.breadCrumbs}
-            journalId={this.props.match.params.journalAboutId}
-          />
-          <h1>{this.props.title}</h1>
-          <h2 className="subtitle">{this.props.subTitle}</h2>
-          {
-            this.props.displayLastPublishedDate &&
-            <p className="muted-text">
-              <Moment date={this.props.lastPublishedDate} format="MMMM DD, YYYY" />
-            </p>
+          { this.props.breadCrumbs.length > 0 &&
+            <BreadCrumbs
+              ancestorPages={this.props.breadCrumbs}
+              journalId={this.props.match.params.journalAboutId}
+            />
           }
-          <p className="muted-text">{ this.props.author.trim() && `By ${this.props.author}` }</p>
-          <div>
+          <h1 className="article-title">{this.props.title}</h1>
+          <h2 className="subtitle">{this.props.subTitle}</h2>
+          <div className="date-and-author">
+            {
+              this.props.displayLastPublishedDate &&
+              <p className="muted-text">
+                <Moment date={this.props.lastPublishedDate} format="MMMM DD, YYYY" />
+              </p>
+            }
+            <p className="muted-text">{ this.props.author.trim() && `By ${this.props.author}` }</p>
+          </div>
+          <div className="journal-page-body">
             {
               this.props.body.map((el) => {
                 switch (el.type) {
                   case RICH_TEXT:
                   case RAW_HTML:
                     // rich text and raw HTML use the same component
-                    return <RawHTMLViewer key={el.id} content={el.value} />;
+                    return (
+                      <div className="body-element">
+                        <RawHTMLViewer key={el.id} content={el.value} />
+                      </div>
+                    );
                   case PDF:
                     return (
-                      <ViewerBorder
-                        key={el.id}
-                        spanId={el.value.span_id}
-                        title={el.value.title}
-                        spanFullWidth
-                      >
-                        <PDFViewerContainer url={el.value.url} title={el.value.title} />
-                      </ViewerBorder>
+                      <div className="body-element">
+                        <ViewerBorder
+                          key={el.id}
+                          spanId={el.value.span_id}
+                          title={el.value.title}
+                          spanFullWidth
+                        >
+                          <PDFViewerContainer url={el.value.url} title={el.value.title} />
+                        </ViewerBorder>
+                      </div>
                     );
                   case XBLOCK_VIDEO:
                     return (
-                      <ViewerBorder spanId={el.value.span_id} title={el.value.title} spanFullWidth>
-                        <XBlockVideoViewer url={el.value.view_url} title={el.value.title} />
-                      </ViewerBorder>
+                      <div className="body-element">
+                        <ViewerBorder
+                          spanId={el.value.span_id}
+                          title={el.value.title}
+                          spanFullWidth
+                        >
+                          <XBlockVideoViewer url={el.value.view_url} title={el.value.title} />
+                        </ViewerBorder>
+                      </div>
                     );
                   case IMAGE:
                     return (
-                      <ViewerBorder
-                        key={el.id}
-                        spanId={el.value.span_id}
-                        title={el.value.title}
-                        caption={el.value.caption}
-                      >
-                        <ImageViewerContainer url={el.value.url} altText={el.value.title} />
-                      </ViewerBorder>
+                      <div className="body-element">
+                        <ViewerBorder
+                          key={el.id}
+                          spanId={el.value.span_id}
+                          title={el.value.title}
+                          caption={el.value.caption}
+                        >
+                          <ImageViewerContainer url={el.value.url} altText={el.value.title} />
+                        </ViewerBorder>
+                      </div>
                     );
                   default:
                     return <div key={el.id}>No matching component</div>;

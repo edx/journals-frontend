@@ -1,4 +1,3 @@
-// TODO: all colors should be using variables and inheriting from sitebranding
 // TODO: all fonts should be inherited
 .viewer-border{
   background-color: $lightest;
@@ -13,7 +12,6 @@
   line-height: 1.5;
   color: $dark-grey;
 }
-// TODO doesn't work if the caption is wrapped in a <p>
 %caption-text {
   min-width: 350px;
   font-family: "Open Sans";

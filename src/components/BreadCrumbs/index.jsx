@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import './BreadCrumbs.scss';
 
 const BreadCrumbs = props => (
-  <ul>
+  <ul className="bread-crumb-list">
     {
       props.ancestorPages.map(page =>
         (
