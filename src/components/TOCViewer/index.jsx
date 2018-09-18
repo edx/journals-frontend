@@ -61,8 +61,8 @@ class TreeViewer extends React.Component {
                     className={
                       classNames({
                         fa: true,
-                        'fa-chevron-down': this.state.expanded,
-                        'fa-chevron-right': !this.state.expanded,
+                        'fa-angle-down': this.state.expanded,
+                        'fa-angle-right': !this.state.expanded,
                       }).split(' ')
                     }
                   />

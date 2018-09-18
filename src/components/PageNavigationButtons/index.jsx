@@ -7,15 +7,15 @@ import './PageNavigationButtons.scss';
 
 const PrevButtonText = () => (
   <div className="btn-label">
-    <Icon className="fa fa-chevron-left" hidden />
-    <span className="btn-text"> Previous </span>
+    <Icon className="fa fa-angle-left" hidden />
+    <span className="btn-text">Previous</span>
   </div>
 );
 
 const NextButtonText = () => (
   <div className="btn-label">
     <span className="btn-text">Next</span>
-    <Icon className="fa fa-chevron-right" hidden />
+    <Icon className="fa fa-angle-right" hidden />
   </div>
 );
 
@@ -23,24 +23,24 @@ const PageNavigationButtons = props => (
   <div className="page-nav-btns">
     {
       props.prev.trim() ?
-        <Link className="btn btn-outline-secondary" to={props.prev}>
+        <Link className="btn btn-outline-secondary nav-btn" to={props.prev}>
           {PrevButtonText()}
         </Link>
       :
         /* eslint-disable jsx-a11y/anchor-is-valid */
-        <a className="btn btn-outline-secondary disabled" aria-disabled="true">
+        <a className="btn btn-outline-secondary disabled nav-btn" aria-disabled="true">
           {PrevButtonText()}
         </a>
         /* eslint-enable jsx-a11y/anchor-is-valid */
     }
     {
       props.next.trim() ?
-        <Link className="btn btn-outline-secondary" to={props.next}>
+        <Link className="btn btn-outline-secondary nav-btn" to={props.next}>
           {NextButtonText()}
         </Link>
       :
         /* eslint-disable jsx-a11y/anchor-is-valid */
-        <a className="btn btn-outline-secondary disabled" aria-disabled="true">
+        <a className="btn btn-outline-secondary disabled nav-btn" aria-disabled="true">
           {NextButtonText()}
         </a>
         /* eslint-enable jsx-a11y/anchor-is-valid */
