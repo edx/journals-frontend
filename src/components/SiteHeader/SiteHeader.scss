@@ -24,16 +24,32 @@
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
   display: flex;
   justify-content: space-between;
-  padding: 8px 10px;
 
   .site-logo-link{
     height: 100%;
 
-    .site-logo{
-      max-height: 100%;
-      padding-right: 30px;
+    @media (min-width: 576px){
+      .site-logo{
+        max-height: 100%;
+        padding: 11px 33px;
+      }
     }
+
+    @media (max-width: 575px) {
+      .site-logo{
+        max-height: 100%;
+        padding: 14px 12px;
+      }
+    }
+
   }
+
+  .journal-name{
+    font-size: 16px;
+    line-height: 1.88;
+    color: $dark-grey;
+  }
+
 
   >*{
     height: 100%;
@@ -42,56 +58,61 @@
     margin: 0 5px;
   }
 
+  // TODO: make account btn look good in mobile view too
+
   .header-actions{
     .account-info{
-      margin-left: 20px;
+      margin: 12px 38px 12px 20px;
+      font-size: 16px;
 
       .dropdown-toggle{
         line-height: 1;
         color: $primary;
         background-color: #ffffff;
-        border: 1px solid $primary;
         font-weight: bold;
+        height: 42px;
+        border: 1px solid $primary;
 
         &::after{
           content: none;
         }
+      }
 
-        span{
-          .fa{
-            padding: 4px;
-          }
-        }
-
-        &:hover{
-         cursor: pointer;
-        }
-
-        >span{
-          font-size: 14px;
-          font-weight: bold;
+      span{
+        .fa{
+          padding-right: 4px;
         }
       }
-      .dropdown-menu{
-        border: 1px solid $primary;
-        left: unset;
-        right: 0;
 
-        .dropdown-item{
-          color: $primary;
+      &:hover{
+        cursor: pointer;
+      }
 
-          .fa{
-            margin-right: 5px;
-          }
-        }
+      >span{
+        font-size: 14px;
+        font-weight: bold;
       }
     }
-    a.btn{
-      height: 38px;
-      margin: 0 10px;
+    .dropdown-menu{
+      border: 1px solid $primary;
+      left: unset;
+      right: 0;
+
+      .dropdown-item{
+        color: $primary;
+
+        .fa{
+          margin-right: 5px;
+        }
+      }
     }
   }
+  a.btn{
+    height: 38px;
+    margin: 0 10px;
+  }
 }
+
 
 
 
