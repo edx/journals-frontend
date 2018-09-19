@@ -69,7 +69,7 @@ class TreeViewer extends React.Component {
                 }
                 onClick={this.setExpanded}
               /> :
-              <span className="bullet">&bull;</span>
+              <span className="bullet"><div>&bull;</div></span>
           }
           <Link to={`/${this.props.journalAboutId}/pages/${this.props.node.id}`}>{this.props.node.title}</Link>
         </span>
