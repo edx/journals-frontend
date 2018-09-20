@@ -13,12 +13,12 @@ const MainContent = (props) => {
   const containerClass = classNames({
     container: true,
     'd-none': props.navPanelOpen,
-    'd-sm-block': props.navPanelOpen,
+    'd-lg-block': props.navPanelOpen,
   });
   return (
     <div className={containerClass}>
       <div className="row">
-        <div className="col col-12 offset-md-2 col-md-8">
+        <div className="col col-12 offset-lg-2 col-lg-8">
           <main>
             <Switch>
               <Route exact path="/" component={IndexPageContainer} />

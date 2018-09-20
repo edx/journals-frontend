@@ -27,12 +27,12 @@ class SiteHeader extends React.Component {
           <Link className="site-logo-link" to="/">
             <img className="site-logo" alt="site logo" src={this.props.siteLogo} />
           </Link>
-          <span className="d-none d-md-inline">{this.props.journalName}</span>
+          <span className="d-none d-lg-inline">{this.props.journalName}</span>
         </div>
         <div className="header-actions">
           {
             this.props.isAuthenticated &&
-              <span className="d-none d-sm-inline-block">
+              <span className="d-none d-lg-inline-block">
                 <SearchBar journalId={this.props.journalId} history={this.props.history} />
               </span>
           }
