@@ -7,7 +7,7 @@ import Footer from '../../components/Footer';
 
 const mapStateToProps = state => (
   {
-    siteLogo: `${state.siteInfo.serverBaseUrl}${state.siteInfo.logo}`,
+    siteLogo: state.siteInfo.logo,
     footerLinks: state.siteInfo.footerLinks,
   }
 );
