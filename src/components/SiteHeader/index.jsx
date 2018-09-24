@@ -27,7 +27,7 @@ class SiteHeader extends React.Component {
           <Link className="site-logo-link" to="/">
             <img className="site-logo" alt="site logo" src={this.props.siteLogo} />
           </Link>
-          <span className="d-none d-lg-inline">{this.props.journalName}</span>
+          <span className="d-none d-lg-inline journal-name">{this.props.journalName}</span>
         </div>
         <div className="header-actions">
           {

@@ -1,8 +1,16 @@
 @media (min-width: 992px){
   .header-actions .account-info .dropdown-toggle{
+    font-size: 16px;
     padding: 8px;
     span{
       display: inline-block;
+    }
+  }
+  .site-header{
+    .site-logo-link{
+      .site-logo{
+        padding-left: 20px;
+      }
     }
   }
 }
@@ -40,6 +48,13 @@
     display: flex;
     align-items: center;
     margin: 0 5px;
+  }
+
+  .journal-name {
+    font-size: 16px;
+    color: $dark-grey;
+    font-weight: 600;
+    line-height: 1.88;
   }
 
   .header-actions{

@@ -4,9 +4,9 @@ div.mobile-navigation{
   top: 0;
   background-color: #fff;
   z-index: 5;
-  border-bottom: 1px solid black;
   padding: 8px 10px;
   margin-bottom: 20px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
 
   >div {
     display: flex;
@@ -18,14 +18,19 @@ div.mobile-navigation{
     .fa{
       padding: 0 5px;
     }
-  }
+    &.search-button  {
+      width: 47px;
+      padding: 2px;
 
-  .search-button  {
-    width: 47px;
-    height: 38px;
-    font-size: 9px;
-    .fa{
-      font-size: 14px;
+      span{
+        display: block;
+        font-size: 9px;
+        font-weight: bold;
+      }
+      .fa{
+        font-size: 14px;
+        padding: 4px;
+      }
     }
   }
 }

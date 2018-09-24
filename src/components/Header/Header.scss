@@ -6,10 +6,29 @@
 @media (max-width: 991px){
   div.site-header{
     height:54px;
+    z-index: 6;
+    position: relative;
   }
 }
 div.header{
   display:inline;
+
+  .search-field{
+    &.border {
+      border: solid 1px $silver !important;
+      max-width: 318px;
+      box-shadow: inset 0 1px 4px 0 rgba(41, 43, 44, 0.2);
+      border-radius: 25px;
+
+      label {
+        font-size: 16px;
+        color: $dark-grey;
+      }
+    }
+    &.search-btn{
+      color: #20c997;
+    }
+  }
 
   .mobile-control{
     height: 64px;
