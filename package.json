@@ -18,6 +18,7 @@
   "dependencies": {
     "@edx/edx-bootstrap": "^1.0.0",
     "@edx/paragon": "^3.4.6",
+    "@redux-beacon/segment": "^1.0.0",
     "axios": "^0.18.0",
     "babel-polyfill": "^6.26.0",
     "classnames": "^2.2.5",
@@ -38,6 +39,7 @@
     "react-router-hash-link": "^1.2.0",
     "react-router-redux": "^5.0.0-alpha.9",
     "redux": "^3.7.2",
+    "redux-beacon": "^2.0.3",
     "redux-devtools-extension": "^2.13.2",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",
@@ -90,7 +92,8 @@
       "src/**/*.{js,jsx}"
     ],
     "coveragePathIgnorePatterns": [
-      "/node_modules/"
+      "/node_modules/",
+      "/src/segment.js"
     ],
     "transformIgnorePatterns": [
       "/node_modules/(?!(@edx/paragon)/).*/"

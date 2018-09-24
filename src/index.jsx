@@ -2,9 +2,9 @@ import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Helmet } from 'react-helmet';
-import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { IntlProvider } from 'react-intl';
+import { ConnectedRouter } from 'react-router-redux';
 
 import HeaderContainer from './containers/HeaderContainer';
 import NavigationPanelContainer from './containers/NavigationPanelContainer';
@@ -12,12 +12,13 @@ import NavToggleContainer from './containers/NavToggleContainer';
 import MainContentContainer from './containers/MainContentContainer';
 import FooterContainer from './containers/FooterContainer';
 import store from './data/store';
+import history from './data/history';
 import './App.scss';
 
 
 const App = () => (
   <Provider store={store}>
-    <Router>
+    <ConnectedRouter history={history}>
       <div>
         <Helmet defaultTitle="Journals">
           <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet" />
@@ -35,7 +36,7 @@ const App = () => (
         </div>
         <FooterContainer />
       </div>
-    </Router>
+    </ConnectedRouter>
   </Provider>
 );
 
