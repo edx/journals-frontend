@@ -10,7 +10,7 @@ const JournalAboutPage = props => (
       <HeroBanner
         title={props.journal.title}
         description={props.journal.shortDescription}
-        bannerImageUrl={`${props.serverBaseUrl}${props.journal.heroImageUrl}`}
+        bannerImageUrl={props.journal.heroImageUrl}
         showButton
         authorized={props.authorizedJournals.includes(props.journal.journalId)}
         journalAboutId={props.journal.journalAboutId}

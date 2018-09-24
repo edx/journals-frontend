@@ -54,7 +54,7 @@ class JournalIndexPage extends React.Component {
           <div>
             <HeroBanner
               title={this.props.journalIndex.title}
-              bannerImageUrl={`${this.props.serverBaseUrl}${this.props.journalIndex.hero_image_url}`}
+              bannerImageUrl={this.props.journalIndex.hero_image_url}
             />
             {
               /* eslint-disable react/no-danger */
@@ -72,7 +72,7 @@ class JournalIndexPage extends React.Component {
                   journalAboutId={journal.id}
                   title={journal.title}
                   organization={journal.organization}
-                  cardImageUrl={`${this.props.serverBaseUrl}${journal.card_image_url}`}
+                  cardImageUrl={journal.card_image_url}
                   authorized={this.props.authorizedJournals.includes(journal.journal_id)}
                 />
               ))
@@ -106,7 +106,6 @@ JournalIndexPage.defaultProps = {
   useExistingJournal: () => {},
   finishedFetchingIndex: false,
   finishedFetching: false,
-  serverBaseUrl: '',
   authorizedJournals: [],
   isPreview: false,
 };
@@ -125,7 +124,6 @@ JournalIndexPage.propTypes = {
   useExistingJournal: PropTypes.func,
   finishedFetching: PropTypes.bool,
   finishedFetchingIndex: PropTypes.bool,
-  serverBaseUrl: PropTypes.string,
   authorizedJournals: PropTypes.arrayOf(PropTypes.number),
   isPreview: PropTypes.bool,
 };
