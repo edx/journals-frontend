@@ -51,4 +51,12 @@ const fetchJournal = id => (
   }
 );
 
-export default fetchJournal;
+const useExistingJournal = journal => (
+  (dispatch) => {
+    dispatch(startedFetchingJournal());
+    dispatch(getJournalSuccess(journal));
+    dispatch(finishedFetchingJournal());
+  }
+);
+
+export { fetchJournal, useExistingJournal };

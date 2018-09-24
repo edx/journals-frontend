@@ -10,7 +10,7 @@ const LinkList = footerLinks => (
     {
       footerLinks.map(link =>
         (
-          <li>
+          <li key={link.label_text}>
             <Hyperlink
               className="footer-link"
               destination={link.destination_link}

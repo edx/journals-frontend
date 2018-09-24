@@ -5,6 +5,10 @@ import {
   FINISHED_FETCHING_JOURNALS,
   GET_JOURNALS_SUCCESS,
   GET_JOURNALS_FAILURE,
+  STARTED_FETCHING_JOURNAL_INDEX,
+  FINISHED_FETCHING_JOURNAL_INDEX,
+  GET_JOURNAL_INDEX_SUCCESS,
+  GET_JOURNAL_INDEX_FAILURE,
 } from '../constants/actionTypes/journals';
 
 import JournalsApiService from '../services/JournalsApiService';
@@ -52,4 +56,50 @@ const fetchJournals = () => (
   }
 );
 
-export default fetchJournals;
+const startedFetchingJournalIndex = () => (
+  {
+    type: STARTED_FETCHING_JOURNAL_INDEX,
+  }
+);
+
+const finishedFetchingJournalIndex = () => (
+  {
+    type: FINISHED_FETCHING_JOURNAL_INDEX,
+  }
+);
+
+const getJournalIndexSuccess = journalIndex => (
+  {
+    type: GET_JOURNAL_INDEX_SUCCESS,
+    journalIndex,
+  }
+);
+
+const getJournalIndexFailure = error => (
+  {
+    type: GET_JOURNAL_INDEX_FAILURE,
+    error,
+  }
+);
+
+const fetchJournalIndexPage = () => (
+  (dispatch) => {
+    dispatch(startedFetchingJournalIndex());
+    return JournalsApiService.fetchJournalIndexPage()
+      .then((data) => {
+        dispatch(getJournalIndexSuccess(data.data.items));
+      })
+      .catch((error) => {
+        dispatch(getJournalIndexFailure(error));
+      })
+      .finally(() => {
+        dispatch(finishedFetchingJournalIndex());
+      });
+  }
+);
+
+
+export {
+  fetchJournals,
+  fetchJournalIndexPage,
+};

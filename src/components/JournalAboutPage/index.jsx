@@ -1,25 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-import { Hyperlink } from '@edx/paragon';
+import HeroBanner from '../HeroBanner';
+
 import './JournalAboutPage.scss';
 
 const JournalAboutPage = props => (
   props.journal.finishedFetching ? (
     <div>
-      <div className="hero" style={{ background: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(${props.serverBaseUrl}${props.journal.heroImageUrl})` }} >
-        <div><h1>{props.journal.title}</h1></div>
-        <div><h2>{props.journal.shortDescription}</h2></div>
-        <div>
-          {
-            props.authorizedJournals.includes(props.journal.journalId) ? (
-              <Link to={{ pathname: `/${props.journal.journalAboutId}` }} className="btn btn-success">View Now</Link>
-            ) : (
-              <Hyperlink destination={`${props.serverBaseUrl}${props.journal.purchaseUrl}`} className="btn btn-success" content={`Purchase Access ($${props.journal.price})`} />
-            )
-          }
-        </div>
-      </div>
+      <HeroBanner
+        title={props.journal.title}
+        description={props.journal.shortDescription}
+        bannerImageUrl={`${props.serverBaseUrl}${props.journal.heroImageUrl}`}
+        showButton
+        authorized={props.authorizedJournals.includes(props.journal.journalId)}
+        journalAboutId={props.journal.journalAboutId}
+        purchaseUrl={`${props.serverBaseUrl}${props.journal.purchaseUrl}`}
+        price={props.journal.price}
+      />
       <div>
         <p className="long-description">{props.journal.longDescription}</p>
         {
@@ -33,6 +30,7 @@ const JournalAboutPage = props => (
     'Loading...'
   )
 );
+
 
 JournalAboutPage.defaultProps = {
   serverBaseUrl: '',

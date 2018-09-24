@@ -3,12 +3,22 @@ import {
   FINISHED_FETCHING_JOURNALS,
   GET_JOURNALS_SUCCESS,
   GET_JOURNALS_FAILURE,
+  STARTED_FETCHING_JOURNAL_INDEX,
+  FINISHED_FETCHING_JOURNAL_INDEX,
+  GET_JOURNAL_INDEX_SUCCESS,
+  GET_JOURNAL_INDEX_FAILURE,
+
 } from '../constants/actionTypes/journals';
 
 const journals = (state = {
   journals: [],
+  journalIndex: {},
   startedFetching: false,
   finishedFetching: false,
+  error: null,
+  startedFetchingIndex: false,
+  finishedFetchingIndex: false,
+  journalIndexError: null,
 }, action) => {
   switch (action.type) {
     case GET_JOURNALS_SUCCESS:
@@ -24,6 +34,7 @@ const journals = (state = {
     case STARTED_FETCHING_JOURNALS:
       return {
         ...state,
+        error: null,
         startedFetching: true,
         finishedFetching: false,
       };
@@ -33,6 +44,30 @@ const journals = (state = {
         startedFetching: false,
         finishedFetching: true,
       };
+    case GET_JOURNAL_INDEX_SUCCESS:
+      return {
+        ...state,
+        journalIndex: action.journalIndex.length > 0 ? action.journalIndex[0] : {},
+      };
+    case GET_JOURNAL_INDEX_FAILURE:
+      return {
+        ...state,
+        journalIndexError: action.error,
+      };
+    case STARTED_FETCHING_JOURNAL_INDEX:
+      return {
+        ...state,
+        journalIndexError: null,
+        startedFetchingIndex: true,
+        finishedFetchingIndex: false,
+      };
+    case FINISHED_FETCHING_JOURNAL_INDEX:
+      return {
+        ...state,
+        startedFetchingIndex: false,
+        finishedFetchingIndex: true,
+      };
+
     default:
       return state;
   }

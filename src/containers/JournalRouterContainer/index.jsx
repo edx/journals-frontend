@@ -2,11 +2,12 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
 import JournalRouter from '../../components/JournalRouter';
-import fetchJournal from '../../data/actions/journal';
+import { fetchJournal } from '../../data/actions/journal';
 import { toggleNavigationVisibility } from '../../data/actions/navigation';
 
 const mapStateToProps = state => ({
   isAuthenticated: state.siteInfo.isAuthenticated,
+  journalAboutId: state.journal.journalAboutId,
 });
 
 const mapDispatchToProps = dispatch => (
