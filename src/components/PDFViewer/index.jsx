@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import StatusAlert from '../StatusAlert';
 
 import './PDFViewer.scss';
 
@@ -8,13 +9,21 @@ const getIFrameUrl = (serverBaseUrl, relativeUrl) => (
 );
 
 const PDFViewer = props => (
-  <div className="embed-responsive responsive-pdf">
-    <iframe
-      title={props.title}
-      className="embed-responsive-item"
-      src={getIFrameUrl(props.serverBaseUrl, props.url)}
+  props.url ? (
+    <div className="embed-responsive responsive-pdf">
+      <iframe
+        title={props.title}
+        className="embed-responsive-item"
+        src={getIFrameUrl(props.serverBaseUrl, props.url)}
+      />
+    </div>
+  ) : (
+    <StatusAlert
+      alertType="danger"
+      iconClassName={['fa', 'fa-times-circle']}
+      message="Document not found"
     />
-  </div>
+  )
 );
 
 PDFViewer.defaultProps = {
