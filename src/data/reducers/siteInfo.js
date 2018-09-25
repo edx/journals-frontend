@@ -36,17 +36,17 @@ const siteInfo = (state = {
         serverBaseUrl: action.siteInfo.server_url,
         lmsRootUrl: action.siteInfo.lms_url_root,
         authorizedJournals: action.siteInfo.authorized_journals,
-        error: null,
       };
     case GET_SITE_INFO_FAILURE:
       return {
         ...state,
         isAuthenticated: false,
-        error: action.siteInfo.error,
+        error: action.error,
       };
     case STARTED_FETCHING_SITE_INFO:
       return {
         ...state,
+        error: null,
         startedFetching: true,
         finishedFetching: false,
       };

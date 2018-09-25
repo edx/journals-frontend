@@ -9,6 +9,7 @@ const page = (state = {
   page: {},
   startedFetching: false,
   finishedFetching: false,
+  error: null,
 }, action) => {
   switch (action.type) {
     case GET_PAGE_SUCCESS:
@@ -24,6 +25,7 @@ const page = (state = {
     case STARTED_FETCHING_PAGE:
       return {
         ...state,
+        error: null,
         startedFetching: true,
         finishedFetching: false,
       };
