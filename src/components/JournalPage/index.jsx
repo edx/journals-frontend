@@ -8,7 +8,7 @@ import {
   XBLOCK_VIDEO,
   IMAGE,
 } from '../../data/constants/contentTypes';
-import UnauthorizedPage from '../UnauthorizedPage';
+import ErrorPage from '../ErrorPage';
 
 import RawHTMLViewer from '../RawHTMLViewer';
 import ImageViewerContainer from '../../containers/ImageViewerContainer';
@@ -46,10 +46,23 @@ class JournalPage extends React.Component {
     const baseUrl = !this.props.is_preview ? `/${this.props.match.params.journalAboutId}/pages` : '';
     const previousPageUrl = this.props.previousPage ? `${baseUrl}/${this.props.previousPage}` : '';
     const nextPageUrl = this.props.nextPage ? `${baseUrl}/${this.props.nextPage}` : '';
+
+    if (this.props.error) {
+      return (
+        <ErrorPage
+          status={this.props.error.response && this.props.error.response.status}
+          message={this.props.error.message}
+        />
+      );
+    }
+    if (this.props.startedFetching && !this.props.finishedFetching) {
+      return (
+        <div className="journal-page-body">Loading...</div>
+      );
+    }
+
     return (
-      this.props.fetchPageSuccess ? (
-        <UnauthorizedPage />
-      ) : (
+      this.props.finishedFetching &&
         <div className="page">
           { this.props.breadCrumbs.length > 0 &&
             <BreadCrumbs
@@ -127,7 +140,6 @@ class JournalPage extends React.Component {
               <PageNavigationButtons prev={previousPageUrl} next={nextPageUrl} />
           }
         </div>
-      )
     );
   }
 }
@@ -142,7 +154,9 @@ JournalPage.defaultProps = {
   body: [],
   getPage: () => {},
   setPageVisit: () => {},
-  fetchPageSuccess: false,
+  startedFetching: false,
+  finishedFetching: false,
+  error: null,
   nextPage: null,
   previousPage: null,
   is_preview: false,
@@ -170,7 +184,9 @@ JournalPage.propTypes = {
     }),
     url: PropTypes.string,
   }).isRequired,
-  fetchPageSuccess: PropTypes.bool,
+  error: PropTypes.instanceOf(Error),
+  startedFetching: PropTypes.bool,
+  finishedFetching: PropTypes.bool,
   nextPage: PropTypes.number,
   previousPage: PropTypes.number,
   is_preview: PropTypes.bool,

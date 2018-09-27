@@ -9,6 +9,7 @@ const preview = (state = {
   page: {},
   startedFetching: false,
   finishedFetching: false,
+  error: null,
 }, action) => {
   switch (action.type) {
     case GET_PREVIEW_SUCCESS:
@@ -24,6 +25,7 @@ const preview = (state = {
     case STARTED_FETCHING_PREVIEW:
       return {
         ...state,
+        error: null,
         startedFetching: true,
         finishedFetching: false,
       };

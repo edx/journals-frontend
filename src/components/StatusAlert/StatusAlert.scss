@@ -1,0 +1,16 @@
+.alert {
+  .icon {
+      .fa  {
+          font-size: 1.5rem;
+      }
+  }
+
+  .title {
+      font-weight: 600;
+      display: block;
+  }
+}
+
+.alert-dialog {
+  display: flex !important;
+}

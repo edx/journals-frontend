@@ -12,7 +12,9 @@ class JournalPreview extends React.Component {
     return (
       <JournalPage
         match={this.props.match}
-        fetchPreviewSuccess={this.props.fetchPreviewSuccess}
+        error={this.props.error}
+        startedFetching={this.props.startedFetching}
+        finishedFetching={this.props.finishedFetching}
         is_preview
         title={this.props.title}
         subTitle={this.props.subTitle}
@@ -35,7 +37,9 @@ JournalPreview.defaultProps = {
   breadCrumbs: [],
   body: [],
   getPreview: () => {},
-  fetchPreviewSuccess: false,
+  error: null,
+  startedFetching: false,
+  finishedFetching: false,
 };
 
 JournalPreview.propTypes = {
@@ -56,7 +60,9 @@ JournalPreview.propTypes = {
     }),
     url: PropTypes.string,
   }).isRequired,
-  fetchPreviewSuccess: PropTypes.bool,
+  error: PropTypes.instanceOf(Error),
+  startedFetching: PropTypes.bool,
+  finishedFetching: PropTypes.bool,
 };
 
 

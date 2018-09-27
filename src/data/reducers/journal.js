@@ -45,6 +45,7 @@ const journal = (state = {
     case STARTED_FETCHING_JOURNAL:
       return {
         ...state,
+        error: null,
         startedFetching: true,
         finishedFetching: false,
       };

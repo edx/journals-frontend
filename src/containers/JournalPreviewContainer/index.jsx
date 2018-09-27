@@ -13,7 +13,9 @@ const mapStateToProps = state => (
     author: state.preview.page.author,
     breadCrumbs: state.preview.page.bread_crumbs,
     body: state.preview.page.body,
-    fetchPreviewSuccess: state.preview.error,
+    error: state.preview.error,
+    startedFetching: state.preview.startedFetching,
+    finishedFetching: state.preview.finishedFetching,
   }
 );
 
