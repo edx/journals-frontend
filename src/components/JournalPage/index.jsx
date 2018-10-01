@@ -108,13 +108,7 @@ class JournalPage extends React.Component {
                   case XBLOCK_VIDEO:
                     return (
                       <div className="body-element" key={el.id}>
-                        <ViewerBorder
-                          spanId={el.value.span_id}
-                          title={el.value.title}
-                          spanFullWidth
-                        >
-                          <XBlockVideoViewer url={el.value.view_url} title={el.value.title} />
-                        </ViewerBorder>
+                        <XBlockVideoViewer url={el.value.view_url} title={el.value.title} />
                       </div>
                     );
                   case IMAGE:
