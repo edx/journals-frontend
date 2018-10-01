@@ -8,13 +8,34 @@ import SearchBar from '../SearchBar';
 
 import './SiteHeader.scss';
 
+const getCurrentPage = (pageId, aboutPageId, indexPageId) => {
+  const ROUTES = [
+    { path: /^\/$/, id: indexPageId },
+    { path: /^\/\d+\/about$/, id: aboutPageId },
+    { path: /^\/\d+\/pages\/\d+$/, id: pageId },
+  ];
+  const matchingRoutes = ROUTES.filter(route => route.path.test(window.location.pathname));
+  return matchingRoutes.length > 0 ? matchingRoutes[0].id : null;
+};
 
 class SiteHeader extends React.Component {
+  getEditorLink() {
+    const currentPageId = getCurrentPage(
+      this.props.pageId,
+      this.props.journalAboutId,
+      this.props.journalIndexId,
+    );
+    if (currentPageId) {
+      return `${this.props.cmsPath}/pages/${currentPageId}/edit/`;
+    }
+    return this.props.cmsPath;
+  }
+
   getMenuItems() {
     const menuList = [];
     menuList.push({ label: <span><Icon className="fa fa-user" />My Account</span>, href: this.props.lmsAccountPath });
     if (this.props.canAccessAdmin) {
-      menuList.push(<a href={this.props.cmsPath} target="_blank" rel="noopener noreferrer"><span><Icon className="fa fa-pencil-square-o" />Journal Editor</span></a>);
+      menuList.push(<a href={this.getEditorLink()} target="_blank" rel="noopener noreferrer"><span><Icon className="fa fa-pencil-square-o" />Journal Editor</span></a>);
     }
     menuList.push({ label: 'Logout', href: this.props.logoutPath });
     return menuList;
@@ -63,6 +84,9 @@ class SiteHeader extends React.Component {
 
 SiteHeader.defaultProps = {
   isAuthenticated: false,
+  pageId: 0,
+  journalIndexId: 0,
+  journalAboutId: 0,
   journalId: 0,
   journalName: '',
   lmsAccountPath: '',
@@ -79,6 +103,9 @@ SiteHeader.propTypes = {
     push: PropTypes.func,
   }).isRequired,
   isAuthenticated: PropTypes.bool,
+  pageId: PropTypes.number,
+  journalIndexId: PropTypes.number,
+  journalAboutId: PropTypes.number,
   journalId: PropTypes.number,
   journalName: PropTypes.string,
   lmsAccountPath: PropTypes.string,
