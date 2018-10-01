@@ -28,7 +28,11 @@ const mapStateToProps = state => (
 const mapDispatchToProps = dispatch => (
   {
     getPage: pageId => dispatch(fetchPage(pageId)),
-    setPageVisit: (userId, pageId) => setPageVisit(userId, pageId),
+    setPageVisit: (userId, pageId, aboutPageId) => dispatch(setPageVisit(
+      userId,
+      pageId,
+      aboutPageId,
+    )),
   }
 );
 

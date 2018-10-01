@@ -12,32 +12,56 @@ class JournalPageRedirect extends React.Component {
     this.setPageUrls();
   }
   setPageUrls() {
-    this.lastVisitedPageUrl = `/${this.props.match.params.journalAboutId}/pages/${this.props.lastVisitedPage}`;
-    this.firstJournalPageUrl = `/${this.props.match.params.journalAboutId}/pages/${this.props.journalFirstPage}`;
+    const lastVisitedPage = this.props.visitedPages.filter(page => (
+      page.journal_about === parseInt(this.props.match.params.journalAboutId, 10)
+    ));
+
+    this.lastVisitedPageUrl = (
+      lastVisitedPage.length > 0 ?
+        `/${this.props.match.params.journalAboutId}/pages/${lastVisitedPage[0].page}` :
+        null
+    );
+
+    this.firstJournalPageUrl = (
+      this.props.journalFirstPage ?
+        `/${this.props.match.params.journalAboutId}/pages/${this.props.journalFirstPage}` :
+        null
+    );
+
+    this.journalAboutPageUrl = `/${this.props.match.params.journalAboutId}/about`;
   }
   render() {
-    if (this.props.siteInfoFinishedFetching && this.props.journalFinishedFetching) {
-      // Only run if both the user info and journal info API calls have finished
-      if (this.props.lastVisitedPage) {
+    if (
+      this.props.siteInfoFinishedFetching &&
+      this.props.journalFinishedFetching &&
+      this.props.journalAboutId === parseInt(this.props.match.params.journalAboutId, 10)
+    ) {
+      if (this.lastVisitedPageUrl) {
         // Send user to the last page they visited if available
         return <Redirect push to={this.lastVisitedPageUrl} />;
       }
-      // Send user to the first page in the journal
-      return <Redirect push to={this.firstJournalPageUrl} />;
+      if (this.firstJournalPageUrl) {
+        // Send user to the first page in the journal
+        return <Redirect push to={this.firstJournalPageUrl} />;
+      }
+      return <Redirect push to={this.journalAboutPageUrl} />;
     }
     return <div>Loading...</div>;
   }
 }
 
 JournalPageRedirect.defaultProps = {
-  lastVisitedPage: 0,
-  journalFirstPage: 0,
   siteInfoFinishedFetching: false,
   journalFinishedFetching: false,
+  journalFirstPage: 0,
+  journalAboutId: 0,
 };
 
 JournalPageRedirect.propTypes = {
-  lastVisitedPage: PropTypes.number,
+  visitedPages: PropTypes.arrayOf(PropTypes.shape({
+    page: PropTypes.number,
+    journal_about: PropTypes.number,
+  })).isRequired,
   match: PropTypes.shape({
     params: PropTypes.shape({
       journalAboutId: PropTypes.string,
@@ -47,6 +71,7 @@ JournalPageRedirect.propTypes = {
   journalFirstPage: PropTypes.number,
   siteInfoFinishedFetching: PropTypes.bool,
   journalFinishedFetching: PropTypes.bool,
+  journalAboutId: PropTypes.number,
 };
 
 export default JournalPageRedirect;
