@@ -25,6 +25,7 @@ class JournalPage extends React.Component {
   componentDidMount() {
     this.props.getPage(this.props.match.params.pageId);
   }
+
   componentDidUpdate(prevProps) {
     // If we try to change Journal pages
     if (prevProps.match.params.pageId !== this.props.match.params.pageId) {
@@ -38,7 +39,11 @@ class JournalPage extends React.Component {
 
   trackVisit() {
     if (this.props.userId != null) {
-      this.props.setPageVisit(this.props.userId, this.props.match.params.pageId);
+      this.props.setPageVisit(
+        this.props.userId,
+        this.props.match.params.pageId,
+        this.props.match.params.journalAboutId,
+      );
     }
   }
 

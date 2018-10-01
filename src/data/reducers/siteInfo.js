@@ -3,6 +3,7 @@ import {
   FINISHED_FETCHING_SITE_INFO,
   GET_SITE_INFO_SUCCESS,
   GET_SITE_INFO_FAILURE,
+  UPDATE_PAGE_VISIT,
 } from '../constants/actionTypes/siteInfo';
 
 import configuration from '../../config/';
@@ -56,6 +57,22 @@ const siteInfo = (state = {
         startedFetching: false,
         finishedFetching: true,
       };
+    case UPDATE_PAGE_VISIT: {
+      const updatedVisited = state.visitedPages.map((lastVisitedEntry) => {
+        if (lastVisitedEntry.journal_about === parseInt(action.aboutPageId, 10)) {
+          return {
+            user: action.userId,
+            page: parseInt(action.pageId, 10),
+            journal_about: parseInt(action.aboutPageId, 10),
+          };
+        }
+        return lastVisitedEntry;
+      });
+      return {
+        ...state,
+        visitedPages: updatedVisited,
+      };
+    }
     default:
       return state;
   }
