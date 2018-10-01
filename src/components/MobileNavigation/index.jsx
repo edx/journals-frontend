@@ -13,7 +13,7 @@ const SearchButton = props => (
         <Icon
           className="fa fa-search"
         />
-        <div>Search</div>
+        <span>Search</span>
       </div>
     }
     className={['control-btn', 'search-button']}
