@@ -81,6 +81,8 @@ module.exports = Merge.smart(commonConfig, {
     new webpack.EnvironmentPlugin({
       NODE_ENV: 'development',
       JOURNALS_BASE_URL: 'http://localhost:18606',
+      NEW_RELIC_APP_ID: undefined,
+      NEW_RELIC_LICENSE_KEY: undefined,
     }),
   ],
   // This configures webpack-dev-server which serves bundles from memory and provides live
