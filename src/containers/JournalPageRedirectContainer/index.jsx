@@ -11,6 +11,7 @@ const mapStateToProps = state => (
     journalFirstPage: state.journal.structure.length !== 0 ? state.journal.structure[0].id : null,
     visitedPages: state.siteInfo.visitedPages,
     journalAboutId: state.journal.journalAboutId,
+    error: state.journal.error,
   }
 );
 
