@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Redirect } from 'react-router';
+import ErrorPage from '../ErrorPage';
 
 
 class JournalPageRedirect extends React.Component {
@@ -31,6 +32,14 @@ class JournalPageRedirect extends React.Component {
     this.journalAboutPageUrl = `/${this.props.match.params.journalAboutId}/about`;
   }
   render() {
+    if (this.props.error) {
+      return (
+        <ErrorPage
+          status={this.props.error.response && this.props.error.response.status}
+          message={this.props.error.message}
+        />
+      );
+    }
     if (
       this.props.siteInfoFinishedFetching &&
       this.props.journalFinishedFetching &&
@@ -55,6 +64,7 @@ JournalPageRedirect.defaultProps = {
   journalFinishedFetching: false,
   journalFirstPage: 0,
   journalAboutId: 0,
+  error: null,
 };
 
 JournalPageRedirect.propTypes = {
@@ -72,6 +82,7 @@ JournalPageRedirect.propTypes = {
   siteInfoFinishedFetching: PropTypes.bool,
   journalFinishedFetching: PropTypes.bool,
   journalAboutId: PropTypes.number,
+  error: PropTypes.instanceOf(Error),
 };
 
 export default JournalPageRedirect;
