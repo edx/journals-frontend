@@ -2,3 +2,20 @@
   padding-top: 129.41%; /* about 11:8.5 standard page size */
 }
 
+@media screen and (min-device-aspect-ratio: 4/3) {
+  .responsive-pdf::before{
+    padding-top: 75%;
+  }
+}
+
+@media screen and (min-device-aspect-ratio: 16/10) {
+  .responsive-pdf::before{
+    padding-top: 62%;
+  }
+}
+
+@media screen and (min-device-aspect-ratio: 16/9) {
+  .responsive-pdf::before{
+    padding-top: 85%;
+  }
+}

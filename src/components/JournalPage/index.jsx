@@ -105,6 +105,7 @@ class JournalPage extends React.Component {
                           spanId={el.value.span_id}
                           title={el.value.title}
                           spanFullWidth
+                          showFullscreen
                         >
                           <PDFViewerContainer url={el.value.url} title={el.value.title} />
                         </ViewerBorder>
@@ -117,6 +118,7 @@ class JournalPage extends React.Component {
                           spanId={el.value.span_id}
                           title={el.value.title}
                           spanFullWidth
+                          showFullscreen
                         >
                           <XBlockVideoViewer url={el.value.view_url} title={el.value.title} />
                         </ViewerBorder>

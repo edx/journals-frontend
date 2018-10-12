@@ -4,7 +4,6 @@
 .imported-xblock-video{
   border: none;
 }
-
 .responsive-video::before{
   padding-top: 143%;
 }
@@ -16,5 +15,23 @@
 @media (min-width: 992px){
   .responsive-video::before{
     padding-top: 78%;
+  }
+}
+
+@media screen and (min-device-aspect-ratio: 4/3) {
+  .responsive-video::before{
+    padding-top: 75%;
+  }
+}
+
+@media screen and (min-device-aspect-ratio: 16/10) {
+  .responsive-video::before{
+    padding-top: 62%;
+  }
+}
+
+@media screen and (min-device-aspect-ratio: 16/9) {
+  .responsive-video::before{
+    padding-top: 56%;
   }
 }
