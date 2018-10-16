@@ -18,28 +18,32 @@ class ViewerBorder extends React.Component {
   }
 
   render() {
+    const content = <div className="viewer-content">{this.props.children}</div>;
     return (
       <span id={this.props.spanId}>
         <div className={`viewer-border${this.props.spanFullWidth ? ' w-100' : ''}`}>
           { this.props.title.trim() &&
             <div className="grow">
               <div className="viewer-title" >{this.props.title}
-                <Button
-                  className={['control-btn', 'float-right']}
-                  label={<Icon className="fa fa-expand" />}
-                  onClick={this.goFull}
-                />
+                { this.props.showFullscreen &&
+                  <Button
+                    className={['control-btn', 'float-right']}
+                    label={<Icon className="fa fa-expand" />}
+                    onClick={this.goFull}
+                  />
+                }
               </div>
             </div>
           }
-          <Fullscreen
-            enabled={this.state.isFull}
-            onChange={isFull => this.setState({ isFull })}
-          >
-            <div className="viewer-content">
-              {this.props.children}
-            </div>
-          </Fullscreen>
+          { this.props.showFullscreen ? (
+            <Fullscreen
+              enabled={this.state.isFull}
+              onChange={isFull => this.setState({ isFull })}
+            >{content}
+            </Fullscreen>
+          ) : (
+            content
+          )}
           { this.props.caption.trim() &&
             /* eslint-disable react/no-danger */
             <div className="viewer-caption grow">
@@ -57,6 +61,7 @@ ViewerBorder.defaultProps = {
   title: '',
   caption: '',
   spanFullWidth: false,
+  showFullscreen: false,
 };
 
 ViewerBorder.propTypes = {
@@ -65,6 +70,7 @@ ViewerBorder.propTypes = {
   title: PropTypes.string,
   caption: PropTypes.string,
   spanFullWidth: PropTypes.bool,
+  showFullscreen: PropTypes.bool,
 };
 
 export default ViewerBorder;
