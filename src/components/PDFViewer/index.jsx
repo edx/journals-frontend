@@ -10,7 +10,7 @@ const getIFrameUrl = (serverBaseUrl, relativeUrl) => (
 
 const PDFViewer = props => (
   props.url ? (
-    <div className="embed-responsive responsive-pdf">
+    <div className="embed-responsive responsive-pdf embed-responsive-4by3">
       <iframe
         title={props.title}
         className="embed-responsive-item"
