@@ -5,6 +5,13 @@ import './NavigationPanel.scss';
 import TOCViewer from '../TOCViewer';
 
 class NavigationPanel extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      previousWidth: window.innerWidth,
+    };
+  }
+
   componentDidMount() {
     window.addEventListener('resize', this.closeNavWhenShrunk.bind(this));
   }
@@ -14,9 +21,13 @@ class NavigationPanel extends React.Component {
   }
 
   closeNavWhenShrunk = () => {
-    if (window.matchMedia('(max-width: 992px)').matches && this.props.navPanelOpen) {
+    const widthThreshold = 1240;
+    if (this.state.previousWidth > widthThreshold &&
+        window.innerWidth < widthThreshold &&
+        this.props.navPanelOpen) {
       this.props.toggleNavigationOpen();
     }
+    this.setState({ previousWidth: window.innerWidth });
   }
   render() {
     return (
