@@ -16,7 +16,7 @@ class SearchBar extends React.Component {
     if (query.startsWith(MATCH_PHRASE_START_CHAR) && query.endsWith(MATCH_PHRASE_END_CHAR)) {
       searchOperator = 'and';
     }
-    const cleanQuery = query.replace(/[MATCH_PHRASE_START_CHARG]+/g, '');
+    const cleanQuery = query.replace(new RegExp(MATCH_PHRASE_START_CHAR, 'g'), '');
     const options = {
       query: cleanQuery,
       operator: searchOperator,
