@@ -12,7 +12,9 @@
     "prepublishOnly": "npm run build",
     "start": "NODE_ENV=development BABEL_ENV=development node_modules/.bin/webpack-dev-server --config=config/webpack.dev.config.js --progress",
     "debug-test": "node --inspect-brk node_modules/.bin/jest --runInBand --coverage",
-    "test": "jest --coverage --passWithNoTests"
+    "test": "jest --coverage --passWithNoTests",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run"
   },
   "license": "AGPL-3.0",
   "dependencies": {
@@ -56,10 +58,14 @@
     "babel-preset-react": "^6.24.1",
     "codecov": "^3.0.0",
     "css-loader": "^0.28.9",
+    "cypress": "^3.1.1",
+    "cypress-failed-log": "^2.4.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "es-check": "^2.0.2",
+    "eslint": "^5.7.0",
     "eslint-config-edx": "^4.0.3",
+    "eslint-plugin-cypress": "^2.1.1",
     "fetch-mock": "^6.3.0",
     "file-loader": "^1.1.9",
     "gh-pages": "^1.1.0",
