@@ -35,6 +35,9 @@ class JournalPage extends React.Component {
     if (prevProps.pageId !== this.props.pageId) {
       this.trackVisit();
     }
+    if (this.props.finishedFetching) {
+      document.getElementsByClassName('header')[0].scrollIntoView();
+    }
   }
 
   trackVisit() {
