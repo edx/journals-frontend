@@ -53,7 +53,7 @@ class Header extends React.Component {
 
   componentDidUpdate(prevProps) {
     if (this.props.navPanelOpen && window.matchMedia('(max-width: 992px)').matches) {
-      document.getElementsByClassName("highlight")[0].scrollIntoView(false);
+      document.getElementsByClassName('highlight')[0].scrollIntoView(false);
       if (this.props.location.pathname !== prevProps.location.pathname) {
         this.props.toggleNavigationOpen();
       }
