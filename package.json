@@ -100,7 +100,8 @@
     ],
     "coveragePathIgnorePatterns": [
       "/node_modules/",
-      "/src/segment.js"
+      "/src/segment.js",
+      "/cypress/"
     ],
     "transformIgnorePatterns": [
       "/node_modules/(?!(@edx/paragon)/).*/"
