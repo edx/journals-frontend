@@ -98,10 +98,10 @@
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}"
     ],
+    "testNamePattern": "!.spec.js",
     "coveragePathIgnorePatterns": [
       "/node_modules/",
-      "/src/segment.js",
-      "/cypress/"
+      "/src/segment.js"
     ],
     "transformIgnorePatterns": [
       "/node_modules/(?!(@edx/paragon)/).*/"
