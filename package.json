@@ -98,7 +98,7 @@
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}"
     ],
-    "testNamePattern": "!.spec.js",
+    "testNamePattern": "!/cypress/",
     "coveragePathIgnorePatterns": [
       "/node_modules/",
       "/src/segment.js"
