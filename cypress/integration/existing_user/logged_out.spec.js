@@ -32,9 +32,11 @@ describe('Landing Page Configurations', () => {
     cy.contains(Cypress.env('JOURNAL_NAME')).click()
     // Check for the presence of about key word in resulting url
     cy.url().should('include', '/about')
-    // Check for the Course Information on about page
-    cy.contains('.hero h1', Cypress.env('JOURNAL_NAME'))
-    cy.contains('.hero h2', `${Cypress.env('JOURNAL_NAME')} description`)
-    cy.contains('.hero .btn', Cypress.env('JOURNAL_PRICE'))
+    // Check for the Course Information on course hero image
+    cy.get('.hero').within(() => {
+      cy.get('h1').should('have.text', Cypress.env('JOURNAL_NAME'))
+      cy.get('h2').should('have.text', `${Cypress.env('JOURNAL_NAME')} description`)
+      cy.get('.btn').contains(Cypress.env('JOURNAL_PRICE'))
+    })
   })
 })

@@ -2,10 +2,11 @@ import {
   expandTocItem,
 } from '../../support/utils'
 
-describe('Logged In User', () => {
+describe('Verify Journal contents', () => {
+  // Login to edX stage using request and get user session
   beforeEach(() => {
     cy.login_request(Cypress.env('JOURNAL_USER_EMAIL'), Cypress.env('JOURNAL_USER_PASSWORD'))
-    Cypress.Cookies.preserveOnce('edxloggedin', 'stage-edx-user-info')
+    // Use the above user session to login to Journals
     cy.visit('/')
     cy.get('.header-actions > .btn').contains('Login').click()
   })
@@ -14,7 +15,7 @@ describe('Logged In User', () => {
     // Click on the Journal card
     cy.contains('E2E Tests Journal').click()
     // Check for the presence of TOC panel
-    cy.contains('#side-nav-panel-toggle', 'Content')
+    cy.get('#side-nav-panel-toggle').should('have.text', 'Contents')
     // Check that by default TOC panel is closed
     cy.get('#nav-panel')
       .should('have.class', 'nav-panel-closed')
