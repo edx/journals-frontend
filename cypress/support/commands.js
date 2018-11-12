@@ -2,7 +2,7 @@
 Cypress.Commands.add('login_request', (userEmail, userPassword) => {
   // Open the Stage landing page to create session
   cy.request({
-    url: 'https://courses.stage.edx.org/login',
+    url: Cypress.env('lms_login_url'),
     failOnStatusCode: false,
     auth: {
       user: Cypress.env('AUTH_USER_NAME'),
@@ -13,7 +13,7 @@ Cypress.Commands.add('login_request', (userEmail, userPassword) => {
   cy.getCookie('csrftoken').its('value').then(($token) => {
     cy.request({
       method: 'POST',
-      url: 'https://courses.stage.edx.org/user_api/v1/account/login_session/',
+      url: Cypress.env('lms_login_api_url'),
       form: true,
       body: {
         email: userEmail,
@@ -21,7 +21,7 @@ Cypress.Commands.add('login_request', (userEmail, userPassword) => {
         remember: false,
       },
       headers: {
-        Referer: 'https://courses.stage.edx.org/login',
+        Referer: Cypress.env('lms_login_url'),
         'X-CSRFToken': $token,
       },
     })

@@ -1,0 +1,10 @@
+{
+  "baseUrl": "https://journals.stage.edx.org",
+  "env": {
+    "ENVIRONMENT": "staging",
+    "journal_title": "E2E Tests Journal",
+    "journal_price": 167,
+    "lms_login_url": "https://courses.stage.edx.org/login",
+    "lms_login_api_url": "https://courses.stage.edx.org/user_api/v1/account/login_session/"
+  }
+}

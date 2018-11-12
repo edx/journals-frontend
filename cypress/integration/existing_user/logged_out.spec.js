@@ -34,9 +34,9 @@ describe('Landing Page Configurations', () => {
     cy.url().should('include', '/about')
     // Check for the Course Information on course hero image
     cy.get('.hero').within(() => {
-      cy.get('h1').should('have.text', Cypress.env('JOURNAL_NAME'))
-      cy.get('h2').should('have.text', `${Cypress.env('JOURNAL_NAME')} description`)
-      cy.get('.btn').contains(Cypress.env('JOURNAL_PRICE'))
+      cy.get('h1').should('have.text', Cypress.env('journal_title'))
+      cy.get('h2').should('have.text', `${Cypress.env('journal_title')} description`)
+      cy.get('.btn').contains(Cypress.env('journal_price'))
     })
   })
 })
