@@ -1,5 +1,6 @@
 import {
   expandTocItem,
+  verifyPageTitle,
 } from '../../support/utils'
 
 describe('Verify Journal contents', () => {
@@ -47,5 +48,28 @@ describe('Verify Journal contents', () => {
     cy.get('@firstGrandChildItem')
       .find('a').first()
       .should('have.text', '1.1.1')
+  })
+
+  it.only('browse pages using next and previous button', () => {
+    // Click on the Journal card
+    cy.contains('E2E Tests Journal').click()
+    // Open the side navigation panel
+    cy.contains('#side-nav-panel-toggle', 'Content').click()
+    // Expand target chapter
+    cy.contains('.toc>ul>li', 'Chapter 3').as('chapter3')
+    expandTocItem('@chapter3')
+    // Click on target page
+    cy.get('@chapter3').find('a').contains('First Page').click()
+    // Check the Title of page and higlighted toc item
+    verifyPageTitle('First Page')
+    // Move to next page and confirm highlighted item and title of page is correct
+    cy.contains('.nav-btn', 'Next').click()
+    verifyPageTitle('Second Page')
+    // Move to next page and confirm highlighted item and title of page is correct
+    cy.contains('.nav-btn', 'Next').click()
+    verifyPageTitle('Third Page')
+    // Move to previous page and confirm highlighted item and title of page is correct
+    cy.contains('.nav-btn', 'Previous').click()
+    verifyPageTitle('Second Page')
   })
 })
