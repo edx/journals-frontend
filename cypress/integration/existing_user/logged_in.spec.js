@@ -50,7 +50,7 @@ describe('Verify Journal contents', () => {
       .should('have.text', '1.1.1')
   })
 
-  it.only('browse pages using next and previous button', () => {
+  it('browse pages using next and previous button', () => {
     // Click on the Journal card
     cy.contains('E2E Tests Journal').click()
     // Open the side navigation panel
