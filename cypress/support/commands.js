@@ -1,5 +1,5 @@
 // Create a command which takes email and password and logs user in using api request
-Cypress.Commands.add('login_request', (userEmail, userPassword) => {
+Cypress.Commands.add('login_using_api', (userEmail, userPassword) => {
   // Open the Stage landing page to create session
   cy.request({
     url: Cypress.env('lms_login_url'),
@@ -27,4 +27,12 @@ Cypress.Commands.add('login_request', (userEmail, userPassword) => {
     })
   })
   Cypress.Cookies.preserveOnce('edxloggedin', 'stage-edx-user-info')
+})
+
+Cypress.Commands.add('login_from_ui', (userEmail, userPassword) => {
+  // Click on the login button and provide email and password to log in
+  cy.get('.header-actions > .btn').contains('Login').click()
+  cy.get('#login-email').type(userEmail)
+  cy.get('#login-password').type(userPassword)
+  cy.get('.action').should('have.text', 'Sign in').click()
 })

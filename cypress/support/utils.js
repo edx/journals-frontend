@@ -22,3 +22,15 @@ export const verifyPageTitle = (pageTitle) => {
   cy.get('.article-title').should('have.text', pageTitle)
   cy.get('.toc .highlight a').should('have.text', pageTitle)
 }
+
+// go to a specific page
+export const goToPage = (capterName, pageTitle) => {
+  cy.contains('#side-nav-panel-toggle', 'Content').click()
+  // Expand target chapter
+  cy.contains('.toc>ul>li', capterName).as('chapter')
+  expandTocItem('@chapter')
+  // Click on target page
+  cy.get('@chapter').find('a').contains(pageTitle).click()
+  // Check the Title of page and higlighted toc item
+  verifyPageTitle(pageTitle)
+}

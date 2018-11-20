@@ -3,6 +3,7 @@
   "defaultCommandTimeout": 10000,
   "requestTimeout": 10000,
   "pageLoadTimeout": 80000,
+  "blacklistHosts": "s3.amazonaws.com",
   "env": {
     "ENVIRONMENT": "staging",
     "journal_title": "E2E Tests Journal",

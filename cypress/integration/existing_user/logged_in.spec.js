@@ -1,12 +1,13 @@
 import {
   expandTocItem,
   verifyPageTitle,
+  goToPage,
 } from '../../support/utils'
 
-describe('Verify Journal contents', () => {
+describe('Verify Journal Navigation', () => {
   // Login to edX stage using request and get user session
   beforeEach(() => {
-    cy.login_request(Cypress.env('JOURNAL_USER_EMAIL'), Cypress.env('JOURNAL_USER_PASSWORD'))
+    cy.login_using_api(Cypress.env('JOURNAL_USER_EMAIL'), Cypress.env('JOURNAL_USER_PASSWORD'))
     // Use the above user session to login to Journals
     cy.visit('/')
     cy.get('.header-actions > .btn').contains('Login').click()
@@ -53,15 +54,8 @@ describe('Verify Journal contents', () => {
   it('browse pages using next and previous button', () => {
     // Click on the Journal card
     cy.contains('E2E Tests Journal').click()
-    // Open the side navigation panel
-    cy.contains('#side-nav-panel-toggle', 'Content').click()
-    // Expand target chapter
-    cy.contains('.toc>ul>li', 'Chapter 3').as('chapter3')
-    expandTocItem('@chapter3')
-    // Click on target page
-    cy.get('@chapter3').find('a').contains('First Page').click()
-    // Check the Title of page and higlighted toc item
-    verifyPageTitle('First Page')
+    // Go to a specific page in a specific chapter
+    goToPage('Chapter 3', 'First Page')
     // Move to next page and confirm highlighted item and title of page is correct
     cy.contains('.nav-btn', 'Next').click()
     verifyPageTitle('Second Page')
@@ -71,5 +65,61 @@ describe('Verify Journal contents', () => {
     // Move to previous page and confirm highlighted item and title of page is correct
     cy.contains('.nav-btn', 'Previous').click()
     verifyPageTitle('Second Page')
+  })
+})
+
+describe('Verify Journal Pages', () => {
+  // Login to edX stage using request and get user session
+  beforeEach(() => {
+    cy.visit('/')
+    cy.login_from_ui(Cypress.env('JOURNAL_USER_EMAIL'), Cypress.env('JOURNAL_USER_PASSWORD'))
+  })
+
+  it('checks Text page', () => {
+    const bodyTexts = ['Simple text', 'Raw html text.']
+    // Click on the Journal card
+    cy.contains('E2E Tests Journal').click()
+    // Go to a specific page in a specific chapter
+    goToPage('Chapter 2', 'Text')
+    cy.get('.journal-page-body')
+      .find('.body-element p').each(($bodyElement, index) => {
+        cy.wrap($bodyElement).should('have.text', bodyTexts[index])
+      })
+  })
+
+  it('checks Images page', () => {
+    const altTexts = ['Apple Sauce', 'Quote']
+    // Click on the Journal card
+    cy.contains('E2E Tests Journal').click()
+    // Go to a specific page in a specific chapter
+    goToPage('Chapter 2', 'Images')
+    cy.get('.journal-page-body')
+      .find('.body-element img').each(($bodyElement, index) => {
+        cy.wrap($bodyElement).should('have.attr', 'alt', altTexts[index])
+      })
+  })
+
+  it('checks Documents page', () => {
+    const docIds = ['pdf-70efdf2ec9b086079795c442636b55fb', 'pdf-a87ff679a2f3e71d9181a67b7542122c']
+    // Click on the Journal card
+    cy.contains('E2E Tests Journal').click()
+    // Go to a specific page in a specific chapter
+    goToPage('Chapter 2', 'Documents')
+    cy.get('.journal-page-body')
+      .find('.body-element>span').each(($bodyElement, index) => {
+        cy.wrap($bodyElement).should('have.attr', 'id', docIds[index])
+      })
+  })
+
+  it('checks Video page', () => {
+    const vidIds = ['xblock_video-e2a2dcc36a08a345332c751b2f2e476c', 'xblock_video-31839b036f63806cba3f47b93af8ccb5']
+    // Click on the Journal card
+    cy.contains('E2E Tests Journal').click()
+    // Go to a specific page in a specific chapter
+    goToPage('Chapter 2', 'Videos')
+    cy.get('.journal-page-body')
+      .find('.body-element>span').each(($bodyElement, index) => {
+        cy.wrap($bodyElement).should('have.attr', 'id', vidIds[index])
+      })
   })
 })
