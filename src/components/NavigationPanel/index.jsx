@@ -35,7 +35,11 @@ class NavigationPanel extends React.Component {
         <div id="nav-panel" className={this.props.navPanelOpen ? 'nav-panel-open' : 'nav-panel-closed'}>
           {
             this.props.journalFinishedFetching ?
-              <TOCViewer journal={this.props.journal} currentPageId={this.props.currentPageId} /> :
+              <TOCViewer
+                journal={this.props.journal}
+                currentPageId={this.props.currentPageId}
+                navPanelOpen={this.props.navPanelOpen}
+              /> :
               'Loading...'
           }
         </div>

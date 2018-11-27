@@ -55,6 +55,7 @@ class TreeViewer extends React.Component {
           {
             this.props.node.children ?
               <Button
+                tabindex={this.props.visible ? 0 : -1}
                 aria-expanded={this.state.expanded}
                 label={
                   <Icon
@@ -71,7 +72,7 @@ class TreeViewer extends React.Component {
               /> :
               <span className="bullet"><div>&bull;</div></span>
           }
-          <Link to={`/${this.props.journalAboutId}/pages/${this.props.node.id}`}>{this.props.node.title}</Link>
+          <Link tabindex={this.props.visible ? 0 : -1} to={`/${this.props.journalAboutId}/pages/${this.props.node.id}`}>{this.props.node.title}</Link>
         </span>
         {
           this.props.node.children &&
@@ -81,6 +82,7 @@ class TreeViewer extends React.Component {
               journalAboutId={this.props.journalAboutId}
               currentPageId={this.props.currentPageId}
               expandParent={this.setExpanded}
+              visible={this.props.visible && this.state.expanded}
             />
           </ul>
         }
@@ -97,6 +99,7 @@ const TreeList = props => (
       journalAboutId={props.journalAboutId}
       currentPageId={props.currentPageId}
       expandParent={props.expandParent}
+      visible={props.visible}
     />
   ))
 );
@@ -110,6 +113,7 @@ const TOCViewer = props => (
         structure={props.journal.structure}
         journalAboutId={props.journal.journalAboutId}
         currentPageId={props.currentPageId}
+        visible={props.navPanelOpen}
       />
     </ul>
   </div>
@@ -121,6 +125,7 @@ TreeViewer.defaultProps = {
 };
 
 TreeViewer.propTypes = {
+  visible: PropTypes.bool.isRequired,
   node: PropTypes.shape({
     id: PropTypes.number,
     title: PropTypes.string,
@@ -132,6 +137,7 @@ TreeViewer.propTypes = {
 };
 
 TreeList.propTypes = {
+  visible: PropTypes.bool.isRequired,
   structure: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number,
     title: PropTypes.string,
@@ -145,6 +151,7 @@ TOCViewer.defaultProps = {
 };
 
 TOCViewer.propTypes = {
+  navPanelOpen: PropTypes.bool.isRequired,
   journal: PropTypes.shape({
     journalAboutId: PropTypes.number,
     title: PropTypes.string,
