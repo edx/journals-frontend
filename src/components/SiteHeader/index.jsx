@@ -42,42 +42,47 @@ class SiteHeader extends React.Component {
   }
 
   render() {
+    if (this.props.finishedFetching) {
+      return (
+        <div className={`site-header ${this.props.className}`}>
+          <div>
+            <Link className="site-logo-link" to="/">
+              <img className="site-logo" alt="site logo" src={this.props.siteLogo} />
+            </Link>
+            <span className="d-none d-lg-inline journal-name">{this.props.journalName}</span>
+          </div>
+          <div className="header-actions">
+            {
+              this.props.isAuthenticated &&
+                <span className="d-none d-lg-inline-block">
+                  <SearchBar journalId={this.props.journalId} history={this.props.history} />
+                </span>
+            }
+            {
+              this.props.isAuthenticated ? (
+                <div className="account-info">
+                  <Dropdown
+                    className="control-btn"
+                    title={
+                      <div>
+                        <Icon className="fa fa-user" />
+                        <span>Account</span>
+                      </div>
+                    }
+                    buttonType={null}
+                    menuItems={this.getMenuItems()}
+                  />
+                </div>
+              ) : (
+                <Hyperlink className="btn control-btn" destination={this.props.loginPath} content="Login" />
+              )
+            }
+          </div>
+        </div>
+      );
+    }
     return (
-      <div className={`site-header ${this.props.className}`}>
-        <div>
-          <Link className="site-logo-link" to="/">
-            <img className="site-logo" alt="site logo" src={this.props.siteLogo} />
-          </Link>
-          <span className="d-none d-lg-inline journal-name">{this.props.journalName}</span>
-        </div>
-        <div className="header-actions">
-          {
-            this.props.isAuthenticated &&
-              <span className="d-none d-lg-inline-block">
-                <SearchBar journalId={this.props.journalId} history={this.props.history} />
-              </span>
-          }
-          {
-            this.props.isAuthenticated ? (
-              <div className="account-info">
-                <Dropdown
-                  className="control-btn"
-                  title={
-                    <div>
-                      <Icon className="fa fa-user" />
-                      <span>Account</span>
-                    </div>
-                  }
-                  buttonType={null}
-                  menuItems={this.getMenuItems()}
-                />
-              </div>
-            ) : (
-              <Hyperlink className="btn control-btn" destination={this.props.loginPath} content="Login" />
-            )
-          }
-        </div>
-      </div>
+      <div className="site-header" />
     );
   }
 }
@@ -96,6 +101,7 @@ SiteHeader.defaultProps = {
   className: '',
   cmsPath: '',
   canAccessAdmin: false,
+  finishedFetching: false,
 };
 
 SiteHeader.propTypes = {
@@ -115,6 +121,7 @@ SiteHeader.propTypes = {
   className: PropTypes.string,
   cmsPath: PropTypes.string,
   canAccessAdmin: PropTypes.bool,
+  finishedFetching: PropTypes.bool,
 };
 
 export default SiteHeader;

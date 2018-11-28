@@ -9,6 +9,7 @@ const mapStateToProps = state => (
   {
     siteLogo: state.siteInfo.logo,
     footerLinks: state.siteInfo.footerLinks,
+    finishedFetching: state.siteInfo.finishedFetching,
   }
 );
 

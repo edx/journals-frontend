@@ -24,18 +24,26 @@ const LinkList = footerLinks => (
 );
 
 
-const Footer = props => (
-  <footer className="page-footer">
-    <div className="footer-content">
-      <img className="site-logo" alt="site logo" src={props.siteLogo} />
-      {LinkList(props.footerLinks)}
-    </div>
-  </footer>
-);
+const Footer = (props) => {
+  if (props.finishedFetching) {
+    return (
+      <footer className="page-footer">
+        <div className="footer-content">
+          <img className="site-logo" alt="site logo" src={props.siteLogo} />
+          {LinkList(props.footerLinks)}
+        </div>
+      </footer>
+    );
+  }
+  return (
+    <footer className="page-footer" />
+  );
+};
 
 Footer.defaultProps = {
   siteLogo: '',
   footerLinks: [],
+  finishedFetching: false,
 };
 
 Footer.propTypes = {
@@ -44,6 +52,7 @@ Footer.propTypes = {
     destination_link: PropTypes.string,
     label_text: PropTypes.string,
   })),
+  finishedFetching: PropTypes.bool,
 };
 
 export default Footer;
