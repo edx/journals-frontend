@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { Dropdown, Hyperlink, Icon } from '@edx/paragon';
 
 import SearchBar from '../SearchBar';
+import ImgWithDefault from '../ImgWithDefault';
 
 import './SiteHeader.scss';
 
@@ -17,6 +18,7 @@ const getCurrentPage = (pageId, aboutPageId, indexPageId) => {
   const matchingRoutes = ROUTES.filter(route => route.path.test(window.location.pathname));
   return matchingRoutes.length > 0 ? matchingRoutes[0].id : null;
 };
+
 
 class SiteHeader extends React.Component {
   componentDidUpdate(prevProps) {
@@ -56,7 +58,7 @@ class SiteHeader extends React.Component {
         <div className={`site-header ${this.props.className}`}>
           <div>
             <Link className="site-logo-link" to="/">
-              <img className="site-logo" alt="site logo" src={this.props.siteLogo} />
+              <ImgWithDefault className="site-logo" img={this.props.siteLogo} altText="header logo" />
             </Link>
             <span className="d-none d-lg-inline journal-name">{this.props.journalName}</span>
           </div>
