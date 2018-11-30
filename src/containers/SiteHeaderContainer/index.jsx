@@ -17,6 +17,7 @@ const mapStateToProps = state => (
     siteLogo: state.siteInfo.logo,
     canAccessAdmin: state.siteInfo.canAccessAdmin,
     cmsPath: `${state.siteInfo.serverBaseUrl}/cms`,
+    finishedFetching: state.siteInfo.finishedFetching,
   }
 );
 
