@@ -19,6 +19,15 @@ const getCurrentPage = (pageId, aboutPageId, indexPageId) => {
 };
 
 class SiteHeader extends React.Component {
+  componentDidUpdate(prevProps) {
+    if (this.searchBar && !prevProps.finishedFetching && this.props.finishedFetching) {
+      const searchInputs = this.searchBar.getElementsByTagName('input');
+      if (searchInputs.length) {
+        searchInputs[0].focus();
+      }
+    }
+  }
+
   getEditorLink() {
     const currentPageId = getCurrentPage(
       this.props.pageId,
@@ -54,9 +63,11 @@ class SiteHeader extends React.Component {
           <div className="header-actions">
             {
               this.props.isAuthenticated &&
+              <div ref={(searchBar) => { this.searchBar = searchBar; }}>
                 <span className="d-none d-lg-inline-block">
                   <SearchBar journalId={this.props.journalId} history={this.props.history} />
                 </span>
+              </div>
             }
             {
               this.props.isAuthenticated ? (
