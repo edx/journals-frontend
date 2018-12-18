@@ -16,6 +16,7 @@ const journal = (state = {
   journalId: null,
   purchaseUrl: '',
   price: '0',
+  accessLength: 0,
   structure: [],
   startedFetching: false,
   finishedFetching: false,
@@ -36,6 +37,7 @@ const journal = (state = {
         structure: action.journal.structure,
         purchaseUrl: action.journal.purchase_url,
         price: action.journal.price,
+        accessLength: action.journal.access_length,
       };
     case GET_JOURNAL_FAILURE:
       return {

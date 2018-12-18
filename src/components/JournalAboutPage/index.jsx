@@ -21,6 +21,7 @@ const JournalAboutPage = (props) => {
           journalAboutId={props.journal.journalAboutId}
           purchaseUrl={`${props.serverBaseUrl}${props.journal.purchaseUrl}`}
           price={props.journal.price}
+          accessLength={props.journal.accessLength}
         />
         <div>
           <p className="long-description">{props.journal.longDescription}</p>
@@ -53,6 +54,7 @@ JournalAboutPage.propTypes = {
     journalId: PropTypes.number,
     purchaseUrl: PropTypes.string,
     price: PropTypes.string,
+    accessLength: PropTypes.number,
     finishedFetching: PropTypes.bool,
     startedFetching: PropTypes.bool,
   }).isRequired,
