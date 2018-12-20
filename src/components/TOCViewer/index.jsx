@@ -55,7 +55,7 @@ class TreeViewer extends React.Component {
           {
             this.props.node.children ?
               <Button
-                tabindex={this.props.visible ? 0 : -1}
+                tabIndex={this.props.visible ? 0 : -1}
                 aria-expanded={this.state.expanded}
                 label={
                   <Icon
@@ -72,7 +72,7 @@ class TreeViewer extends React.Component {
               /> :
               <span className="bullet"><div>&bull;</div></span>
           }
-          <Link tabindex={this.props.visible ? 0 : -1} to={`/${this.props.journalAboutId}/pages/${this.props.node.id}`}>{this.props.node.title}</Link>
+          <Link tabIndex={this.props.visible ? 0 : -1} to={`/${this.props.journalAboutId}/pages/${this.props.node.id}`}>{this.props.node.title}</Link>
         </span>
         {
           this.props.node.children &&
