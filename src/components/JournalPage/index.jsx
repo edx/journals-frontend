@@ -1,6 +1,11 @@
 import React from 'react';
 import Moment from 'react-moment';
 import PropTypes from 'prop-types';
+import hljs from 'highlight.js/lib/highlight';
+import javascript from 'highlight.js/lib/languages/javascript';
+import xml from 'highlight.js/lib/languages/xml';
+import python from 'highlight.js/lib/languages/python';
+import 'highlight.js/styles/default.css';
 import {
   RICH_TEXT,
   RAW_HTML,
@@ -20,6 +25,9 @@ import XBlockVideoViewer from '../XBlockVideoViewer';
 
 import './JournalPage.scss';
 
+hljs.registerLanguage('javascript', javascript);
+hljs.registerLanguage('xml', xml);
+hljs.registerLanguage('python', python);
 
 class JournalPage extends React.Component {
   componentDidMount() {
@@ -36,6 +44,7 @@ class JournalPage extends React.Component {
       this.trackVisit();
     }
     if (this.props.finishedFetching) {
+      hljs.initHighlighting();
       document.getElementsByClassName('header')[0].scrollIntoView();
     }
   }
