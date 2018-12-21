@@ -22,6 +22,7 @@ class JournalAboutPreview extends React.Component {
           journalId: this.props.previewPage.journal_id,
           purchaseUrl: this.props.previewPage.purchase_url,
           price: this.props.previewPage.price,
+          accessLength: this.props.previewPage.accessLength,
         }}
         serverBaseUrl={this.props.serverBaseUrl}
         authorizedJournals={this.props.authorizedJournals}
@@ -48,6 +49,7 @@ JournalAboutPreview.propTypes = {
     journal_id: PropTypes.number,
     purchase_url: PropTypes.string,
     price: PropTypes.string,
+    accessLength: PropTypes.number,
   }).isRequired,
   serverBaseUrl: PropTypes.string,
   authorizedJournals: PropTypes.arrayOf(PropTypes.number),

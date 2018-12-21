@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Hyperlink } from '@edx/paragon';
+import helpers from './utils';
 import './HeroBanner.scss';
 
 
@@ -9,7 +10,7 @@ const ViewOrPurchaseButton = props => (
   props.authorized ? (
     <Link to={{ pathname: `/${props.journalAboutId}` }} className="btn btn-success">View Now</Link>
   ) : (
-    <Hyperlink destination={props.purchaseUrl} className="btn btn-success" content={`Purchase Access ($${props.price})`} />
+    <Hyperlink destination={props.purchaseUrl} className="btn btn-success" content={`Purchase Access ($${props.price}) for ${helpers.accessLengthInMonths(props.accessLength)}`} />
   )
 );
 
@@ -28,6 +29,7 @@ const HeroBanner = props => (
             journalAboutId={props.journalAboutId}
             purchaseUrl={props.purchaseUrl}
             price={props.price}
+            accessLength={props.accessLength}
           />
         </div>
     }
@@ -39,6 +41,7 @@ ViewOrPurchaseButton.defaultProps = {
   journalAboutId: 0,
   purchaseUrl: '',
   price: '',
+  accessLength: 0,
 };
 
 ViewOrPurchaseButton.propTypes = {
@@ -46,6 +49,7 @@ ViewOrPurchaseButton.propTypes = {
   journalAboutId: PropTypes.number,
   purchaseUrl: PropTypes.string,
   price: PropTypes.string,
+  accessLength: PropTypes.number,
 };
 
 
@@ -58,6 +62,7 @@ HeroBanner.defaultProps = {
   journalAboutId: 0,
   purchaseUrl: '',
   price: '',
+  accessLength: 0,
 };
 
 HeroBanner.propTypes = {
@@ -69,6 +74,7 @@ HeroBanner.propTypes = {
   journalAboutId: PropTypes.number,
   purchaseUrl: PropTypes.string,
   price: PropTypes.string,
+  accessLength: PropTypes.number,
 };
 
 export default HeroBanner;
