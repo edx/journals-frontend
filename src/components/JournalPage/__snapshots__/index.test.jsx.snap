@@ -1,0 +1,872 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<JournalPage /> Data fetching not finished and checks that page is loading. 1`] = `
+<div
+  className="journal-page-body"
+>
+  Loading...
+</div>
+`;
+
+exports[`<JournalPage /> renders correctly error page with 404 status code. 1`] = `
+<div>
+  <div
+    className="mt-3"
+  >
+    <div
+      className="text-center py-5"
+    >
+      <h1>
+        404
+      </h1>
+      <p
+        className="lead"
+      >
+        Oops, sorry we can't find that page!
+      </p>
+      <p>
+        Either something went wrong or the page doesn't exist anymore.
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<JournalPage /> renders correctly with DUMMY component 1`] = `
+<div
+  className="page"
+>
+  <ul
+    className="bread-crumb-list"
+  >
+    <li>
+      <a
+        className="bread-crumb-link"
+        href="/12/pages/1"
+        onClick={[Function]}
+      >
+        <u>
+          dummy
+        </u>
+      </a>
+      <span
+        aria-hidden={true}
+        className="fa fa-angle-right bread-crumb-arrow"
+        id="Icon1"
+      />
+    </li>
+  </ul>
+  <h1
+    className="article-title"
+  >
+    dummy title
+  </h1>
+  <h2
+    className="subtitle"
+  >
+    dummy subtitle
+  </h2>
+  <div
+    className="date-and-author"
+  >
+    <p
+      className="muted-text"
+    >
+      
+    </p>
+  </div>
+  <div
+    className="journal-page-body"
+  >
+    <div>
+      No matching component
+    </div>
+  </div>
+  <div
+    className="page-nav-btns"
+  >
+    <a
+      className="btn btn-outline-secondary nav-btn"
+      href="/12/pages/1"
+      onClick={[Function]}
+    >
+      <div
+        className="btn-label"
+      >
+        <span
+          aria-hidden={true}
+          className="fa fa-angle-left"
+          id="Icon1"
+        />
+        <span
+          className="btn-text"
+        >
+          Previous
+        </span>
+      </div>
+    </a>
+    <a
+      className="btn btn-outline-secondary nav-btn"
+      href="/12/pages/3"
+      onClick={[Function]}
+    >
+      <div
+        className="btn-label"
+      >
+        <span
+          className="btn-text"
+        >
+          Next
+        </span>
+        <span
+          aria-hidden={true}
+          className="fa fa-angle-right"
+          id="Icon1"
+        />
+      </div>
+    </a>
+  </div>
+</div>
+`;
+
+exports[`<JournalPage /> renders correctly with IMAGE component 1`] = `
+<div
+  className="page"
+>
+  <ul
+    className="bread-crumb-list"
+  >
+    <li>
+      <a
+        className="bread-crumb-link"
+        href="/12/pages/1"
+        onClick={[Function]}
+      >
+        <u>
+          dummy
+        </u>
+      </a>
+      <span
+        aria-hidden={true}
+        className="fa fa-angle-right bread-crumb-arrow"
+        id="Icon1"
+      />
+    </li>
+  </ul>
+  <h1
+    className="article-title"
+  >
+    dummy title
+  </h1>
+  <h2
+    className="subtitle"
+  >
+    dummy subtitle
+  </h2>
+  <div
+    className="date-and-author"
+  >
+    <p
+      className="muted-text"
+    >
+      
+    </p>
+  </div>
+  <div
+    className="journal-page-body"
+  >
+    <div
+      className="body-element"
+    >
+      <span
+        id="i-id"
+      >
+        <div
+          className="viewer-border"
+        >
+          <div
+            className="grow"
+          >
+            <div
+              className="viewer-title"
+            >
+              i-title
+            </div>
+          </div>
+          <div
+            className="viewer-content"
+          >
+            <img
+              alt="i-title"
+              className="image-block"
+              src="ex.pk/image"
+            />
+          </div>
+          <div
+            className="viewer-caption grow"
+          >
+            <div
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "dummy",
+                }
+              }
+            />
+          </div>
+        </div>
+      </span>
+    </div>
+  </div>
+  <div
+    className="page-nav-btns"
+  >
+    <a
+      className="btn btn-outline-secondary nav-btn"
+      href="/12/pages/1"
+      onClick={[Function]}
+    >
+      <div
+        className="btn-label"
+      >
+        <span
+          aria-hidden={true}
+          className="fa fa-angle-left"
+          id="Icon1"
+        />
+        <span
+          className="btn-text"
+        >
+          Previous
+        </span>
+      </div>
+    </a>
+    <a
+      className="btn btn-outline-secondary nav-btn"
+      href="/12/pages/3"
+      onClick={[Function]}
+    >
+      <div
+        className="btn-label"
+      >
+        <span
+          className="btn-text"
+        >
+          Next
+        </span>
+        <span
+          aria-hidden={true}
+          className="fa fa-angle-right"
+          id="Icon1"
+        />
+      </div>
+    </a>
+  </div>
+</div>
+`;
+
+exports[`<JournalPage /> renders correctly with PDF component 1`] = `
+<div
+  className="page"
+>
+  <ul
+    className="bread-crumb-list"
+  >
+    <li>
+      <a
+        className="bread-crumb-link"
+        href="/12/pages/1"
+        onClick={[Function]}
+      >
+        <u>
+          dummy
+        </u>
+      </a>
+      <span
+        aria-hidden={true}
+        className="fa fa-angle-right bread-crumb-arrow"
+        id="Icon1"
+      />
+    </li>
+  </ul>
+  <h1
+    className="article-title"
+  >
+    dummy title
+  </h1>
+  <h2
+    className="subtitle"
+  >
+    dummy subtitle
+  </h2>
+  <div
+    className="date-and-author"
+  >
+    <p
+      className="muted-text"
+    >
+      
+    </p>
+  </div>
+  <div
+    className="journal-page-body"
+  >
+    <div
+      className="body-element"
+    >
+      <span
+        id="p-id"
+      >
+        <div
+          className="viewer-border w-100"
+        >
+          <div
+            className="grow"
+          >
+            <div
+              className="viewer-title"
+            >
+              p-title
+              <button
+                className="btn control-btn float-right"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                type="button"
+              >
+                <span
+                  aria-hidden={true}
+                  className="fa fa-expand"
+                  id="Icon1"
+                />
+              </button>
+            </div>
+          </div>
+          <div
+            className="fullscreen"
+            style={undefined}
+          >
+            <div
+              className="viewer-content"
+            >
+              <div
+                className="embed-responsive responsive-pdf"
+              >
+                <iframe
+                  className="embed-responsive-item"
+                  src="example.com/static/pdf_js/web/viewer.html?file=example.com/PDF"
+                  title="p-title"
+                />
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </span>
+    </div>
+  </div>
+  <div
+    className="page-nav-btns"
+  >
+    <a
+      className="btn btn-outline-secondary nav-btn"
+      href="/12/pages/1"
+      onClick={[Function]}
+    >
+      <div
+        className="btn-label"
+      >
+        <span
+          aria-hidden={true}
+          className="fa fa-angle-left"
+          id="Icon1"
+        />
+        <span
+          className="btn-text"
+        >
+          Previous
+        </span>
+      </div>
+    </a>
+    <a
+      className="btn btn-outline-secondary nav-btn"
+      href="/12/pages/3"
+      onClick={[Function]}
+    >
+      <div
+        className="btn-label"
+      >
+        <span
+          className="btn-text"
+        >
+          Next
+        </span>
+        <span
+          aria-hidden={true}
+          className="fa fa-angle-right"
+          id="Icon1"
+        />
+      </div>
+    </a>
+  </div>
+</div>
+`;
+
+exports[`<JournalPage /> renders correctly with RAW HTML component 1`] = `
+<div
+  className="page"
+>
+  <ul
+    className="bread-crumb-list"
+  >
+    <li>
+      <a
+        className="bread-crumb-link"
+        href="/12/pages/1"
+        onClick={[Function]}
+      >
+        <u>
+          dummy
+        </u>
+      </a>
+      <span
+        aria-hidden={true}
+        className="fa fa-angle-right bread-crumb-arrow"
+        id="Icon1"
+      />
+    </li>
+  </ul>
+  <h1
+    className="article-title"
+  >
+    dummy title
+  </h1>
+  <h2
+    className="subtitle"
+  >
+    dummy subtitle
+  </h2>
+  <div
+    className="date-and-author"
+  >
+    <p
+      className="muted-text"
+    >
+      
+    </p>
+  </div>
+  <div
+    className="journal-page-body"
+  >
+    <div
+      className="body-element"
+    >
+      <div
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "body with raw_html",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className="page-nav-btns"
+  >
+    <a
+      className="btn btn-outline-secondary nav-btn"
+      href="/12/pages/1"
+      onClick={[Function]}
+    >
+      <div
+        className="btn-label"
+      >
+        <span
+          aria-hidden={true}
+          className="fa fa-angle-left"
+          id="Icon1"
+        />
+        <span
+          className="btn-text"
+        >
+          Previous
+        </span>
+      </div>
+    </a>
+    <a
+      className="btn btn-outline-secondary nav-btn"
+      href="/12/pages/3"
+      onClick={[Function]}
+    >
+      <div
+        className="btn-label"
+      >
+        <span
+          className="btn-text"
+        >
+          Next
+        </span>
+        <span
+          aria-hidden={true}
+          className="fa fa-angle-right"
+          id="Icon1"
+        />
+      </div>
+    </a>
+  </div>
+</div>
+`;
+
+exports[`<JournalPage /> renders correctly with RICH TEXT component 1`] = `
+<div
+  className="page"
+>
+  <ul
+    className="bread-crumb-list"
+  >
+    <li>
+      <a
+        className="bread-crumb-link"
+        href="/12/pages/1"
+        onClick={[Function]}
+      >
+        <u>
+          dummy
+        </u>
+      </a>
+      <span
+        aria-hidden={true}
+        className="fa fa-angle-right bread-crumb-arrow"
+        id="Icon1"
+      />
+    </li>
+  </ul>
+  <h1
+    className="article-title"
+  >
+    dummy title
+  </h1>
+  <h2
+    className="subtitle"
+  >
+    dummy subtitle
+  </h2>
+  <div
+    className="date-and-author"
+  >
+    <p
+      className="muted-text"
+    >
+      
+    </p>
+  </div>
+  <div
+    className="journal-page-body"
+  >
+    <div
+      className="body-element"
+    >
+      <div
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "body with rich_text",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className="page-nav-btns"
+  >
+    <a
+      className="btn btn-outline-secondary nav-btn"
+      href="/12/pages/1"
+      onClick={[Function]}
+    >
+      <div
+        className="btn-label"
+      >
+        <span
+          aria-hidden={true}
+          className="fa fa-angle-left"
+          id="Icon1"
+        />
+        <span
+          className="btn-text"
+        >
+          Previous
+        </span>
+      </div>
+    </a>
+    <a
+      className="btn btn-outline-secondary nav-btn"
+      href="/12/pages/3"
+      onClick={[Function]}
+    >
+      <div
+        className="btn-label"
+      >
+        <span
+          className="btn-text"
+        >
+          Next
+        </span>
+        <span
+          aria-hidden={true}
+          className="fa fa-angle-right"
+          id="Icon1"
+        />
+      </div>
+    </a>
+  </div>
+</div>
+`;
+
+exports[`<JournalPage /> renders correctly with XBLOCK VIDEO component 1`] = `
+<div
+  className="page"
+>
+  <ul
+    className="bread-crumb-list"
+  >
+    <li>
+      <a
+        className="bread-crumb-link"
+        href="/12/pages/1"
+        onClick={[Function]}
+      >
+        <u>
+          dummy
+        </u>
+      </a>
+      <span
+        aria-hidden={true}
+        className="fa fa-angle-right bread-crumb-arrow"
+        id="Icon1"
+      />
+    </li>
+  </ul>
+  <h1
+    className="article-title"
+  >
+    dummy title
+  </h1>
+  <h2
+    className="subtitle"
+  >
+    dummy subtitle
+  </h2>
+  <div
+    className="date-and-author"
+  >
+    <p
+      className="muted-text"
+    >
+      
+    </p>
+  </div>
+  <div
+    className="journal-page-body"
+  >
+    <div
+      className="body-element"
+    >
+      <span
+        id="v-id"
+      >
+        <div
+          className="viewer-border w-100"
+        >
+          <div
+            className="grow"
+          >
+            <div
+              className="viewer-title"
+            >
+              v-title
+              <button
+                className="btn control-btn float-right"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                type="button"
+              >
+                <span
+                  aria-hidden={true}
+                  className="fa fa-expand"
+                  id="Icon1"
+                />
+              </button>
+            </div>
+          </div>
+          <div
+            className="fullscreen"
+            style={undefined}
+          >
+            <div
+              className="viewer-content"
+            >
+              <div
+                className="xblock-video-container embed-responsive responsive-video"
+              >
+                <iframe
+                  allowFullScreen={true}
+                  className="imported-xblock-video embed-responsive-item"
+                  src="ex.pk/video"
+                  title="v-title"
+                />
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </span>
+    </div>
+  </div>
+  <div
+    className="page-nav-btns"
+  >
+    <a
+      className="btn btn-outline-secondary nav-btn"
+      href="/12/pages/1"
+      onClick={[Function]}
+    >
+      <div
+        className="btn-label"
+      >
+        <span
+          aria-hidden={true}
+          className="fa fa-angle-left"
+          id="Icon1"
+        />
+        <span
+          className="btn-text"
+        >
+          Previous
+        </span>
+      </div>
+    </a>
+    <a
+      className="btn btn-outline-secondary nav-btn"
+      href="/12/pages/3"
+      onClick={[Function]}
+    >
+      <div
+        className="btn-label"
+      >
+        <span
+          className="btn-text"
+        >
+          Next
+        </span>
+        <span
+          aria-hidden={true}
+          className="fa fa-angle-right"
+          id="Icon1"
+        />
+      </div>
+    </a>
+  </div>
+</div>
+`;
+
+exports[`<JournalPage /> renders correctly with last publish date. 1`] = `
+<div
+  className="page"
+>
+  <ul
+    className="bread-crumb-list"
+  >
+    <li>
+      <a
+        className="bread-crumb-link"
+        href="/12/pages/1"
+        onClick={[Function]}
+      >
+        <u>
+          dummy
+        </u>
+      </a>
+      <span
+        aria-hidden={true}
+        className="fa fa-angle-right bread-crumb-arrow"
+        id="Icon1"
+      />
+    </li>
+  </ul>
+  <h1
+    className="article-title"
+  >
+    dummy title
+  </h1>
+  <h2
+    className="subtitle"
+  >
+    dummy subtitle
+  </h2>
+  <div
+    className="date-and-author"
+  >
+    <p
+      className="muted-text"
+    >
+      <time
+        dateTime={"1976-04-19T00:00:00.000Z"}
+      >
+        April 19, 1976
+      </time>
+    </p>
+    <p
+      className="muted-text"
+    >
+      By jon doe
+    </p>
+  </div>
+  <div
+    className="journal-page-body"
+  />
+  <div
+    className="page-nav-btns"
+  >
+    <a
+      className="btn btn-outline-secondary nav-btn"
+      href="/12/pages/1"
+      onClick={[Function]}
+    >
+      <div
+        className="btn-label"
+      >
+        <span
+          aria-hidden={true}
+          className="fa fa-angle-left"
+          id="Icon1"
+        />
+        <span
+          className="btn-text"
+        >
+          Previous
+        </span>
+      </div>
+    </a>
+    <a
+      className="btn btn-outline-secondary nav-btn"
+      href="/12/pages/3"
+      onClick={[Function]}
+    >
+      <div
+        className="btn-label"
+      >
+        <span
+          className="btn-text"
+        >
+          Next
+        </span>
+        <span
+          aria-hidden={true}
+          className="fa fa-angle-right"
+          id="Icon1"
+        />
+      </div>
+    </a>
+  </div>
+</div>
+`;
