@@ -1,0 +1,347 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SearchResults/> renders with error 1`] = `
+<div
+  className="result-progress"
+>
+   Error occurred searching
+</div>
+`;
+
+exports[`<SearchResults/> renders with filter all 1`] = `
+<div>
+  <div
+    className="results-container"
+  >
+    <a
+      className="card-link"
+      href="/12/pages/15#"
+      onClick={[Function]}
+    >
+      <div
+        className="search-result-card"
+      >
+        <div
+          className="result-icon"
+        >
+          <span
+            aria-hidden={true}
+            className="fa fa-file-pdf-o"
+            id="Icon1"
+          />
+          <span
+            className="result-title"
+          >
+            block 1
+          </span>
+        </div>
+        <div
+          className="result-highlight"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "1 <b>foo </b>",
+            }
+          }
+        />
+        <div
+          className="result-highlight"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "2 <b>foo </b>",
+            }
+          }
+        />
+        <div
+          className="result-highlight"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "3 <b>foo </b>",
+            }
+          }
+        />
+        <div
+          className="additional-highlights"
+        >
+          <span>
+            + 2 more instances
+          </span>
+        </div>
+        <div
+          className="breadcrumb"
+        >
+          <div
+            className="result-breadcrumb"
+          >
+            x
+          </div>
+          <div
+            className="result-breadcrumb"
+          >
+            y
+          </div>
+        </div>
+      </div>
+    </a>
+    <a
+      className="card-link"
+      href="/12/pages/13#xblock_video-c81e728d9d4c2f636f067f89cc14862c"
+      onClick={[Function]}
+    >
+      <div
+        className="search-result-card"
+      >
+        <div
+          className="result-icon"
+        >
+          <span
+            aria-hidden={true}
+            className="fa fa-file-video-o"
+            id="Icon1"
+          />
+          <span
+            className="result-title"
+          >
+            Science and Cooking Chef Profile: JOSÉ ANDRÉS
+          </span>
+        </div>
+        <div
+          className="result-highlight"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "video-title: performance director <b>foo</b>",
+            }
+          }
+        />
+        <div
+          className="breadcrumb"
+        />
+      </div>
+    </a>
+    <a
+      className="card-link"
+      href="/12/pages/13#image-c4ca4238a0b923820dcc509a6f75849b"
+      onClick={[Function]}
+    >
+      <div
+        className="search-result-card"
+      >
+        <div
+          className="result-icon"
+        >
+          <span
+            aria-hidden={true}
+            className="fa fa-picture-o"
+            id="Icon1"
+          />
+          <span
+            className="result-title"
+          >
+            image-title: foo
+          </span>
+        </div>
+        <div
+          className="result-highlight"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "image-title: <b>foo</b>",
+            }
+          }
+        />
+        <div
+          className="breadcrumb"
+        />
+      </div>
+    </a>
+  </div>
+</div>
+`;
+
+exports[`<SearchResults/> renders with filter document 1`] = `
+<div>
+  <div
+    className="results-container"
+  >
+    <a
+      className="card-link"
+      href="/12/pages/15#"
+      onClick={[Function]}
+    >
+      <div
+        className="search-result-card"
+      >
+        <div
+          className="result-icon"
+        >
+          <span
+            aria-hidden={true}
+            className="fa fa-file-pdf-o"
+            id="Icon1"
+          />
+          <span
+            className="result-title"
+          >
+            block 1
+          </span>
+        </div>
+        <div
+          className="result-highlight"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "1 <b>foo </b>",
+            }
+          }
+        />
+        <div
+          className="result-highlight"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "2 <b>foo </b>",
+            }
+          }
+        />
+        <div
+          className="result-highlight"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "3 <b>foo </b>",
+            }
+          }
+        />
+        <div
+          className="additional-highlights"
+        >
+          <span>
+            + 2 more instances
+          </span>
+        </div>
+        <div
+          className="breadcrumb"
+        >
+          <div
+            className="result-breadcrumb"
+          >
+            x
+          </div>
+          <div
+            className="result-breadcrumb"
+          >
+            y
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
+`;
+
+exports[`<SearchResults/> renders with filter image  1`] = `
+<div>
+  <div
+    className="results-container"
+  >
+    <a
+      className="card-link"
+      href="/12/pages/13#image-c4ca4238a0b923820dcc509a6f75849b"
+      onClick={[Function]}
+    >
+      <div
+        className="search-result-card"
+      >
+        <div
+          className="result-icon"
+        >
+          <span
+            aria-hidden={true}
+            className="fa fa-picture-o"
+            id="Icon1"
+          />
+          <span
+            className="result-title"
+          >
+            image-title: foo
+          </span>
+        </div>
+        <div
+          className="result-highlight"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "image-title: <b>foo</b>",
+            }
+          }
+        />
+        <div
+          className="breadcrumb"
+        />
+      </div>
+    </a>
+  </div>
+</div>
+`;
+
+exports[`<SearchResults/> renders with filter video  1`] = `
+<div>
+  <div
+    className="results-container"
+  >
+    <a
+      className="card-link"
+      href="/12/pages/13#xblock_video-c81e728d9d4c2f636f067f89cc14862c"
+      onClick={[Function]}
+    >
+      <div
+        className="search-result-card"
+      >
+        <div
+          className="result-icon"
+        >
+          <span
+            aria-hidden={true}
+            className="fa fa-file-video-o"
+            id="Icon1"
+          />
+          <span
+            className="result-title"
+          >
+            Science and Cooking Chef Profile: JOSÉ ANDRÉS
+          </span>
+        </div>
+        <div
+          className="result-highlight"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "video-title: performance director <b>foo</b>",
+            }
+          }
+        />
+        <div
+          className="breadcrumb"
+        />
+      </div>
+    </a>
+  </div>
+</div>
+`;
+
+exports[`<SearchResults/> renders with no finish loading 1`] = `
+<div
+  className="result-progress"
+>
+   Searching...
+</div>
+`;
+
+exports[`<SearchResults/> renders with no searchResults 1`] = `
+<div
+  className="result-progress"
+>
+  No matching results found
+</div>
+`;
+
+exports[`<SearchResults/> renders with wrong filter 1`] = `
+<div
+  className="result-progress"
+>
+  No matching results found
+</div>
+`;
