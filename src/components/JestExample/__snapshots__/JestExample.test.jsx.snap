@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Image viewer with missing img 1`] = `
+<div
+  className="alert fade alert-danger show"
+  hidden={false}
+  role="alert"
+>
+  <div
+    className="alert-dialog"
+  >
+    <div
+      className="alert-dialog"
+    >
+      <div
+        className="icon mr-2"
+      >
+        <span
+          aria-hidden={true}
+          className="fa fa-times-circle"
+          id="Icon1"
+        />
+      </div>
+      <div
+        className="message"
+      >
+        <span>
+          Image not found
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Image viewer with valid img 1`] = `
+<img
+  alt="My Test Image"
+  className="image-block"
+  src="http://foo.com/myimg.png"
+/>
+`;
+
+exports[`renders correctly 1`] = `
+<a
+  className="normal"
+  href="http://www.facebook.com"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  Facebook
+</a>
+`;
