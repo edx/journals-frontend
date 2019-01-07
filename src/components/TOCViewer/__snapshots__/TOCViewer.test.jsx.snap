@@ -1,0 +1,489 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TOCViewer renders correctly on journal about page and nav panel closed 1`] = `
+<div
+  className="toc"
+>
+  <div
+    className="toc-title"
+  >
+    TABLE OF CONTENTS
+  </div>
+  <ul>
+    <li
+      className="collapsed"
+    >
+      <span
+        className=""
+      >
+        <button
+          aria-expanded={false}
+          className="btn"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex={-1}
+          type="button"
+        >
+          <span
+            aria-hidden={true}
+            className="fa fa-angle-right"
+            id="Icon1"
+          />
+        </button>
+        <a
+          href="/5/pages/6"
+          onClick={[Function]}
+          tabIndex={-1}
+        >
+          Title of journal page 1
+        </a>
+      </span>
+      <ul>
+        <li
+          className="collapsed"
+        >
+          <span
+            className=""
+          >
+            <button
+              aria-expanded={false}
+              className="btn"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              tabIndex={-1}
+              type="button"
+            >
+              <span
+                aria-hidden={true}
+                className="fa fa-angle-right"
+                id="Icon1"
+              />
+            </button>
+            <a
+              href="/5/pages/8"
+              onClick={[Function]}
+              tabIndex={-1}
+            >
+              Title of journal page 1 child
+            </a>
+          </span>
+          <ul>
+            <li
+              className=""
+            >
+              <span
+                className=""
+              >
+                <span
+                  className="bullet"
+                >
+                  <div>
+                    •
+                  </div>
+                </span>
+                <a
+                  href="/5/pages/9"
+                  onClick={[Function]}
+                  tabIndex={-1}
+                >
+                  Title of journal page 1 grand child
+                </a>
+              </span>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li
+      className=""
+    >
+      <span
+        className=""
+      >
+        <span
+          className="bullet"
+        >
+          <div>
+            •
+          </div>
+        </span>
+        <a
+          href="/5/pages/7"
+          onClick={[Function]}
+          tabIndex={-1}
+        >
+          Title of journal page 2
+        </a>
+      </span>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`TOCViewer renders correctly on journal about page and nav panel opened 1`] = `
+<div
+  className="toc"
+>
+  <div
+    className="toc-title"
+  >
+    TABLE OF CONTENTS
+  </div>
+  <ul>
+    <li
+      className="collapsed"
+    >
+      <span
+        className=""
+      >
+        <button
+          aria-expanded={false}
+          className="btn"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          <span
+            aria-hidden={true}
+            className="fa fa-angle-right"
+            id="Icon1"
+          />
+        </button>
+        <a
+          href="/5/pages/6"
+          onClick={[Function]}
+          tabIndex={0}
+        >
+          Title of journal page 1
+        </a>
+      </span>
+      <ul>
+        <li
+          className="collapsed"
+        >
+          <span
+            className=""
+          >
+            <button
+              aria-expanded={false}
+              className="btn"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              tabIndex={-1}
+              type="button"
+            >
+              <span
+                aria-hidden={true}
+                className="fa fa-angle-right"
+                id="Icon1"
+              />
+            </button>
+            <a
+              href="/5/pages/8"
+              onClick={[Function]}
+              tabIndex={-1}
+            >
+              Title of journal page 1 child
+            </a>
+          </span>
+          <ul>
+            <li
+              className=""
+            >
+              <span
+                className=""
+              >
+                <span
+                  className="bullet"
+                >
+                  <div>
+                    •
+                  </div>
+                </span>
+                <a
+                  href="/5/pages/9"
+                  onClick={[Function]}
+                  tabIndex={-1}
+                >
+                  Title of journal page 1 grand child
+                </a>
+              </span>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li
+      className=""
+    >
+      <span
+        className=""
+      >
+        <span
+          className="bullet"
+        >
+          <div>
+            •
+          </div>
+        </span>
+        <a
+          href="/5/pages/7"
+          onClick={[Function]}
+          tabIndex={0}
+        >
+          Title of journal page 2
+        </a>
+      </span>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`TOCViewer renders correctly on journal page and nav panel closed 1`] = `
+<div
+  className="toc"
+>
+  <div
+    className="toc-title"
+  >
+    TABLE OF CONTENTS
+  </div>
+  <ul>
+    <li
+      className=""
+    >
+      <span
+        className="highlight"
+      >
+        <button
+          aria-expanded={true}
+          className="btn"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex={-1}
+          type="button"
+        >
+          <span
+            aria-hidden={true}
+            className="fa fa-angle-down"
+            id="Icon1"
+          />
+        </button>
+        <a
+          href="/5/pages/6"
+          onClick={[Function]}
+          tabIndex={-1}
+        >
+          Title of journal page 1
+        </a>
+      </span>
+      <ul>
+        <li
+          className="collapsed"
+        >
+          <span
+            className=""
+          >
+            <button
+              aria-expanded={false}
+              className="btn"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              tabIndex={-1}
+              type="button"
+            >
+              <span
+                aria-hidden={true}
+                className="fa fa-angle-right"
+                id="Icon1"
+              />
+            </button>
+            <a
+              href="/5/pages/8"
+              onClick={[Function]}
+              tabIndex={-1}
+            >
+              Title of journal page 1 child
+            </a>
+          </span>
+          <ul>
+            <li
+              className=""
+            >
+              <span
+                className=""
+              >
+                <span
+                  className="bullet"
+                >
+                  <div>
+                    •
+                  </div>
+                </span>
+                <a
+                  href="/5/pages/9"
+                  onClick={[Function]}
+                  tabIndex={-1}
+                >
+                  Title of journal page 1 grand child
+                </a>
+              </span>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li
+      className=""
+    >
+      <span
+        className=""
+      >
+        <span
+          className="bullet"
+        >
+          <div>
+            •
+          </div>
+        </span>
+        <a
+          href="/5/pages/7"
+          onClick={[Function]}
+          tabIndex={-1}
+        >
+          Title of journal page 2
+        </a>
+      </span>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`TOCViewer renders correctly on journal page and nav panel opened 1`] = `
+<div
+  className="toc"
+>
+  <div
+    className="toc-title"
+  >
+    TABLE OF CONTENTS
+  </div>
+  <ul>
+    <li
+      className=""
+    >
+      <span
+        className="highlight"
+      >
+        <button
+          aria-expanded={true}
+          className="btn"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          <span
+            aria-hidden={true}
+            className="fa fa-angle-down"
+            id="Icon1"
+          />
+        </button>
+        <a
+          href="/5/pages/6"
+          onClick={[Function]}
+          tabIndex={0}
+        >
+          Title of journal page 1
+        </a>
+      </span>
+      <ul>
+        <li
+          className="collapsed"
+        >
+          <span
+            className=""
+          >
+            <button
+              aria-expanded={false}
+              className="btn"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              <span
+                aria-hidden={true}
+                className="fa fa-angle-right"
+                id="Icon1"
+              />
+            </button>
+            <a
+              href="/5/pages/8"
+              onClick={[Function]}
+              tabIndex={0}
+            >
+              Title of journal page 1 child
+            </a>
+          </span>
+          <ul>
+            <li
+              className=""
+            >
+              <span
+                className=""
+              >
+                <span
+                  className="bullet"
+                >
+                  <div>
+                    •
+                  </div>
+                </span>
+                <a
+                  href="/5/pages/9"
+                  onClick={[Function]}
+                  tabIndex={-1}
+                >
+                  Title of journal page 1 grand child
+                </a>
+              </span>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li
+      className=""
+    >
+      <span
+        className=""
+      >
+        <span
+          className="bullet"
+        >
+          <div>
+            •
+          </div>
+        </span>
+        <a
+          href="/5/pages/7"
+          onClick={[Function]}
+          tabIndex={0}
+        >
+          Title of journal page 2
+        </a>
+      </span>
+    </li>
+  </ul>
+</div>
+`;
