@@ -3,9 +3,10 @@ import {
   GET_JOURNAL_FAILURE,
   STARTED_FETCHING_JOURNAL,
   FINISHED_FETCHING_JOURNAL,
+  RESET_JOURNAL,
 } from '../constants/actionTypes/journal';
 
-const journal = (state = {
+const INITIAL_STATE = {
   title: '',
   shortDescription: '',
   longDescription: '',
@@ -13,7 +14,7 @@ const journal = (state = {
   heroImageUrl: '',
   customContent: '',
   journalAboutId: null,
-  journalId: null,
+  journalId: 0,
   purchaseUrl: '',
   price: '0',
   accessLength: 0,
@@ -21,7 +22,9 @@ const journal = (state = {
   startedFetching: false,
   finishedFetching: false,
   error: null,
-}, action) => {
+};
+
+const journal = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case GET_JOURNAL_SUCCESS:
       return {
@@ -57,6 +60,8 @@ const journal = (state = {
         startedFetching: false,
         finishedFetching: true,
       };
+    case RESET_JOURNAL:
+      return INITIAL_STATE;
     default:
       return state;
   }

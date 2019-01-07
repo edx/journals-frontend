@@ -25,15 +25,23 @@ const NUM_HIGHLIGHTS_DISPLAY = 3;
 
 const BreadCrumb = ({
   breadcrumbs,
+  journalName,
+  journalId,
 }) => (
   <div className="breadcrumb">
+    {
+    journalId === 0 &&
+      <div className="result-breadcrumb">
+        {journalName}
+      </div>
+    }
     {
     breadcrumbs.map(breadcrumb => (
       <div key={breadcrumb} className="result-breadcrumb">
         {breadcrumb}
       </div>
     ))
-  }
+    }
   </div>
 );
 
@@ -64,6 +72,7 @@ const SearchHighlight = ({
 
 const SearchItem = ({
   data,
+  journalId,
 }) => (
   <Link className="card-link" to={`/${data.journal_about_page_id}/pages/${data.page_id}#${data.span_id}`} >
     <div className="search-result-card">
@@ -84,10 +93,15 @@ const SearchItem = ({
 
       <SearchHighlight highlights={data.highlights.slice(0, NUM_HIGHLIGHTS_DISPLAY)} />
       <AdditionalHighlights total={data.highlights.length} />
-      <BreadCrumb breadcrumbs={data.breadcrumbs} />
+      <BreadCrumb
+        breadcrumbs={data.breadcrumbs}
+        journalName={data.journal_name}
+        journalId={journalId}
+      />
     </div>
   </Link>
 );
+
 
 class SearchResults extends React.Component {
   formatKey(searchResults) {
@@ -126,7 +140,7 @@ class SearchResults extends React.Component {
                 <SearchItem
                   key={this.formatKey(searchResult)}
                   data={searchResult}
-                  filter={this.props.filter}
+                  journalId={this.props.journalId}
                 />
             ))
           }
@@ -142,6 +156,8 @@ BreadCrumb.defaultProps = {
 
 BreadCrumb.propTypes = {
   breadcrumbs: PropTypes.arrayOf(PropTypes.string),
+  journalName: PropTypes.string.isRequired,
+  journalId: PropTypes.number.isRequired,
 };
 
 SearchItem.defaultProps = {
@@ -150,6 +166,7 @@ SearchItem.defaultProps = {
 SearchItem.propTypes = {
   data: PropTypes.shape({
     journal_about_page_id: PropTypes.number,
+    journal_name: PropTypes.string,
     page_id: PropTypes.number,
     span_id: PropTypes.string,
     block_title: PropTypes.string,
@@ -157,6 +174,7 @@ SearchItem.propTypes = {
     highlights: PropTypes.array,
     breadcrumbs: PropTypes.array,
   }).isRequired,
+  journalId: PropTypes.number.isRequired,
 };
 
 SearchResults.defaultProps = {
@@ -165,6 +183,7 @@ SearchResults.defaultProps = {
   searchStarted: false,
   error: null,
   resultsCounter: () => 0,
+  journalId: 0,
 };
 
 SearchResults.propTypes = {
@@ -174,6 +193,7 @@ SearchResults.propTypes = {
   searchStarted: PropTypes.bool,
   error: PropTypes.instanceOf(Error),
   hits: PropTypes.arrayOf(PropTypes.object),
+  journalId: PropTypes.number,
 };
 
 export default SearchResults;

@@ -3,12 +3,14 @@ import { SearchField } from '@edx/paragon';
 import qs from 'query-string';
 import PropTypes from 'prop-types';
 
+const SEARCH_PATH = '/search/';
 
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
     this.search = this.search.bind(this);
   }
+
   search(query) {
     const MATCH_PHRASE_START_CHAR = '"';
     const MATCH_PHRASE_END_CHAR = '"';
@@ -20,9 +22,9 @@ class SearchBar extends React.Component {
     const options = {
       query: cleanQuery,
       operator: searchOperator,
-      journalId: this.props.journalId === null ? 0 : this.props.journalId,
+      journalId: this.props.journalId,
     };
-    this.props.history.push(`/search/?${qs.stringify(options)}`);
+    this.props.history.push(`${SEARCH_PATH}?${qs.stringify(options)}`);
   }
 
   render() {

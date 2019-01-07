@@ -40,6 +40,8 @@ class JournalIndexPage extends React.Component {
         this.props.useExistingJournal(this.props.journals[0]);
       } else {
         this.props.getJournalIndex();
+        // clear journal state when index page fully loaded
+        this.props.resetJournal();
       }
     }
   }
@@ -109,6 +111,7 @@ JournalIndexPage.defaultProps = {
   finishedFetching: false,
   authorizedJournals: [],
   isPreview: false,
+  resetJournal: () => {},
 };
 
 JournalIndexPage.propTypes = {
@@ -127,6 +130,7 @@ JournalIndexPage.propTypes = {
   finishedFetchingIndex: PropTypes.bool,
   authorizedJournals: PropTypes.arrayOf(PropTypes.number),
   isPreview: PropTypes.bool,
+  resetJournal: PropTypes.func,
 };
 
 export default JournalIndexPage;
