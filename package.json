@@ -26,6 +26,7 @@
     "font-awesome": "^4.7.0",
     "highlight.js": "^9.13.1",
     "history": "^4.7.2",
+    "image-webpack-loader": "^4.5.0",
     "moment": "^2.22.2",
     "prop-types": "^15.5.10",
     "query-string": "^6.1.0",

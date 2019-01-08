@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Hyperlink } from '@edx/paragon';
+import ImgWithDefault from '../ImgWithDefault';
 
 import './Footer.scss';
 
@@ -29,7 +30,7 @@ const Footer = (props) => {
     return (
       <footer className="page-footer">
         <div className="footer-content">
-          <img className="site-logo" alt="site logo" src={props.siteLogo} />
+          <ImgWithDefault className="site-logo" img={props.siteLogo} altText="footer logo" />
           {LinkList(props.footerLinks)}
         </div>
       </footer>

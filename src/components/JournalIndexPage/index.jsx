@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, Redirect } from 'react-router-dom';
 import { Button } from '@edx/paragon';
-
+import ImgWithDefault from '../ImgWithDefault';
+import BookCard from '../../images/book-card.jpeg';
 import HeroBanner from '../../components/HeroBanner';
 
 import './JournalIndexPage.scss';
@@ -12,7 +13,7 @@ const JournalCard = props => (
   <Link className="journal-card-link" to={{ pathname: props.authorized ? `/${props.journalAboutId}` : `/${props.journalAboutId}/about` }}>
     <div className="journal-card" >
       <div className="journal-card-image">
-        <img src={props.cardImageUrl} alt={props.title} />
+        <ImgWithDefault img={props.cardImageUrl} defaultImage={BookCard} altText={props.title} />
       </div>
       <div className="journal-card-organization">
         {props.organization}
