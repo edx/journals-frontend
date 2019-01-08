@@ -105,6 +105,7 @@
     ],
     "globals": {
       "courseContext": {}
-    }
+    },
+    "testURL": "https://www.somthing.com/"
   }
 }
