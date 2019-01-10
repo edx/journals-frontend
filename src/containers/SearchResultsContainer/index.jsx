@@ -9,6 +9,7 @@ const mapStateToProps = state => (
     error: state.searchResults.error,
     searchFinished: state.searchResults.finishedFetching,
     searchStarted: state.searchResults.startedFetching,
+    journalId: state.searchResults.journalId,
   }
 );
 

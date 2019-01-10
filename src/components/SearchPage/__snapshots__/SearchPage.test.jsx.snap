@@ -113,6 +113,11 @@ exports[`<SearchPage/> renders with all filters 1`] = `
             <div
               className="result-breadcrumb"
             >
+              new journal
+            </div>
+            <div
+              className="result-breadcrumb"
+            >
               x
             </div>
             <div
@@ -155,7 +160,13 @@ exports[`<SearchPage/> renders with all filters 1`] = `
           />
           <div
             className="breadcrumb"
-          />
+          >
+            <div
+              className="result-breadcrumb"
+            >
+              new journal
+            </div>
+          </div>
         </div>
       </a>
       <a
@@ -190,7 +201,13 @@ exports[`<SearchPage/> renders with all filters 1`] = `
           />
           <div
             className="breadcrumb"
-          />
+          >
+            <div
+              className="result-breadcrumb"
+            >
+              new journal
+            </div>
+          </div>
         </div>
       </a>
     </div>

@@ -72,6 +72,11 @@ exports[`<SearchResults/> renders with filter all 1`] = `
           <div
             className="result-breadcrumb"
           >
+            new journal
+          </div>
+          <div
+            className="result-breadcrumb"
+          >
             x
           </div>
           <div
@@ -114,7 +119,13 @@ exports[`<SearchResults/> renders with filter all 1`] = `
         />
         <div
           className="breadcrumb"
-        />
+        >
+          <div
+            className="result-breadcrumb"
+          >
+            new journal
+          </div>
+        </div>
       </div>
     </a>
     <a
@@ -149,7 +160,13 @@ exports[`<SearchResults/> renders with filter all 1`] = `
         />
         <div
           className="breadcrumb"
-        />
+        >
+          <div
+            className="result-breadcrumb"
+          >
+            new journal
+          </div>
+        </div>
       </div>
     </a>
   </div>
@@ -220,6 +237,11 @@ exports[`<SearchResults/> renders with filter document 1`] = `
           <div
             className="result-breadcrumb"
           >
+            new journal
+          </div>
+          <div
+            className="result-breadcrumb"
+          >
             x
           </div>
           <div
@@ -271,7 +293,13 @@ exports[`<SearchResults/> renders with filter image  1`] = `
         />
         <div
           className="breadcrumb"
-        />
+        >
+          <div
+            className="result-breadcrumb"
+          >
+            new journal
+          </div>
+        </div>
       </div>
     </a>
   </div>
@@ -315,7 +343,13 @@ exports[`<SearchResults/> renders with filter video  1`] = `
         />
         <div
           className="breadcrumb"
-        />
+        >
+          <div
+            className="result-breadcrumb"
+          >
+            new journal
+          </div>
+        </div>
       </div>
     </a>
   </div>

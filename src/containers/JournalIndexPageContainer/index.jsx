@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 
 import JournalIndexPage from '../../components/JournalIndexPage';
 import { fetchJournals, fetchJournalIndexPage } from '../../data/actions/journals';
-import { useExistingJournal } from '../../data/actions/journal';
+import { resetJournal, useExistingJournal } from '../../data/actions/journal';
 import { toggleNavigationVisibility } from '../../data/actions/navigation';
 
 const mapStateToProps = state => (
@@ -22,6 +22,7 @@ const mapDispatchToProps = dispatch => (
     getJournals: () => dispatch(fetchJournals()),
     toggleNavigationVisibility: val => dispatch(toggleNavigationVisibility(val)),
     useExistingJournal: journal => dispatch(useExistingJournal(journal)),
+    resetJournal: () => dispatch(resetJournal()),
   }
 );
 

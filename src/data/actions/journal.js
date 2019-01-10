@@ -5,6 +5,7 @@ import {
   FINISHED_FETCHING_JOURNAL,
   GET_JOURNAL_SUCCESS,
   GET_JOURNAL_FAILURE,
+  RESET_JOURNAL,
 } from '../constants/actionTypes/journal';
 
 import JournalsApiService from '../services/JournalsApiService';
@@ -59,4 +60,10 @@ const useExistingJournal = journal => (
   }
 );
 
-export { fetchJournal, useExistingJournal };
+const resetJournal = () => (
+  {
+    type: RESET_JOURNAL,
+  }
+);
+
+export { fetchJournal, useExistingJournal, resetJournal };
