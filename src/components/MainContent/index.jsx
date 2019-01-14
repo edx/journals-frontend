@@ -8,6 +8,7 @@ import JournalIndexPreviewContainer from '../../containers/JournalIndexPreviewCo
 import PrivateRouteContainer from '../../containers/PrivateRouteContainer';
 import JournalRouterContainer from '../../containers/JournalRouterContainer';
 import SearchPageContainer from '../../containers/SearchPageContainer';
+import LoginContainer from '../../containers/LoginContainer';
 
 
 const MainContent = (props) => {
@@ -24,6 +25,7 @@ const MainContent = (props) => {
             <Switch>
               <Route exact path="/" component={JournalIndexPageContainer} />
               <Route path="/indexPreview/:previewId" component={JournalIndexPreviewContainer} />
+              <Route exact path="/login" component={LoginContainer} />
               <PrivateRouteContainer path="/search" component={SearchPageContainer} />
               <Route path="/:journalAboutId" component={JournalRouterContainer} />
             </Switch>

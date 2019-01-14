@@ -18,6 +18,7 @@ const mapStateToProps = state => (
     canAccessAdmin: state.siteInfo.canAccessAdmin,
     cmsPath: `${state.siteInfo.serverBaseUrl}/cms`,
     finishedFetching: state.siteInfo.finishedFetching,
+    lmsIntegration: state.siteInfo.lmsIntegration,
   }
 );
 

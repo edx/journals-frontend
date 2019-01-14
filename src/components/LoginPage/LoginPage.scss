@@ -1,0 +1,77 @@
+@media (min-width: 992px){
+  .search-filter-panel>div{
+    margin: 20px 16px 0px 16px;
+  }
+}
+
+@media (max-width: 991px){
+  .search-filter-panel{
+    justify-content: space-between;
+
+    >div{
+        margin: 0px 5px 0px 5px;
+    }
+  }
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 100px auto;
+  grid-gap: 10px;
+  // background-color: #2196F3;
+  padding: 10px;
+}
+
+.grid-container > div {
+  // background-color: rgba(255, 255, 255, 0.8);
+  text-align: left;
+  // padding: 20px 0;
+  // font-size: 30px;
+}
+
+.form-container {
+  margin-top: 20px;
+}
+
+.form-row {
+  display: block;
+  padding: 10px 30px 0px 30px;
+  text-align: left;
+  border-radius: 4px;
+  background-color: $white;
+  // border: solid 1px $light-grey;
+
+  &:hover{
+      background-color: $pale-grey;
+      cursor: pointer;
+  }
+}
+.form-row > div {
+  display: inline;
+}
+
+.btn.filter-btn{
+  line-height: 1;
+  padding: 0 0 8px 0;
+  color:  $slate-grey;
+  background-color: $white;
+  border: none;
+  border-radius: 0px;
+  font-size: 14px;
+
+  &:hover{
+    cursor: pointer;
+  }
+
+  &:focus{
+    box-shadow: none;
+    color: $primary;
+    font-weight: bold;
+  }
+}
+
+.btn.filter-btn-selected{
+  color: $primary;
+  border-bottom: 2px solid $primary;
+  font-weight: bold;
+}

@@ -21,6 +21,7 @@ const siteInfo = (state = {
   startedFetching: false,
   finishedFetching: false,
   authorizedJournals: [],
+  lmsIntegration: true,
 }, action) => {
   switch (action.type) {
     case GET_SITE_INFO_SUCCESS:
@@ -37,6 +38,7 @@ const siteInfo = (state = {
         serverBaseUrl: action.siteInfo.server_url,
         lmsRootUrl: action.siteInfo.lms_url_root,
         authorizedJournals: action.siteInfo.authorized_journals,
+        lmsIntegration: action.siteInfo.lms_integration,
       };
     case GET_SITE_INFO_FAILURE:
       return {
