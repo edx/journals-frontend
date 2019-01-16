@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 
+import account from './account';
 import page from './page';
 import preview from './preview';
 import journal from './journal';
@@ -17,6 +18,7 @@ const rootReducer = combineReducers({
   journal,
   searchResults,
   siteInfo,
+  account,
 });
 
 export default rootReducer;

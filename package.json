@@ -24,6 +24,7 @@
     "classnames": "^2.2.5",
     "email-prop-type": "^1.1.5",
     "font-awesome": "^4.7.0",
+    "formik": "^1.4.2",
     "highlight.js": "^9.13.1",
     "history": "^4.7.2",
     "image-webpack-loader": "^4.5.0",

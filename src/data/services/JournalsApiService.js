@@ -68,6 +68,32 @@ class JournalsApiService {
     });
   }
 
+  static createAccount(email, username, password) {
+    return axios.post(`${JournalsApiService.apiUrl}/useraccount/`, {
+      email,
+      username,
+      password,
+    }, {
+      withCredentials: true,
+      headers: {
+        'X-CSRFToken': getCookieValue('journals_csrftoken'),
+      },
+    });
+  }
+
+  static loginAccount(username, password) {
+    return axios.post(`${JournalsApiService.apiUrl}/useraccount/`, {
+      login: true,
+      username,
+      password,
+    }, {
+      withCredentials: true,
+      headers: {
+        'X-CSRFToken': getCookieValue('journals_csrftoken'),
+      },
+    });
+  }
+
   static fetchSearchResults(journalId, query, operator) {
     // Note, not passing filter to server for now, will filter on client side
     const options = { query, operator };

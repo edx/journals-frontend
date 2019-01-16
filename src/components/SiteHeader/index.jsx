@@ -93,7 +93,7 @@ class SiteHeader extends React.Component {
             }
             {
               !this.props.isAuthenticated && !this.props.lmsIntegration &&
-                <Link className="btn control-btn" to="login">Local Login</Link>
+                <Link className="btn control-btn" to="/login">Local Login</Link>
             }
           </div>
         </div>
