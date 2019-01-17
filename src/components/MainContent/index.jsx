@@ -9,6 +9,7 @@ import PrivateRouteContainer from '../../containers/PrivateRouteContainer';
 import JournalRouterContainer from '../../containers/JournalRouterContainer';
 import SearchPageContainer from '../../containers/SearchPageContainer';
 import UserLoginContainer from '../../containers/UserLoginContainer';
+import UserLogoutContainer from '../../containers/UserLogoutContainer';
 import UserAccountContainer from '../../containers/UserAccountContainer';
 
 const MainContent = (props) => {
@@ -26,6 +27,7 @@ const MainContent = (props) => {
               <Route exact path="/" component={JournalIndexPageContainer} />
               <Route path="/indexPreview/:previewId" component={JournalIndexPreviewContainer} />
               <Route exact path="/login" component={UserLoginContainer} />
+              <Route exact path="/login" component={UserLogoutContainer} />
               <Route exact path="/createaccount" component={UserAccountContainer} />
               <PrivateRouteContainer path="/search" component={SearchPageContainer} />
               <Route path="/:journalAboutId" component={JournalRouterContainer} />

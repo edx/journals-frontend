@@ -94,6 +94,17 @@ class JournalsApiService {
     });
   }
 
+  static logoutAccount() {
+    return axios.post(`${JournalsApiService.apiUrl}/useraccount/`, {
+      logout: true,
+    }, {
+      withCredentials: true,
+      headers: {
+        'X-CSRFToken': getCookieValue('journals_csrftoken'),
+      },
+    });
+  }
+
   static fetchSearchResults(journalId, query, operator) {
     // Note, not passing filter to server for now, will filter on client side
     const options = { query, operator };

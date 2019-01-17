@@ -7,6 +7,10 @@ import {
   FINISHED_LOGIN_ACCOUNT,
   GET_ACCOUNT_LOGIN_SUCCESS,
   GET_ACCOUNT_LOGIN_FAILURE,
+  STARTED_LOGOUT_ACCOUNT,
+  FINISHED_LOGOUT_ACCOUNT,
+  GET_ACCOUNT_LOGOUT_SUCCESS,
+  GET_ACCOUNT_LOGOUT_FAILURE,
 } from '../constants/actionTypes/account';
 
 const INITIAL_STATE = {
@@ -18,6 +22,9 @@ const INITIAL_STATE = {
   startedLogin: false,
   finishedLogin: false,
   errorLogin: null,
+  startedLogout: false,
+  finishedLogout: false,
+  errorLogout: null,
 };
 
 const account = (state = INITIAL_STATE, action) => {
@@ -71,6 +78,30 @@ const account = (state = INITIAL_STATE, action) => {
         ...state,
         startedLogin: false,
         finishedLogin: true,
+      };
+    case GET_ACCOUNT_LOGOUT_SUCCESS:
+      return {
+        ...state,
+        email: '',
+        username: '',
+      };
+    case GET_ACCOUNT_LOGOUT_FAILURE:
+      return {
+        ...state,
+        errorLogout: action.error,
+      };
+    case STARTED_LOGOUT_ACCOUNT:
+      return {
+        ...state,
+        errorLogout: null,
+        startedLogout: true,
+        finishedLogout: false,
+      };
+    case FINISHED_LOGOUT_ACCOUNT:
+      return {
+        ...state,
+        startedLogout: false,
+        finishedLogout: true,
       };
 
     default:

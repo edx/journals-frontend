@@ -48,7 +48,7 @@ class SiteHeader extends React.Component {
     if (this.props.canAccessAdmin) {
       menuList.push(<a href={this.getEditorLink()} target="_blank" rel="noopener noreferrer"><span><Icon className="fa fa-pencil-square-o" />Journal Editor</span></a>);
     }
-    menuList.push({ label: 'Logout', href: this.props.logoutPath });
+    menuList.push({ label: 'Logout', href: this.props.lmsIntegration ? this.props.logoutPath : '/logout' });
     return menuList;
   }
 
