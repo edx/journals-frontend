@@ -57,7 +57,7 @@ class JournalIndexPage extends React.Component {
           <div>
             <HeroBanner
               title={this.props.journalIndex.title}
-              bannerImageUrl={this.props.journalIndex.hero_image_url}
+              bannerImageUrl={this.props.journalIndex.heroImageUrl}
             />
             {
               /* eslint-disable react/no-danger */
@@ -120,7 +120,7 @@ JournalIndexPage.propTypes = {
     id: PropTypes.number,
     title: PropTypes.string,
     intro: PropTypes.string,
-    hero_image_url: PropTypes.string,
+    heroImageUrl: PropTypes.string,
   }).isRequired,
   getJournals: PropTypes.func,
   getJournalIndex: PropTypes.func,

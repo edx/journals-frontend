@@ -15,7 +15,25 @@ const preview = (state = {
     case GET_PREVIEW_SUCCESS:
       return {
         ...state,
-        page: action.page,
+        page: {
+          id: action.page.id,
+          title: action.page.title,
+          intro: action.page.intro,
+          subTitle: action.page.sub_title,
+          shortDescription: action.page.short_description,
+          longDescription: action.page.long_description,
+          body: action.page.body,
+          author: action.page.author,
+          displayLastPublishedDate: action.page.display_last_published_date,
+          lastPublishedDate: action.page.last_published_at,
+          heroImageUrl: action.page.hero_image_url,
+          customContent: action.page.custom_content,
+          journalId: action.page.journal_id,
+          purchaseUrl: action.page.purchase_url,
+          price: action.page.price,
+          accessLength: action.page.accessLength,
+          breadCrumbs: action.page.bread_crumbs,
+        },
       };
     case GET_PREVIEW_FAILURE:
       return {

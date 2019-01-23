@@ -47,7 +47,12 @@ const journals = (state = {
     case GET_JOURNAL_INDEX_SUCCESS:
       return {
         ...state,
-        journalIndex: action.journalIndex.length > 0 ? action.journalIndex[0] : {},
+        journalIndex: action.journalIndex.length > 0 ? {
+          id: action.journalIndex[0].id,
+          title: action.journalIndex[0].title,
+          intro: action.journalIndex[0].intro,
+          heroImageUrl: action.journalIndex[0].hero_image_url,
+        } : {},
       };
     case GET_JOURNAL_INDEX_FAILURE:
       return {

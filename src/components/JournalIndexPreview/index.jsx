@@ -21,7 +21,7 @@ class JournalIndexPreview extends React.Component {
           journalIndex={{
             title: this.props.previewPage.title,
             intro: this.props.previewPage.intro,
-            hero_image_url: this.props.previewPage.hero_image_url,
+            heroImageUrl: this.props.previewPage.heroImageUrl,
           }}
           journals={this.props.journals}
         />
@@ -48,7 +48,7 @@ JournalIndexPreview.propTypes = {
     id: PropTypes.number,
     title: PropTypes.string,
     intro: PropTypes.string,
-    hero_image_url: PropTypes.string,
+    heroImageUrl: PropTypes.string,
   }).isRequired,
   serverBaseUrl: PropTypes.string,
   authorizedJournals: PropTypes.arrayOf(PropTypes.number),
