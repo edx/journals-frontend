@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<JournalAboutPage /> renders loading page when page is not finished fetching. 1`] = `"Loading..."`;
+
+exports[`<JournalAboutPage /> renders page correctly with authorized journal id 1`] = `
+<div>
+  <div
+    className="hero"
+    style={
+      Object {
+        "background": "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url()",
+      }
+    }
+  >
+    <h1>
+      Title of journal about page
+    </h1>
+    <h2>
+      Short description of journal
+    </h2>
+    <div>
+      <a
+        className="btn btn-success"
+        href="/5"
+        onClick={[Function]}
+      >
+        View Now
+      </a>
+    </div>
+  </div>
+  <div>
+    <p
+      className="long-description"
+    >
+      Long description of journal
+    </p>
+    <div
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<h2>Content Title</h2><p>Custom content details</p>",
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`<JournalAboutPage /> renders page correctly without authorized journal id 1`] = `
+<div>
+  <div
+    className="hero"
+    style={
+      Object {
+        "background": "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url()",
+      }
+    }
+  >
+    <h1>
+      Title of journal about page
+    </h1>
+    <h2>
+      Short description of journal
+    </h2>
+    <div>
+      <a
+        className="btn btn-success"
+        href="example.com/userhttp://purchase.example.com/"
+        onClick={[Function]}
+        target="_self"
+      >
+        Purchase Access ($0) for unlimited time
+      </a>
+    </div>
+  </div>
+  <div>
+    <p
+      className="long-description"
+    >
+      Long description of journal
+    </p>
+    <div
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<h2>Content Title</h2><p>Custom content details</p>",
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`<JournalAboutPage /> renders the empty page. 1`] = `null`;
