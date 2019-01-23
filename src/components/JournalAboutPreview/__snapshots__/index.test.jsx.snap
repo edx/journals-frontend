@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<JournalAboutPreview /> renders correctly the JournalAbout page in preview mode. 1`] = `
+<div>
+  <div
+    className="hero"
+    style={
+      Object {
+        "background": "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url()",
+      }
+    }
+  >
+    <h1>
+      Title of journal about page
+    </h1>
+    <h2>
+      Short description of journal
+    </h2>
+    <div>
+      <a
+        className="btn btn-success"
+        href="/0"
+        onClick={[Function]}
+      >
+        View Now
+      </a>
+    </div>
+  </div>
+  <div>
+    <p
+      className="long-description"
+    >
+      Long description of journal
+    </p>
+    <div
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<h2>Content Title</h2><p>Custom content details</p>",
+        }
+      }
+    />
+  </div>
+</div>
+`;
